@@ -10,37 +10,31 @@
     <link>https://quartz.19960312.xyz/Travels/Travels</link>
     <guid>https://quartz.19960312.xyz/Travels/Travels</guid>
     <description>北京-天津 [天津]滨江道惬意的夜晚 https://www.acfun.cn/v/ac30585633 戒台寺 十三陵/蟒山 白羊沟 妙峰山 妙峰山露营----扛车上山之旅 https://www.acfun.cn/v/ac29469038 怀柔水库 https://www.youtube.com/watch?v=zVK0bDFXyDc 深圳盐田绿道-大梅沙 https://www.</description>
-    <pubDate>Tue, 06 Feb 2024 15:57:08 GMT</pubDate>
+    <pubDate>Tue, 06 Feb 2024 16:01:36 GMT</pubDate>
   </item><item>
     <title>Videos</title>
     <link>https://quartz.19960312.xyz/Readings/Videos/Videos</link>
     <guid>https://quartz.19960312.xyz/Readings/Videos/Videos</guid>
     <description>EU PyCon 的 JIT 三十分钟教程 Antonio Cuni - How to write a JIT compiler in 30 minutes - YouTube EU PyCon 的 JIT 三十分钟教程，感觉讲的非常的好，建议感兴趣的同学可以看下 .</description>
-    <pubDate>Tue, 06 Feb 2024 15:57:08 GMT</pubDate>
+    <pubDate>Tue, 06 Feb 2024 16:01:36 GMT</pubDate>
   </item><item>
     <title>Papers</title>
     <link>https://quartz.19960312.xyz/Readings/Papers/Papers</link>
     <guid>https://quartz.19960312.xyz/Readings/Papers/Papers</guid>
     <description>梭罗的极简主义生活智慧及其启示 323950844.pdf ［摘 要］极简主义原是西方一种现代艺术流派，其核心理念是崇尚简约。而作为一种生活方式的极简主义，梭罗早在 19 世纪就践行过：他通过对“步行”“奢侈”与“文明”的深刻反思，认为应简化人的物质需求，倡导追求精神上的自由，从而促进人与自然和谐共生。 当前正处于生态危机的时代，亟需提倡这样一种极简主义的生活方式。梭罗的极简主义生活智慧对于我国的生态文明建设具有重要的启示作用，有助于实现全社会 的生态幸福。 ［关键词］梭罗；极简主义；精神自由；生态幸福 Bitcoin- A Peer-to-Peer Electronic Cash System bitcoin.</description>
-    <pubDate>Tue, 06 Feb 2024 15:57:08 GMT</pubDate>
+    <pubDate>Tue, 06 Feb 2024 16:01:36 GMT</pubDate>
   </item><item>
     <title>How to check the binding glibc version of a binary</title>
     <link>https://quartz.19960312.xyz/Knowledges/How-to-check-the-binding-glibc-version-of-a-binary</link>
     <guid>https://quartz.19960312.xyz/Knowledges/How-to-check-the-binding-glibc-version-of-a-binary</guid>
     <description>There are several ways to check the glibc version that a binary file depends on:: ldd command ldd binary_file objdump, disassembly objdump -T binary_file | grep -i glibc readelf readelf -d binary_file | grep libc check dynamic section to get libc version。 check the source code repo If you can access the source code, check the building scripts for the glibc version。 rpm/deb package manage tools How to check RPM Dependencies gdb debugging gdb binary_file print (const char*) ELF-&gt;gnu_required-&gt;name show the glibc SONAME version when linking。 strings extracting strings binary_file | grep GLIBC extracting glibc symbols version prefixes。.</description>
-    <pubDate>Tue, 06 Feb 2024 15:57:08 GMT</pubDate>
+    <pubDate>Tue, 06 Feb 2024 16:01:35 GMT</pubDate>
   </item><item>
     <title>Git</title>
     <link>https://quartz.19960312.xyz/Knowledges/Git</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Git</guid>
     <description>Refs: “Branch early, branch often”.</description>
-    <pubDate>Tue, 06 Feb 2024 15:57:08 GMT</pubDate>
-  </item><item>
-    <title>赛里斯生存指南：如何证明我妈是我妈</title>
-    <link>https://quartz.19960312.xyz/Blog/2023-11-17-how-to-prove-your-mom-is-your-mom</link>
-    <guid>https://quartz.19960312.xyz/Blog/2023-11-17-how-to-prove-your-mom-is-your-mom</guid>
-    <description>最近我遇到了一点需要证明我妈是我妈的小麻烦,中间还遇到了一些小小波折, 为了防止“没有记录就没有发生”，所以简单记录一下. 看到这个标题，很多人就会想: 这都已经2023年了，你说的这个已经是烂梗老活了，毫无新意, 我不相信 2023 年 11 月还存在这样的事情，但是千真万确这个事情就发生在 2023 年的 11 月，地点就是赛里斯。 虽然大家遇到需要证明你妈是你妈的机会不太多，但是为了防止大家在真的遇到这种情形的时候手足无措，我还是分享一下我在赛里斯的这个生存小技巧，以备不时之需 。 简要经过 事情的经过是这样的，因为种种原因，我和我的母亲已经不在同一个户口本上了，所以在办理一些事情的时候呢，需要证明亲子关系。 首先我就让家人去了故乡的村委会，要求出具我和我母亲的亲子关系证明，村委会以各种奇奇怪怪的理由推脱，一会儿是人不在办公场所，一会儿又劝我们说这个证明其实没有必要开，然后又劝我们去公安局派出所开具这个证明比较有法律效力。当然这些都是胡诌，其实在这个场景下，最佳的方式就是用一包红色外壳的香烟来解决问题，这包烟虽然只价值区区几十元人民币，但是依照联合国的赤贫标准为每日一美元的生活费，这几十元足够支付这些人一周的伙食费。 然后我的家人又去了故乡的派出所，派出所提出：我也不认识你，你应当去村委会开具一个证明，我给你盖一个章他就有法律效力了。其实这个时候为了少跑一趟，你最佳的选择依然是用一包香烟解决问题。但是如果你给出了这一包香烟，方便了你自己，但却会导致成千上万的人民群众因此必须付出一包香烟的代价，所以任何一个有社会责任感的公民，都不应该在此时为了方便自己而导致整个社会风气的败坏。 事实上在 2016 年发布的 公安部等12部门联合出台《关于改进和规范公安派出所出具证明工作的意见》等2个文件 的第二条第三款就有如下规定： 二、公民在办理相关社会事务时，无法用法定身份证件证明的事项，需要公安派出所开具相关证明的，由公安派出所根据具体情况予以办理。主要包括下列9类情形： … 3、亲属关系证明。曾经同户人员间的亲属关系，历史户籍档案等能够反映，需要开具证明的，公安派出所在核实后应当出具。 派出所的人天天跟法律法规打交道，他能不知道法律法规吗？他每天接触数百人，开着各种稀奇古怪的证明，他能不知道什么证明应该开吗？你笑他不懂法律法规，他笑你不懂人情世故。 最佳解法 你的最佳做法是拿着这个文件去派出所，阐明自己属于辖区居民，派出所有自己的户籍资料，有义务出具亲属关系证明，如果这个时候对方乖乖的给你开具了证明那就万事大吉了。 如果对方依然顽固不化，拒绝为你开具证明。那么你应该坚持要求他出示拒绝开具证明的书面文件。咱们毕竟是作为文明社会的读书人，做事要讲究一个温文尔雅，言行举止要文质彬彬，这个时候你就可以引用著名文艺界人士陈丹青教授的名言：“我操你mlgb，我要去纪检委举报你，我要去陶然亭排队”，一般到了这个程度，基本上你要开具的证明，也就八九不离十了。 后记 这个事情还是令我感到了一点小小的塞里斯特色震撼，这都已经2023年了，文明世界的人工智能，已经快要通过图灵测试了。而我们这个世界，想要证明我妈是我妈，还需要以性侵别人的妈作为代价，多少还是有点野蛮的。这个意见文件居然是 2016 年才发布的，难以想象 2016 年前的赛里斯人想要活着有多么的艰难，因为他们连“我从哪里来”这样的哲学基本问题都回答不了。 现在已经是信息化的时代，这样简单的问题，你去互联网大厂随便找一个程序员，随便写几个SQL语句，就可以做一个可供全国人民使用的亲属关系证明系统。退一万步讲，在过去的三年大抗疫期间，一个小小的二维码，只要你变红了，你的祖宗十八代他都能给挖出来变红，证明一个亲属关系又有何难？ 所以这种问题根本不是技术的问题，而是一种文化里的基因。西方的文化是上帝的文化，在上帝这样至高无上的神面前，所有人都是仆人，所以西方的公职人员在面对公众的时候，大多是带着尊重的心态，以帮助别人为自己的乐趣。而在赛力斯的文化是皇帝的文化，人人都想当土皇帝，手上有一丁点的权力，都要时不时拿出来耍威风，过一把皇帝的瘾，一包烟他也不是买不起，主要是抽别人的更有性价比。 这种野蛮与文明的鸿沟一天没有被填平，那么每一天都会有无数公职人员的母亲被无缘无故的性侵，为了保护他们的母亲，尊重女性，希望这个鸿沟快点被填平。 Refs 公安部等12部门联合出台《关于改进和规范公安派出所出具证明工作的意见》等2个文件 .</description>
-    <pubDate>Tue, 06 Feb 2024 15:57:08 GMT</pubDate>
+    <pubDate>Tue, 06 Feb 2024 16:01:35 GMT</pubDate>
   </item><item>
     <title>我如何构建我的数字花园</title>
     <link>https://quartz.19960312.xyz/Blog/How-I-build-my-digital-garden</link>
@@ -64,6 +58,12 @@
     <link>https://quartz.19960312.xyz/Collections/OpensourceProject/Markdown-to-Notion-Projects</link>
     <guid>https://quartz.19960312.xyz/Collections/OpensourceProject/Markdown-to-Notion-Projects</guid>
     <description>https://github.com/Layjoo/MdToNotion 这个项目可以把markdown目录发布到notion的Database 可以用作构建自动发布的pipeline使用 https://github.com/tryfabric/martian Convert Markdown to notion blocks .</description>
+    <pubDate>Fri, 05 Jan 2024 17:14:31 GMT</pubDate>
+  </item><item>
+    <title>AI Related</title>
+    <link>https://quartz.19960312.xyz/Collections/Resource/AI-Related</link>
+    <guid>https://quartz.19960312.xyz/Collections/Resource/AI-Related</guid>
+    <description>GitHub - openai/whisper: Robust Speech Recognition via Large-Scale Weak Supervision CompVis/stable-diffusion · Hugging Face Onlyswan官方语音模型 - a Hugging Face Space by onlyswan Gamma App: Generate AI Presentations, Webpages &amp; Docs Home - boardmix White Board App Speak &amp; Improve AI Powered Spoken English Learning App Enter Your Business Name | LOGO.</description>
     <pubDate>Fri, 05 Jan 2024 17:14:31 GMT</pubDate>
   </item>
     </channel>
