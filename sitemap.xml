@@ -89,6 +89,21 @@
     <loc>https://quartz.19960312.xyz/Blog/The-First-Blind-Date-of-a-Young-Man</loc>
     <lastmod>2024-02-14T17:14:31.000Z</lastmod>
   </url><url>
+    <loc>https://quartz.19960312.xyz/Collections/BibleReading/Exodus</loc>
+    <lastmod>2024-02-18T00:22:33.000Z</lastmod>
+  </url><url>
+    <loc>https://quartz.19960312.xyz/Collections/BibleReading/Genesis</loc>
+    <lastmod>2024-02-18T00:22:33.000Z</lastmod>
+  </url><url>
+    <loc>https://quartz.19960312.xyz/Collections/BibleReading/Introduce</loc>
+    <lastmod>2024-02-18T00:22:33.000Z</lastmod>
+  </url><url>
+    <loc>https://quartz.19960312.xyz/Collections/BibleReading/Leviticus</loc>
+    <lastmod>2024-02-18T00:22:33.000Z</lastmod>
+  </url><url>
+    <loc>https://quartz.19960312.xyz/Collections/BibleReading/Numbers</loc>
+    <lastmod>2024-02-18T00:22:33.000Z</lastmod>
+  </url><url>
     <loc>https://quartz.19960312.xyz/Collections/Jiangxuan/A-Secret-Garden-within-a-Library-Card</loc>
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
   </url><url>
@@ -137,13 +152,13 @@
     <loc>https://quartz.19960312.xyz/Collections/Jiangxuan/Jiangxuan-Workshop-The-Love-Story-of-Elder</loc>
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
   </url><url>
-    <loc>https://quartz.19960312.xyz/Collections/Jiangxuan/Jia%CC%84ng-Xua%CC%8Cn-Symposium-Self-Cultivation-of-an-Old-School-Artistic-Youth</loc>
+    <loc>https://quartz.19960312.xyz/Collections/Jiangxuan/Ji%C4%81ng-Xu%C7%8En-Symposium-Self-Cultivation-of-an-Old-School-Artistic-Youth</loc>
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/Jiangxuan/Let's-Talk-About-The-Jiangxuan-Symposium</loc>
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
   </url><url>
-    <loc>https://quartz.19960312.xyz/Collections/Jiangxuan/Mo%CC%80-Ha%CC%81-The-Rise-of-a-Youth-Subculture</loc>
+    <loc>https://quartz.19960312.xyz/Collections/Jiangxuan/M%C3%B2-H%C3%A1-The-Rise-of-a-Youth-Subculture</loc>
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/Jiangxuan/The-First-Global-Hass-Conference</loc>
@@ -151,6 +166,9 @@
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/OpensourceProject/Markdown-to-Notion-Projects</loc>
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
+  </url><url>
+    <loc>https://quartz.19960312.xyz/Collections/OpensourceProject/Python-Dev</loc>
+    <lastmod>2024-02-17T17:14:31.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/OpensourceProject/Storage-Related</loc>
     <lastmod>2024-02-05T17:14:31.000Z</lastmod>
@@ -192,13 +210,13 @@
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Git</loc>
-    <lastmod>2024-02-17T09:27:28.343Z</lastmod>
+    <lastmod>2024-02-18T11:39:56.007Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/How-to-check-RPM-Dependencies</loc>
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/How-to-check-the-binding-glibc-version-of-a-binary</loc>
-    <lastmod>2024-02-17T09:27:28.356Z</lastmod>
+    <lastmod>2024-02-18T11:39:56.018Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Software-Usage/CICD-System</loc>
     <lastmod>2024-02-05T17:14:31.000Z</lastmod>
@@ -226,6 +244,9 @@
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Linux-Common-Operations</loc>
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
+  </url><url>
+    <loc>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</loc>
+    <lastmod>2024-02-18T11:39:56.134Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/iscsiadm-common-commands</loc>
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
@@ -279,13 +300,13 @@
     <lastmod>2023-02-05T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Readings/Papers/Papers</loc>
-    <lastmod>2024-02-17T09:27:28.658Z</lastmod>
+    <lastmod>2024-02-18T11:39:56.429Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Readings/Videos/Videos</loc>
-    <lastmod>2024-02-17T09:27:28.672Z</lastmod>
+    <lastmod>2024-02-18T11:39:56.444Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Travels/Travels</loc>
-    <lastmod>2024-02-17T09:27:28.676Z</lastmod>
+    <lastmod>2024-02-18T11:39:56.449Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/</loc>
     <lastmod>2023-09-05T00:22:33.000Z</lastmod>

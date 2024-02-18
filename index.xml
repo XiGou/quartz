@@ -10,61 +10,61 @@
     <link>https://quartz.19960312.xyz/Travels/Travels</link>
     <guid>https://quartz.19960312.xyz/Travels/Travels</guid>
     <description>北京-天津 [天津]滨江道惬意的夜晚 https://www.acfun.cn/v/ac30585633 戒台寺 十三陵/蟒山 白羊沟 妙峰山 妙峰山露营----扛车上山之旅 https://www.acfun.cn/v/ac29469038 怀柔水库 https://www.youtube.com/watch?v=zVK0bDFXyDc 深圳盐田绿道-大梅沙 https://www.</description>
-    <pubDate>Sat, 17 Feb 2024 09:27:28 GMT</pubDate>
+    <pubDate>Sun, 18 Feb 2024 11:39:56 GMT</pubDate>
   </item><item>
     <title>Videos</title>
     <link>https://quartz.19960312.xyz/Readings/Videos/Videos</link>
     <guid>https://quartz.19960312.xyz/Readings/Videos/Videos</guid>
     <description>EU PyCon 的 JIT 三十分钟教程 Antonio Cuni - How to write a JIT compiler in 30 minutes - YouTube EU PyCon 的 JIT 三十分钟教程，感觉讲的非常的好，建议感兴趣的同学可以看下 .</description>
-    <pubDate>Sat, 17 Feb 2024 09:27:28 GMT</pubDate>
+    <pubDate>Sun, 18 Feb 2024 11:39:56 GMT</pubDate>
   </item><item>
     <title>Papers</title>
     <link>https://quartz.19960312.xyz/Readings/Papers/Papers</link>
     <guid>https://quartz.19960312.xyz/Readings/Papers/Papers</guid>
     <description>梭罗的极简主义生活智慧及其启示 323950844.pdf ［摘 要］极简主义原是西方一种现代艺术流派，其核心理念是崇尚简约。而作为一种生活方式的极简主义，梭罗早在 19 世纪就践行过：他通过对“步行”“奢侈”与“文明”的深刻反思，认为应简化人的物质需求，倡导追求精神上的自由，从而促进人与自然和谐共生。 当前正处于生态危机的时代，亟需提倡这样一种极简主义的生活方式。梭罗的极简主义生活智慧对于我国的生态文明建设具有重要的启示作用，有助于实现全社会 的生态幸福。 ［关键词］梭罗；极简主义；精神自由；生态幸福 Bitcoin- A Peer-to-Peer Electronic Cash System bitcoin.</description>
-    <pubDate>Sat, 17 Feb 2024 09:27:28 GMT</pubDate>
+    <pubDate>Sun, 18 Feb 2024 11:39:56 GMT</pubDate>
+  </item><item>
+    <title>Nvme Device Operation cmds</title>
+    <link>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</guid>
+    <description>Disconnecting and reconnecting nvme Very simple in the end: echo 1 &gt; /sys/bus/pci/devices/$(readlink -f /sys/class/nvme/nvme1 | awk -F &quot;/&quot; &#039;{print $5}&#039;)/remove echo 1 &gt; /sys/bus/pci/devices/$(readlink -f /sys/class/nvme/nvme2 | awk -F &quot;/&quot; &#039;{print $5}&#039;)/remove echo 1 &gt; /sys/bus/pci/rescan .</description>
+    <pubDate>Sun, 18 Feb 2024 11:39:56 GMT</pubDate>
   </item><item>
     <title>How to check the binding glibc version of a binary</title>
     <link>https://quartz.19960312.xyz/Knowledges/How-to-check-the-binding-glibc-version-of-a-binary</link>
     <guid>https://quartz.19960312.xyz/Knowledges/How-to-check-the-binding-glibc-version-of-a-binary</guid>
     <description>There are several ways to check the glibc version that a binary file depends on:: ldd command ldd binary_file objdump, disassembly objdump -T binary_file | grep -i glibc readelf readelf -d binary_file | grep libc check dynamic section to get libc version。 check the source code repo If you can access the source code, check the building scripts for the glibc version。 rpm/deb package manage tools How to check RPM Dependencies gdb debugging gdb binary_file print (const char*) ELF-&gt;gnu_required-&gt;name show the glibc SONAME version when linking。 strings extracting strings binary_file | grep GLIBC extracting glibc symbols version prefixes。.</description>
-    <pubDate>Sat, 17 Feb 2024 09:27:28 GMT</pubDate>
+    <pubDate>Sun, 18 Feb 2024 11:39:56 GMT</pubDate>
   </item><item>
     <title>Git</title>
     <link>https://quartz.19960312.xyz/Knowledges/Git</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Git</guid>
     <description>Refs: “Branch early, branch often”.</description>
-    <pubDate>Sat, 17 Feb 2024 09:27:28 GMT</pubDate>
+    <pubDate>Sun, 18 Feb 2024 11:39:56 GMT</pubDate>
   </item><item>
-    <title>年轻人的第一次相亲</title>
-    <link>https://quartz.19960312.xyz/Blog/The-First-Blind-Date-of-a-Young-Man</link>
-    <guid>https://quartz.19960312.xyz/Blog/The-First-Blind-Date-of-a-Young-Man</guid>
-    <description>今年过年回家，因为一些契机，我们在家里开始搞起了封建迷信活动，按照神仙在凡间代言人的指导，在我八十八岁高龄的老外婆的见证之下，我拜了我的二姨和二姨父作干爹干妈, 我也进行了人生中第一次相亲。 我外婆生育了七个子女，目前我有一位大姨已经去世，所以还剩下六个子女，而二姨一家是属于家族之中权钱皆备的一家，但因为生活习惯的原因，历来有些疏远。这么多年也没提过这些事情，要不是接着封建迷信的由头，我这个行为多少有点趋炎附势的味道了。 我的二姨和姨父搞了个新爹上任“三把火”，首先就是严肃批评了我的反叛思想，不过这对我伤害性不大，毕竟那是我以前上大学时期的事情了，现在我已经是嬉皮笑脸的乐子人了，什么东方西方、自由民主之类的词汇已经不再能够吸引我，毕竟键政只是年轻时期的一个小爱好，自己也没有能力影响社会，关注再多也没有什么作用。第二个就是我二姨企图让我把头发剃了，这当然是不现实的，目前我全家大部分都已经接受了我的发型了，没理由打到了南京再来个划江而治。最后一件事就是我二姨开始在打牌的时候给我物色相亲对象，仔细的分析了一通对方的家世如何根正苗红，研究了一下属相八字如何般配，最后发了一张照片，还反复强调真人比照片要好好看许多。 我历来是不喜欢各种相亲活动的，因为我每次提到相亲，我就想到了那个经典梗图”广州人和母猪配种市场”。 相亲这种人类活动更像是动物配种，一个广州人走进人和母猪配种市场，认真挑选一头骨骼粗壮，血统纯正，能长出大肥膘的猪开始配种，然后就等待着猪下崽，等崽喂大了又开始配种的循环。 不过最近恰逢春节假期，且又刚有了亲上加亲的喜事，为了避免被我姨说我不识抬举丢了脸面，我还是体体面面地去相亲了，刚开始我母亲，叔母，舅母，妹妹都跟着一起看热闹，约在了一个茶楼包间，有两排座椅，我们一行人坐在一边，相亲对象坐在另一边，像是公务员面试一样抽象。 我妹妹比较能活跃气氛，先是一通夸夸组合拳，夸小姐姐长的漂亮身材好，皮肤白嫩个子高。然后就是我方成员对我来了一通吹捧：“这个娃儿我从小看到大，各方面都是不错的”，“读书成绩也好，也很有礼貌”，“性格也好，不会打老婆”…… 我是一个沉默寡言的人，以前是因为性格内向，现在脸皮变得比城墙还厚以后，依然沉默寡言，因为我认为很多问题都没有提出的必要的，因为它们的答案明晃晃地在风中飘荡。所以在我方成员疯狂输出的时候，我没插上话倒是令我感到十分轻松愉快。随后我们进行了简单的交谈，互相了解了一些背景信息，了解了各自的工作和生活状态。没有出现”你package多少”、“开宝马上班油耗高不高”、“深圳湾的豪宅装修应该用什么油漆”这样的灵魂提问，可能是对方对此不感兴趣，也可能是对方熟知交谈的礼仪，当然也有可能是她看我这个吊儿郎当的样子肯定一样也没有。 我妹妹提议一起去商场的游戏厅玩，我们一起玩了抓娃娃机，零收获;然后又玩了一会儿投篮，最后我们玩了推币机这个赌狗项目，赢了很多彩票，换了小礼品送给了小姐姐，虽然战利品不值钱，但是游玩过程还是很开心的。本来打算晚上一起吃饭的，但是小姐姐说约了同学，所以我们就道别分开了。 总体而言，我觉得这次相亲体验还是不错的，还好带了我妹，让氛围不太尴尬。对方人也挺好的，比较有修养，没出现小红书上那样的的抽象事件。整体而言更像是曾经在豆瓣找饭搭子的感觉，因为没有强烈的目的性，进而可以轻松愉快地一起出去玩或者凑单吃美团优惠的多人套餐。 至于结果，其实不那么重要，对于我这种不太愿意社交的人来讲，相亲认识个新的朋友也相当于在不断重复的工作生活中掀起了一丝波澜🇵🇱。.</description>
-    <pubDate>Wed, 14 Feb 2024 17:14:31 GMT</pubDate>
+    <title>出埃及记</title>
+    <link>https://quartz.19960312.xyz/Collections/BibleReading/Exodus</link>
+    <guid>https://quartz.19960312.xyz/Collections/BibleReading/Exodus</guid>
+    <description>todo.</description>
+    <pubDate>Sun, 18 Feb 2024 00:22:33 GMT</pubDate>
   </item><item>
-    <title>我如何构建我的数字花园</title>
-    <link>https://quartz.19960312.xyz/Blog/How-I-build-my-digital-garden</link>
-    <guid>https://quartz.19960312.xyz/Blog/How-I-build-my-digital-garden</guid>
-    <description>在web2.0早期的时代，我想第一次打开互联网的人都会有一个想法：我如何才能让我的信息发布在网络上？ 所以我们开始使用贴吧去和孙笑川争论，使用土豆网发布诺基亚手机录制的无聊的视频。这些信息在发布以后，都会在互联网上被搜索引擎收录，所有人都有可能看见。 随着移动互联网时代的到来，这种情况有了改变，由于人们发现了这些普通用户发布的信息背后巨大的商业价值，所以逐渐让这些信息变得封闭，你发送的信息会被审核，会被无缘无故的删除（百度贴吧删除了实名认证之前的所有信息），同时也不可能在公开的搜索引擎上被检索，不能在其他的网页上被引用。这个时候我们才发现，原来我发送的这些信息不属于我自己。 什么是数字花园？ 所以这个时候技术圈里面又开始流行起了web1.</description>
-    <pubDate>Mon, 05 Feb 2024 17:14:31 GMT</pubDate>
+    <title>创世记</title>
+    <link>https://quartz.19960312.xyz/Collections/BibleReading/Genesis</link>
+    <guid>https://quartz.19960312.xyz/Collections/BibleReading/Genesis</guid>
+    <description>「创世记」主要讲的是神创造世界到以色列人定居埃及之间的故事，圣经中人物众多，但是有故事的人物不多，很多连篇累牍记载人物族谱的文字可以直接跳过，如果有必要知道的人物一定会出现在后续的故事中。当然如果感觉人物的关系有些混乱或者记不清楚影响理解的时候，可以参考圣经人物家谱网站查询人物的关系图。 非基督教信徒听到的最广泛传播的圣经故事大多出自于创世记，比如神创造天地、亚当夏娃偷吃禁果、诺亚方舟、索多玛无义人，其实这跟我们背单词老是在背 Abandon 的原理是一样的，由于创世记是圣经的第一本经文，所以也是很多非信徒了解圣经的开端，但是绝大多数人在看完第一本后就放弃了阅读圣经。 接下来我将会通过几个主题简单讲讲创世记中的一些有趣的故事情节。 996 工作制 在创世记中，上帝花了六天创造了世界上的一切，而在第七天选择了休息，这就是一星期有七天的由来，在后续的经文中，上帝和人们立约，要求需要工作六天，而必须在第七天休息，所以我们社会主义国家提出的上五休二的双休制度实际上是破坏了与上帝的约定，而华为则是一家基督教原教旨主义的企业，只有他们在现代社会中依然坚守 996 工作制度。他们让员工 996 可能并不是为了压榨更多的剩余价值，而是为了防止员工打破和上帝的约定被惩罚，可以说是用心良苦了。 女权主义 上帝觉得亚当太孤单，就从亚当体内取出了一根肋骨创造了夏娃，这里面就暗含了好几层的意思： 女性是来自于男性的，也是附属于男性的 女性最初存在的意义是服务男性 当然这显然是一个错误的看法，也可以看出圣经本身是男权主义立场的书籍，“先有鸡还是先有蛋”是一个很难回答的问题，但是”先有女还是先有男“在现在的科技水平下却是一个很容易回答的问题，雌性（人类称为女性）的定义就是在有性生殖中承担卵细胞生产任务的性别，而在有性生殖出现之前的生物是女性还是男性呢？我们可以再多看点男女的分别，女性负责孕育和生产新生命，而男性没有这个功能，如果世界上最先有的是男性的生命，那么就会因为无法繁殖而立刻灭绝。所以从科学逻辑上讲，女性肯定是先于男性出现的，那么自然上述两个命题都是不成立的。 从另一个方面讲，女性先于男性出现，是否又能够说明女性相对于男性应该有更高的地位呢？我想这两者没什么必然联系，只是一种自然现象而已，不需要过度解读，男女平等是一个最优解，我们应该主动选择最优解，而不是去搞什么玄学来让自己获得更高的地位。 亚当和夏娃听了毒蛇的话，偷吃了伊甸园的禁果，于是上帝对亚当和夏娃进行了惩罚： 创世纪3:16 上帝对女人说：“我要大大增加你怀孕的痛苦，你生孩子时会经历产痛。你会恋慕你丈夫，他会辖制你。” 创世纪3:17-19 上帝对亚当说：“由于你听了妻子的话，… 在你有生之年，你要辛苦劳碌才能吃土地的出产。你会汗流满面才有食物吃” 我认为这段内容说是惩罚倒不如说是对人类婚姻的隐喻，女性因为生育的痛苦而向丈夫索要彩礼，同时又因此受到丈夫的辖制；而男性则需要汗流满面劳作来获得食物来养育自己和妻子。我认为这是婚姻的隐喻的另一个证据就是在上帝作出此惩罚之后，亚当和夏娃被赶出伊甸园，生育了全人类。当然这一段是很男权的，它借上帝之口命令女性生育、听从丈夫，同时又让上帝只肯定男性工作的价值。 数学归纳法（递降归纳） 索多玛和蛾摩拉是两个充满邪恶的城市，这里的人恶贯满盈，于是上帝想要毁灭这两座城市。 亚伯拉罕想要劝上帝不要毁灭这两座城市，于是发生了如下对话： 其中两个人就离开那里，前往所多玛。耶和华仍然跟亚伯拉罕在一起。 亚伯拉罕上前说：“你真的要把正义的人跟邪恶的人一起消灭吗？ 假如城里有50个正义的人，你还会消灭所有人吗？不会为了城里的这50个人，而赦免那个地方吗？ 你绝对不会把正义的人跟邪恶的人一起处死，让他们有同样的结局！你是绝对不会这样做的。审判全世界的主难道会处事不公正吗？” 耶和华说：“我如果在所多玛城里找到50个正义的人，就会因为他们而赦免那个地方。” 亚伯拉罕又说：“我不过是个像灰尘一样卑微的人，但请容许我继续对耶和华说话。 假如50个正义的人少了5个，你会因为少了5个就毁灭全城吗？”他说：“我如果在那里找到45个正义的人，也不会“也不会毁灭那座城。” 但亚伯拉罕又对他说：“假如在那里找到40个正义的人呢？”他说：“因为这40个人，我也不会毁灭那座城。” 亚伯拉罕又说：“求耶和华不要发怒，让我再说下去：假如在那里找到30个正义的人呢？”他说：“如果在那里找到30个，我也不会毁灭那座城。” 亚伯拉罕又说：“请容许我继续对耶和华说话。假如在那里找到20个正义的人呢？”他说：“因为这20个人，我也不会毁灭那座城。” 最后亚伯拉罕说：“求耶和华不要发怒，让我再多说一句：假如在那里找到10个正义的人呢？”他说：“因为这10个人，我也不会毁灭那座城。” 耶和华跟亚伯拉罕说完话之后就离开了，亚伯拉罕也回到了自己的地方。” 简单来讲就是亚伯拉罕认为索多玛这个城市有恶人，但是也有义人，如果直接毁灭城市，会有义人无辜被杀死，所以他想劝说上帝不要毁灭索多玛，所以他先搞了个初始条件“如果有 50 个义人，上帝就不会毁灭这座城”，然后把 50 这个数字越推越小，最终说服上帝“如果在城里找到 10 个义人，就不毁灭索多玛”。但是亚伯拉罕推到这里突然停止了，可能是他发现再推下去就会出现推不动的情况，因为他再多说几句肯定就会出现“如果在城里找到 0 个义人…”，那上帝肯定就会说“那不正好全杀了吗？” 最后上帝的使者来到索多玛，有一个叫罗德的人接待了他们，但是索多玛人前来围攻罗德的家要跟使者睡觉，罗德提出献出自己的两个女儿来保护使者也遭到了拒绝，索多玛人破门而入，结果被罚叔弄瞎了眼睛没能找到使者。事后使者告诉罗德一家出城躲避，然后上帝降下硫磺和火毁灭了索多玛和蛾摩拉。这个故事主要还是说明上帝是赏罚分明、言出必行的，上帝说了找到十个义人就不毁灭索多玛，结果只有罗德一家人（4人，包含妻子和两个女儿）是义人，其他全是坏蛋，所以上帝灭了索多玛和蛾摩拉，但是却放走了罗德一家。 挪亚方舟 耶和华看到自己创造出的人类作恶多端，天天想着坏事，于是就想发动大洪水把世界上一切的生灵毁灭。 但是上帝很喜欢挪亚，因为挪亚是一个正义的人，于是就吩咐挪亚造了一个大船，带上一些世界上的全部的生灵住在船上，然后上帝发动了大洪水，毁灭了全世界的生灵。 大洪水之后，挪亚方舟上的生灵回到大地，重新开始繁衍生息，同时上帝和挪亚以及方舟上的生灵通过彩虹立约，未来不会再发动洪水消灭全部生灵。这从宗教的角度否认了任何形式的种族灭绝的正义性，因此近代发生的纳粹大屠杀、南京大屠杀等等无论如何辩解均不具有任何正义性。 红颜祸水 后来迦南地区闹饥荒，而且非常严重，亚伯兰就下埃及去侨居一段时间。 快到埃及的时候，亚伯兰对妻子撒莱说：“请听我说。你那么漂亮， 埃及人看见你，就肯定会说：‘这是他的妻子。’然后他们会把我杀了，却会让你活着。 请告诉别人你是我的妹妹，这样我就能因为你而平安无事，保住性命。 创世纪12:10-13 亚伯拉罕住在基拉尔的时候，再次说妻子撒拉是他的妹妹。于是基拉尔王亚比米勒派人去把撒拉带到他那里。 后来，亚比米勒在晚上做了一个梦，上帝来对他说：“你死期到了，因为你带来的那个女人已经结了婚，她是属于别人的。 创世纪 20:1-3 当地的人问起他的妻子，以撒就说：“她是我妹妹。”以撒不敢说：“她是我妻子。”利百加美丽动人，所以他说：“这里的人可能会因为利百加而杀我。 创世纪 26:7 这段相似的剧情在创世纪中重复了至少三次，我觉得用中文的“红颜祸水”来概括这个情节是最精炼的。现在的社会，每一个男性都想找一个容貌美丽的妻子，圣经中的这部分内容主要是教育人们，在弱肉强食、礼崩乐坏的社会中，一个容貌美丽的妻子反而是一种带来灾祸的根源。而上帝当然也严厉惩罚因为贪图美貌抢夺他人妻子的行为，但是上帝的神迹会不会在你这里显现，那很难说。 巴别塔 豆瓣有一个很火的话题叫“生活中的巴别塔时刻”，我曾经看见这个话题不知所云，于是就查阅了维基百科，那是我第一次知道巴别塔的含义。 主要的故事是人们想建造一座通天的巨塔，上帝认为是因为人们语言相通才能团结起来干这样的大事，所以上帝让人们分散各地，打乱了他们的语言。 因此”巴别塔时刻”指的就是问牛答马，无法沟通的时刻，也可以指明明说的一样的语言，但是因为双方理解不同而无法完成有效沟通的时刻。 一夫多妻制 亚伯拉罕的妻子撒莱没有生育能力，于是撒莱让亚伯拉罕娶了自己的埃及女仆夏甲，夏甲怀孕后就瞧不起自己的主人，最后被撒莱赶走。最后上帝许诺让撒莱也生一个儿子，并且将其改名为撒拉，这场妻妾之争才算暂时结束。 拉班有两个女儿，大的叫利亚，小的叫拉结。17 利亚目无神采，拉结却美丽动人。18 雅各爱上了拉结，于是说：“为了你的小女儿拉结，我愿意服侍你七年。 创世纪 29:16-18 结果在七年之后，拉班却将利亚嫁给了雅各，雅各又服侍了拉班七年如愿娶了拉结。雅各宠爱拉结，冷落利亚，所以上帝就令拉结不孕让利亚获得更多宠爱，然后又上演了拉结让自己的侍女给雅各做妾生子，拉结被上帝赐福生子的重复剧情。 总之这一系列剧情就说明，圣经中一夫多妻是一件正常的事情，妻子必须赞成甚至主动促成丈夫纳妾，同时女性要通过生育来获得更多的宠爱，当然这个思想放在当今，肯定是过于陈腐了。 包皮之战 上帝要求男子进行割礼（割去包皮）作为与上帝立约的标志，因此亚伯拉罕及其后代都进行了割礼。 雅各（被上帝赐名以色列，含义是跟上帝较量的人）的女儿底拿经常去出去找当地的女孩子玩，但是后来当地希未人首领哈抹的儿子示剑看见她就强奸了她，而后示剑喜欢上了底拿，于是就去向雅各提亲。雅各和他的儿子们听见底拿被奸污，非常生气，所以假装同意了示剑的求婚，但是告诉他们底拿必须嫁给接受了割礼的民族，必须让所有的希未人全部接受割礼才能把底拿嫁给他。 示剑被爱情冲昏了头脑，上了雅各一家子的洋当，回去就让所有族人全部进行了割礼，由于希未人进行了割礼之后伤口疼痛，雅各的儿子利未和西缅趁机进城杀死了包括示剑在内的全部的男性，抢走了所有的财产，大获全胜。 我觉得这一段还是很有喜剧效果的，雅各一家人用了一个搞笑的计谋就让希未人被灭族，我认为这次搞笑的战争可以称为“包皮之战”。.</description>
+    <pubDate>Sun, 18 Feb 2024 00:22:33 GMT</pubDate>
   </item><item>
-    <title>Storage Related</title>
-    <link>https://quartz.19960312.xyz/Collections/OpensourceProject/Storage-Related</link>
-    <guid>https://quartz.19960312.xyz/Collections/OpensourceProject/Storage-Related</guid>
-    <description> GitHub - louwrentius/fio-plot: Create charts from FIO storage benchmark tool output You need to run benchmark first, then use the tool to generate Charts, I think it is Boring.</description>
-    <pubDate>Mon, 05 Feb 2024 17:14:31 GMT</pubDate>
+    <title>圣经阅读系列文章简介</title>
+    <link>https://quartz.19960312.xyz/Collections/BibleReading/Introduce</link>
+    <guid>https://quartz.19960312.xyz/Collections/BibleReading/Introduce</guid>
+    <description>圣经是世界上销量最高的书籍，也是西方文化的重要组成部分，虽然我并未实际上参与任何基督教活动，但是我依然对圣经的内容充满好奇，所以我计划在未来一段时间阅读圣经的全部内容，并且对每一本经文写下简短的读后感。 我第一次对圣经的内容感兴趣，还是因为一个微博上的搞笑段子，当时有个微博账号叫“基督中文”，还有一个叫做“真主中文”，有一天发生了一波搞笑的微博论战： 基督中文：为什么你看到别人眼中有尖刺，却看不到自己眼中有梁木。路加福音（06:41） 真主中文：你见群山而以为都是固定的，其实群山都象行云一样逝去。 基督中文：你是住在我的微博了？ 真主中文：善若不弘扬，恶就会声张。 我忽然觉得这种引用宗教文本进行论战的形式还是挺有乐趣的，它让本来严肃的、神圣的、针锋相对的宗教辩论变得轻松愉快，仿佛基督徒和穆斯林的世仇忽然消失了，他们成了一对嬉皮笑脸打情骂俏的小情侣。另外这些句子事实上还是很精炼很有道理的，所以我觉得有好机会真的应该好好看看这些宗教文学作品。 如果你在中文互联网上搜索圣经，出现最多的翻译版本就是简体中文和合本，这个版本翻译文本格式比较规整简练，但是读起来比较晦涩，上述的”尖刺梁木论战“的翻译就是出于和合本翻译，而最近我恰好看到有人讲不同圣经版本的阅读体验实际上是千差万别的，同时了解到了新世界译本是目前发行量最大的圣经版本之一，且发行年代较近，这个版本的汉语翻译读起来十分顺畅易懂，所以我选择了此版本作为我通读圣经的目标版本。 圣经内容目录 Old Testament（旧约） The OrthodoxGreek-based nameConventional English nameChinese NameLawΓένεσιςGénesisGenesis创世记ἜξοδοςÉxodosExodus出埃及记ΛευϊτικόνLeuitikónLeviticus利未记ἈριθμοίArithmoíNumbers民数记ΔευτερονόμιονDeuteronómionDeuteronomy申命记HistoryἸησοῦς NαυῆIêsous NauêJoshuaΚριταίKritaíJudgesῬούθRoúthRuthΒασιλειῶν ΑʹI ReignsI SamuelΒασιλειῶν ΒʹII ReignsII SamuelΒασιλειῶν ΓʹIII ReignsI KingsΒασιλειῶν ΔʹIV ReignsII KingsΠαραλειπομένων ΑʹI ParalipomenonI ChroniclesΠαραλειπομένων ΒʹII ParalipomenonII ChroniclesἜσδρας ΑʹI Esdras1 EsdrasἜσδρας ΒʹII EsdrasEzra–NehemiahΤωβίτTobitTobit or TobiasἸουδίθIoudithJudithἘσθήρEstherEsther with additionsΜακκαβαίων ΑʹI Makkabaioi1 MaccabeesΜακκαβαίων ΒʹII Makkabaioi2 MaccabeesΜακκαβαίων ΓʹIII Makkabaioi3 MaccabeesWisdomΨαλμοίPsalmsPsalmsΨαλμός ΡΝΑʹPsalm 151Psalm 151Προσευχὴ ΜανάσσηPrayer of ManassehPrayer of ManassehἸώβIōbJobΠαροιμίαιProverbsProverbsἘκκλησιαστήςEkklesiastesEcclesiastesἎσμα ἈσμάτωνSong of SongsSong of Solomon or CanticlesΣοφία ΣαλoμῶντοςWisdom of SolomonWisdomΣοφία Ἰησοῦ ΣειράχWisdom of Jesus the son of SeirachSirach or EcclesiasticusΨαλμοί ΣαλoμῶντοςPsalms of SolomonPsalms of SolomonProphetsΔώδεκαThe TwelveMinor ProphetsὩσηέ ΑʹI.</description>
+    <pubDate>Sun, 18 Feb 2024 00:22:33 GMT</pubDate>
   </item><item>
-    <title>CICD System</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Software-Usage/CICD-System</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Software-Usage/CICD-System</guid>
-    <description>Jenkins Implemented by Java ，pipeline defined by Jenkinsfile, can achieve CI as Code. Master-Slave architecture. There are abundant plug-ins, but many of them are in a state of no maintenance, are usable but have a lot of Warnings.</description>
-    <pubDate>Mon, 05 Feb 2024 17:14:31 GMT</pubDate>
-  </item><item>
-    <title>Markdown to Notion Projects</title>
-    <link>https://quartz.19960312.xyz/Collections/OpensourceProject/Markdown-to-Notion-Projects</link>
-    <guid>https://quartz.19960312.xyz/Collections/OpensourceProject/Markdown-to-Notion-Projects</guid>
-    <description>https://github.com/Layjoo/MdToNotion 这个项目可以把markdown目录发布到notion的Database 可以用作构建自动发布的pipeline使用 https://github.com/tryfabric/martian Convert Markdown to notion blocks .</description>
-    <pubDate>Fri, 05 Jan 2024 17:14:31 GMT</pubDate>
+    <title>利未记</title>
+    <link>https://quartz.19960312.xyz/Collections/BibleReading/Leviticus</link>
+    <guid>https://quartz.19960312.xyz/Collections/BibleReading/Leviticus</guid>
+    <description>todo.</description>
+    <pubDate>Sun, 18 Feb 2024 00:22:33 GMT</pubDate>
   </item>
     </channel>
   </rss>
