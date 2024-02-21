@@ -173,6 +173,9 @@
     <loc>https://quartz.19960312.xyz/Collections/OpensourceProject/Storage-Related</loc>
     <lastmod>2024-02-05T17:14:31.000Z</lastmod>
   </url><url>
+    <loc>https://quartz.19960312.xyz/Collections/Others/Baofuzi-writing</loc>
+    <lastmod>2024-02-21T00:22:33.000Z</lastmod>
+  </url><url>
     <loc>https://quartz.19960312.xyz/Collections/Resource/AI-Related</loc>
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
   </url><url>
@@ -210,13 +213,13 @@
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Git</loc>
-    <lastmod>2024-02-18T12:55:49.827Z</lastmod>
+    <lastmod>2024-02-21T16:26:50.022Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/How-to-check-RPM-Dependencies</loc>
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/How-to-check-the-binding-glibc-version-of-a-binary</loc>
-    <lastmod>2024-02-18T12:55:49.836Z</lastmod>
+    <lastmod>2024-02-21T16:26:50.031Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Software-Usage/CICD-System</loc>
     <lastmod>2024-02-05T17:14:31.000Z</lastmod>
@@ -246,7 +249,7 @@
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</loc>
-    <lastmod>2024-02-18T12:55:49.913Z</lastmod>
+    <lastmod>2024-02-21T16:26:50.146Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/iscsiadm-common-commands</loc>
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
@@ -284,10 +287,16 @@
     <loc>https://quartz.19960312.xyz/Readings/Articles/Articles</loc>
     <lastmod>2023-02-05T00:22:33.000Z</lastmod>
   </url><url>
+    <loc>https://quartz.19960312.xyz/Readings/Articles/Matters/You-Are-the-Lost-Dream-Under-the-Sunset</loc>
+    <lastmod>2024-02-20T00:22:33.000Z</lastmod>
+  </url><url>
     <loc>https://quartz.19960312.xyz/Readings/Books/Books-2023</loc>
     <lastmod>2023-02-05T00:22:33.000Z</lastmod>
   </url><url>
-    <loc>https://quartz.19960312.xyz/Readings/Movies/Movies-&-TV</loc>
+    <loc>https://quartz.19960312.xyz/Readings/Movies/Kar-Wai-Wong</loc>
+    <lastmod>2023-02-05T00:22:33.000Z</lastmod>
+  </url><url>
+    <loc>https://quartz.19960312.xyz/Readings/Movies/Others</loc>
     <lastmod>2023-02-05T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Readings/Music/Fulushou_FloruitShow</loc>
@@ -300,13 +309,13 @@
     <lastmod>2023-02-05T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Readings/Papers/Papers</loc>
-    <lastmod>2024-02-18T12:55:50.136Z</lastmod>
+    <lastmod>2024-02-21T16:26:50.444Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Readings/Videos/Videos</loc>
-    <lastmod>2024-02-18T12:55:50.148Z</lastmod>
+    <lastmod>2024-02-21T16:26:50.462Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Travels/Travels</loc>
-    <lastmod>2024-02-18T12:55:50.152Z</lastmod>
+    <lastmod>2024-02-21T16:26:50.468Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/</loc>
     <lastmod>2023-09-05T00:22:33.000Z</lastmod>

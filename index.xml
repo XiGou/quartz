@@ -10,37 +10,49 @@
     <link>https://quartz.19960312.xyz/Travels/Travels</link>
     <guid>https://quartz.19960312.xyz/Travels/Travels</guid>
     <description>北京-天津 [天津]滨江道惬意的夜晚 https://www.acfun.cn/v/ac30585633 戒台寺 十三陵/蟒山 白羊沟 妙峰山 妙峰山露营----扛车上山之旅 https://www.acfun.cn/v/ac29469038 怀柔水库 https://www.youtube.com/watch?v=zVK0bDFXyDc 深圳盐田绿道-大梅沙 https://www.</description>
-    <pubDate>Sun, 18 Feb 2024 12:55:50 GMT</pubDate>
+    <pubDate>Wed, 21 Feb 2024 16:26:50 GMT</pubDate>
   </item><item>
     <title>Videos</title>
     <link>https://quartz.19960312.xyz/Readings/Videos/Videos</link>
     <guid>https://quartz.19960312.xyz/Readings/Videos/Videos</guid>
     <description>EU PyCon 的 JIT 三十分钟教程 Antonio Cuni - How to write a JIT compiler in 30 minutes - YouTube EU PyCon 的 JIT 三十分钟教程，感觉讲的非常的好，建议感兴趣的同学可以看下 .</description>
-    <pubDate>Sun, 18 Feb 2024 12:55:50 GMT</pubDate>
+    <pubDate>Wed, 21 Feb 2024 16:26:50 GMT</pubDate>
   </item><item>
     <title>Papers</title>
     <link>https://quartz.19960312.xyz/Readings/Papers/Papers</link>
     <guid>https://quartz.19960312.xyz/Readings/Papers/Papers</guid>
     <description>梭罗的极简主义生活智慧及其启示 323950844.pdf ［摘 要］极简主义原是西方一种现代艺术流派，其核心理念是崇尚简约。而作为一种生活方式的极简主义，梭罗早在 19 世纪就践行过：他通过对“步行”“奢侈”与“文明”的深刻反思，认为应简化人的物质需求，倡导追求精神上的自由，从而促进人与自然和谐共生。 当前正处于生态危机的时代，亟需提倡这样一种极简主义的生活方式。梭罗的极简主义生活智慧对于我国的生态文明建设具有重要的启示作用，有助于实现全社会 的生态幸福。 ［关键词］梭罗；极简主义；精神自由；生态幸福 Bitcoin- A Peer-to-Peer Electronic Cash System bitcoin.</description>
-    <pubDate>Sun, 18 Feb 2024 12:55:50 GMT</pubDate>
+    <pubDate>Wed, 21 Feb 2024 16:26:50 GMT</pubDate>
   </item><item>
     <title>Nvme Device Operation cmds</title>
     <link>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</link>
     <guid>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</guid>
     <description>Disconnecting and reconnecting nvme Very simple in the end: echo 1 &gt; /sys/bus/pci/devices/$(readlink -f /sys/class/nvme/nvme1 | awk -F &quot;/&quot; &#039;{print $5}&#039;)/remove echo 1 &gt; /sys/bus/pci/devices/$(readlink -f /sys/class/nvme/nvme2 | awk -F &quot;/&quot; &#039;{print $5}&#039;)/remove echo 1 &gt; /sys/bus/pci/rescan .</description>
-    <pubDate>Sun, 18 Feb 2024 12:55:49 GMT</pubDate>
+    <pubDate>Wed, 21 Feb 2024 16:26:50 GMT</pubDate>
   </item><item>
     <title>How to check the binding glibc version of a binary</title>
     <link>https://quartz.19960312.xyz/Knowledges/How-to-check-the-binding-glibc-version-of-a-binary</link>
     <guid>https://quartz.19960312.xyz/Knowledges/How-to-check-the-binding-glibc-version-of-a-binary</guid>
     <description>There are several ways to check the glibc version that a binary file depends on:: ldd command ldd binary_file objdump, disassembly objdump -T binary_file | grep -i glibc readelf readelf -d binary_file | grep libc check dynamic section to get libc version。 check the source code repo If you can access the source code, check the building scripts for the glibc version。 rpm/deb package manage tools How to check RPM Dependencies gdb debugging gdb binary_file print (const char*) ELF-&gt;gnu_required-&gt;name show the glibc SONAME version when linking。 strings extracting strings binary_file | grep GLIBC extracting glibc symbols version prefixes。.</description>
-    <pubDate>Sun, 18 Feb 2024 12:55:49 GMT</pubDate>
+    <pubDate>Wed, 21 Feb 2024 16:26:50 GMT</pubDate>
   </item><item>
     <title>Git</title>
     <link>https://quartz.19960312.xyz/Knowledges/Git</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Git</guid>
     <description>Refs: “Branch early, branch often”.</description>
-    <pubDate>Sun, 18 Feb 2024 12:55:49 GMT</pubDate>
+    <pubDate>Wed, 21 Feb 2024 16:26:50 GMT</pubDate>
+  </item><item>
+    <title>包袱子 头封写法</title>
+    <link>https://quartz.19960312.xyz/Collections/Others/Baofuzi-writing</link>
+    <guid>https://quartz.19960312.xyz/Collections/Others/Baofuzi-writing</guid>
+    <description>From 四川地区”写袱子“习俗 - 知乎 首先，烧袱子。是汉族信仰习俗，流行于四川各地。 由于父亲新逝，为了祭奠怀念，所以我根据老家（巴中地区）长辈说的和网上搜集的一些写袱子的格式（包含图片格式）发给大家，根据全国各地区文化习俗之差异，仅供参考。 ”封袱子、写袱子、烧袱子 “都是为怀念去往天国的亲人、祭奠他们，不是封建迷信，是一种风俗、更是一种民族文化传统。 1、写袱子的基本格式： 袱子书写习惯是从上到下，从右向左，本来正规的应该是繁体字，但是现在我们很多时候不知道具体的繁体字了，所以从简也行。 2、写袱子的称谓： 男称大人，女称孺人。如：老大人，老儒人。老儒人中儒字可以变为”安“或者”夫“都可行，但是我们老家多用老儒人称呼。 老人死三年内：亡男称 新逝显考 或 新故显考，亡女称 新逝显妣 或 新故显妣。 三年后：亡男称 故显考 或 曾故显考 ，亡女称 故显妣 或 曾故显妣。 由于袱子一般是写三代，所以我就不过多列举，有需要可以百度文库，不要看其他野史。 一代：称父亲 故显考(姓)公讳(名字)老大人妣(姓)老孺人正魂收用 孝男 （备注：我们老家 很少写正魂二字) 二代：称祖父 故祖考(姓)公讳(名字)老大人妣(姓)老孺人正魂收用 孝孙 三代：称曾祖父 故曾祖(姓)公讳(名字)老大人妣(姓)老孺人正魂收用 孝曾孙 母之父：称外祖父 故外祖考 公諱 老大人收用 孝外孙 母之兄或弟：称舅 故舅考 公諱 老大人收用 孝外侄 妻之父：称岳父 故岳父 公諱 老大人收用 孝婿 叩 妻之祖父： 故内祖考 公諱 老大人收用 孙婿 叩 妻之姐夫： 故襟兄 收用 襟弟 叩 妻之姐姐： 故姨姐 府 氏收用 姨妹弟 叩 后父： 故继父 老大人收用 继男 叩 后母： 故继母 老孺人收用 继男 叩 丈夫： 故良人 收用 荆室 叩 妻： 故贤妻 收用 为夫 具 更多称谓，请查询百度文库。 3、烧袱子的节日称谓： 一般都以农历为准。格式上“今当或今逢”什么之期，对长辈可以是”恭逢什么之期“。是指什么节日写给已故亲人的袱子。不同的节日填写不同的日期。 新年 拜年之期 正月 上元之期 清明 拜扫之期 端阳 蒲节之期 七月半 中元之期 或 孟兰之期 腊月 下元之期 或 岁月之期 见暮之期 除夕 年尽之期（我们老家一般在农历大寒到立春，这段时间都流行砍坟草、垒坟、烧袱子等习俗，这个时候一般都用年尽之期） 烧七写首七，然后依顺序写二七、三七至十七，十七写封七作帛之期。百期写百期之期或卒哭之期；周年，一周年写小样之期；二周年写大样之期；三周年写除服之期。 一般情况，我们老家的人写袱子共计5列： 第一列 今逢什么之期 不孝男某某某、媳某某 第二列 虔具冥财 多少封 第几封 奉上 第三列 最主要的（逝去亲人的称谓） 第四列 坟前火化 （路边火化等） 第五列 天运多少年多少月多少日 火化 或者 公元多少年多少月多少日 火化（化纳）日期最好是写阴历。 列举几个常用的格式图片，方便大家依照各地方习俗选用。 原文地址:“袱包”的写法—农村乡党应酬之(一) 原作者:颍川郎 首先声明，本文并不是宣扬迷信，而是研究将要消失的民俗文化，随着新时代的来临，一些的民间历史文化正在消失，本人认为需要发掘、传承，供后世学者研究。 “袱包”是古时祭奠逝者，将冥币以信袱的方式化给幽冥界的亡魂，以寄托哀思。相当于现在人邮寄钱财。由于地域不同，写法也不尽一致，但大致相仿，其写法大有讲究，随着老一辈的逝去，正逐步失传。本人根据先辈口授，一一记录，如有谬误请阅者指正。 一、“袱包”的样式 （一）正面（一般为竖式，从右至左书写） 天运年月日化炼孝敬献故考（妣）老大（孺）人正魂收用奉上第号具备信袱冥财共封 （一）背面：在粘接头写上大大的“封”号，用袱子版印上运输的“飞马”图案。 二、祭祀、寄钱缘由 （一）节气与称谓 **1.</description>
+    <pubDate>Wed, 21 Feb 2024 00:22:33 GMT</pubDate>
+  </item><item>
+    <title>社员新诗选 | 你是斜阳下迷失的梦</title>
+    <link>https://quartz.19960312.xyz/Readings/Articles/Matters/You-Are-the-Lost-Dream-Under-the-Sunset</link>
+    <guid>https://quartz.19960312.xyz/Readings/Articles/Matters/You-Are-the-Lost-Dream-Under-the-Sunset</guid>
+    <description>苟熙 个人博客 gouxi xigou 程序员 Developer.</description>
+    <pubDate>Tue, 20 Feb 2024 00:22:33 GMT</pubDate>
   </item><item>
     <title>出埃及记</title>
     <link>https://quartz.19960312.xyz/Collections/BibleReading/Exodus</link>
@@ -52,18 +64,6 @@
     <link>https://quartz.19960312.xyz/Collections/BibleReading/Genesis</link>
     <guid>https://quartz.19960312.xyz/Collections/BibleReading/Genesis</guid>
     <description>「创世记」主要讲的是神创造世界到以色列人定居埃及之间的故事，圣经中人物众多，但是有故事的人物不多，很多连篇累牍记载人物族谱的文字可以直接跳过，如果有必要知道的人物一定会出现在后续的故事中。当然如果感觉人物的关系有些混乱或者记不清楚影响理解的时候，可以参考圣经人物家谱网站查询人物的关系图。 非基督教信徒听到的最广泛传播的圣经故事大多出自于创世记，比如神创造天地、亚当夏娃偷吃禁果、诺亚方舟、索多玛无义人，其实这跟我们背单词老是在背 Abandon 的原理是一样的，由于创世记是圣经的第一本经文，所以也是很多非信徒了解圣经的开端，但是绝大多数人在看完第一本后就放弃了阅读圣经。 接下来我将会通过几个主题简单讲讲创世记中的一些有趣的故事情节。 996 工作制 在创世记中，上帝花了六天创造了世界上的一切，而在第七天选择了休息，这就是一星期有七天的由来，在后续的经文中，上帝和人们立约，要求需要工作六天，而必须在第七天休息，所以我们社会主义国家提出的上五休二的双休制度实际上是破坏了与上帝的约定，而华为则是一家基督教原教旨主义的企业，只有他们在现代社会中依然坚守 996 工作制度。他们让员工 996 可能并不是为了压榨更多的剩余价值，而是为了防止员工打破和上帝的约定被惩罚，可以说是用心良苦了。 女权主义 上帝觉得亚当太孤单，就从亚当体内取出了一根肋骨创造了夏娃，这里面就暗含了好几层的意思： 女性是来自于男性的，也是附属于男性的 女性最初存在的意义是服务男性 当然这显然是一个错误的看法，也可以看出圣经本身是男权主义立场的书籍，“先有鸡还是先有蛋”是一个很难回答的问题，但是”先有女还是先有男“在现在的科技水平下却是一个很容易回答的问题，雌性（人类称为女性）的定义就是在有性生殖中承担卵细胞生产任务的性别，而在有性生殖出现之前的生物是女性还是男性呢？我们可以再多看点男女的分别，女性负责孕育和生产新生命，而男性没有这个功能，如果世界上最先有的是男性的生命，那么就会因为无法繁殖而立刻灭绝。所以从科学逻辑上讲，女性肯定是先于男性出现的，那么自然上述两个命题都是不成立的。 从另一个方面讲，女性先于男性出现，是否又能够说明女性相对于男性应该有更高的地位呢？我想这两者没什么必然联系，只是一种自然现象而已，不需要过度解读，男女平等是一个最优解，我们应该主动选择最优解，而不是去搞什么玄学来让自己获得更高的地位。 亚当和夏娃听了毒蛇的话，偷吃了伊甸园的禁果，于是上帝对亚当和夏娃进行了惩罚： 创世纪3:16 上帝对女人说：“我要大大增加你怀孕的痛苦，你生孩子时会经历产痛。你会恋慕你丈夫，他会辖制你。” 创世纪3:17-19 上帝对亚当说：“由于你听了妻子的话，… 在你有生之年，你要辛苦劳碌才能吃土地的出产。你会汗流满面才有食物吃” 我认为这段内容说是惩罚倒不如说是对人类婚姻的隐喻，上帝为男女分配好了任务，男性负责劳作，而女性则负责生育。女性因为生育的痛苦而向丈夫索要补偿，同时又因此受到丈夫的辖制；而男性则需要汗流满面劳作来获得食物来养育自己和妻子。我认为这是婚姻的隐喻的另一个证据就是在上帝作出此惩罚之后，亚当和夏娃被赶出伊甸园，生育了全人类。当然这一段是很男权的，它借上帝之口命令女性生育、听从丈夫，同时又让上帝只肯定男性工作的价值。 数学归纳法（递降归纳） 索多玛和蛾摩拉是两个充满邪恶的城市，这里的人恶贯满盈，于是上帝想要毁灭这两座城市。 亚伯拉罕想要劝上帝不要毁灭这两座城市，于是发生了如下对话： 其中两个人就离开那里，前往所多玛。耶和华仍然跟亚伯拉罕在一起。 亚伯拉罕上前说：“你真的要把正义的人跟邪恶的人一起消灭吗？ 假如城里有50个正义的人，你还会消灭所有人吗？不会为了城里的这50个人，而赦免那个地方吗？ 你绝对不会把正义的人跟邪恶的人一起处死，让他们有同样的结局！你是绝对不会这样做的。审判全世界的主难道会处事不公正吗？” 耶和华说：“我如果在所多玛城里找到50个正义的人，就会因为他们而赦免那个地方。” 亚伯拉罕又说：“我不过是个像灰尘一样卑微的人，但请容许我继续对耶和华说话。 假如50个正义的人少了5个，你会因为少了5个就毁灭全城吗？”他说：“我如果在那里找到45个正义的人，也不会“也不会毁灭那座城。” 但亚伯拉罕又对他说：“假如在那里找到40个正义的人呢？”他说：“因为这40个人，我也不会毁灭那座城。” 亚伯拉罕又说：“求耶和华不要发怒，让我再说下去：假如在那里找到30个正义的人呢？”他说：“如果在那里找到30个，我也不会毁灭那座城。” 亚伯拉罕又说：“请容许我继续对耶和华说话。假如在那里找到20个正义的人呢？”他说：“因为这20个人，我也不会毁灭那座城。” 最后亚伯拉罕说：“求耶和华不要发怒，让我再多说一句：假如在那里找到10个正义的人呢？”他说：“因为这10个人，我也不会毁灭那座城。” 耶和华跟亚伯拉罕说完话之后就离开了，亚伯拉罕也回到了自己的地方。” 简单来讲就是亚伯拉罕认为索多玛这个城市有恶人，但是也有义人，如果直接毁灭城市，会有义人无辜被杀死，所以他想劝说上帝不要毁灭索多玛，他先搞了个初始条件“如果有 50 个义人，上帝就不会毁灭这座城”，然后把 50 这个数字越推越小，最终说服上帝“如果在城里找到 10 个义人，就不毁灭索多玛”。但是亚伯拉罕推到这里突然停止了，可能是他发现再推下去就会出现推不动的情况，因为他再多说几句肯定就会出现“如果在城里找到 0 个义人…”，那上帝肯定就会说“那不正好全杀了吗？” 最后上帝的使者来到索多玛，有一个叫罗德的人接待了他们，但是索多玛人前来围攻罗德的家要跟使者睡觉，罗德提出献出自己的两个女儿来保护使者也遭到了拒绝，索多玛人破门而入，结果被法术弄瞎了眼睛没能找到使者。事后使者告诉罗德一家出城躲避，然后上帝降下硫磺和火毁灭了索多玛和蛾摩拉。 这个故事主要还是说明上帝是赏罚分明、言出必行的，上帝说了找到十个义人就不毁灭索多玛，结果只有罗德一家人（4人，包含妻子和两个女儿）是义人，其他全是坏蛋，所以上帝灭了索多玛和蛾摩拉，但是却放走了罗德一家。 挪亚方舟 耶和华看到自己创造出的人类作恶多端，天天想着坏事，于是就想发动大洪水把世界上一切的生灵毁灭。 但是上帝很喜欢挪亚，因为挪亚是一个正义的人，于是就吩咐挪亚造了一个大船，带上一些世界上的全部的生灵住在船上，然后上帝发动了大洪水，毁灭了全世界的生灵。 大洪水之后，挪亚方舟上的生灵回到大地，重新开始繁衍生息，同时上帝和挪亚以及方舟上的生灵通过彩虹立约，未来不会再发动洪水消灭全部生灵。这从宗教的角度否认了任何形式的种族灭绝的正义性，因此近代发生的纳粹大屠杀、南京大屠杀等等无论如何辩解均不具有任何正义性。 红颜祸水 后来迦南地区闹饥荒，而且非常严重，亚伯兰就下埃及去侨居一段时间。 快到埃及的时候，亚伯兰对妻子撒莱说：“请听我说。你那么漂亮， 埃及人看见你，就肯定会说：‘这是他的妻子。’然后他们会把我杀了，却会让你活着。 请告诉别人你是我的妹妹，这样我就能因为你而平安无事，保住性命。 创世纪12:10-13 亚伯拉罕住在基拉尔的时候，再次说妻子撒拉是他的妹妹。于是基拉尔王亚比米勒派人去把撒拉带到他那里。 后来，亚比米勒在晚上做了一个梦，上帝来对他说：“你死期到了，因为你带来的那个女人已经结了婚，她是属于别人的。 创世纪 20:1-3 当地的人问起他的妻子，以撒就说：“她是我妹妹。”以撒不敢说：“她是我妻子。”利百加美丽动人，所以他说：“这里的人可能会因为利百加而杀我。 创世纪 26:7 这段相似的剧情在创世纪中重复了至少三次，我觉得用中文的“红颜祸水”来概括这个情节是最精炼的。现在的社会，每一个男性都想找一个容貌美丽的妻子，圣经中的这部分内容主要是教育人们，在弱肉强食、礼崩乐坏的社会中，一个容貌美丽的妻子反而是一种带来灾祸的根源。而上帝当然也严厉惩罚因为贪图美貌抢夺他人妻子的行为，但是上帝的神迹会不会在你这里显现，那很难说。 巴别塔 豆瓣有一个很火的话题叫“生活中的巴别塔时刻”，我曾经看见这个话题不知所云，于是就查阅了维基百科，那是我第一次知道巴别塔的含义。 主要的故事是人们想建造一座通天的巨塔，上帝认为是因为人们语言相通才能团结起来干这样的大事，所以上帝让人们分散各地，打乱了他们的语言。 因此”巴别塔时刻”指的就是问牛答马，无法沟通的时刻，也可以指明明说的一样的语言，但是因为双方理解不同而无法完成有效沟通的时刻。 一夫多妻制 亚伯拉罕的妻子撒莱没有生育能力，于是撒莱让亚伯拉罕娶了自己的埃及女仆夏甲，夏甲怀孕后就瞧不起自己的主人，最后被撒莱赶走。最后上帝许诺让撒莱也生一个儿子，并且将其改名为撒拉，这场妻妾之争才算暂时结束。 拉班有两个女儿，大的叫利亚，小的叫拉结。 利亚目无神采，拉结却美丽动人。 雅各爱上了拉结，于是说：“为了你的小女儿拉结，我愿意服侍你七年。 — 创世纪 29:16-18 结果在七年之后，拉班却将利亚嫁给了雅各，雅各又服侍了拉班七年如愿娶了拉结。雅各宠爱拉结，冷落利亚，所以上帝就令拉结不孕让利亚获得更多宠爱，然后又上演了拉结让自己的侍女给雅各做妾生子，拉结被上帝赐福生子的重复剧情。 总之这一系列剧情就说明，圣经中一夫多妻是一件正常的事情，妻子必须赞成甚至主动促成丈夫纳妾，同时女性要通过生育来获得更多的宠爱，当然这个思想放在当今，肯定是过于陈腐了。 包皮之战 上帝要求男子进行割礼（割去包皮）作为与上帝立约的标志，因此亚伯拉罕及其后代都进行了割礼。 雅各（被上帝赐名以色列，含义是跟上帝较量的人）的女儿底拿经常去出去找当地的女孩子玩，但是后来当地希未人首领哈抹的儿子示剑看见她就强奸了她，而后示剑喜欢上了底拿，于是就去向雅各提亲。雅各和他的儿子们听见底拿被奸污，非常生气，所以假装同意了示剑的求婚，但是告诉他们底拿必须嫁给接受了割礼的民族，必须让所有的希未人全部接受割礼才能把底拿嫁给他。 示剑被爱情冲昏了头脑，上了雅各一家子的洋当，回去就让所有族人全部进行了割礼，由于希未人进行了割礼之后伤口疼痛，雅各的儿子利未和西缅趁机进城杀死了包括示剑在内的全部的男性，抢走了所有的财产，大获全胜。 我觉得这一段还是很有喜剧效果的，雅各一家人用了一个搞笑的计谋就让希未人被灭族，我认为这次搞笑的战争可以称为“包皮之战”。.</description>
-    <pubDate>Sun, 18 Feb 2024 00:22:33 GMT</pubDate>
-  </item><item>
-    <title>圣经阅读系列文章简介</title>
-    <link>https://quartz.19960312.xyz/Collections/BibleReading/Introduce</link>
-    <guid>https://quartz.19960312.xyz/Collections/BibleReading/Introduce</guid>
-    <description>圣经是世界上销量最高的书籍，也是西方文化的重要组成部分，虽然我并未实际上参与任何基督教活动，但是我依然对圣经的内容充满好奇，所以我计划在未来一段时间阅读圣经的全部内容，并且对每一本经文写下简短的读后感。 我第一次对圣经的内容感兴趣，还是因为一个微博上的搞笑段子，当时有个微博账号叫“基督中文”，还有一个叫做“真主中文”，有一天发生了一波搞笑的微博论战： 基督中文：为什么你看到别人眼中有尖刺，却看不到自己眼中有梁木。路加福音（06:41） 真主中文：你见群山而以为都是固定的，其实群山都象行云一样逝去。 基督中文：你是住在我的微博了？ 真主中文：善若不弘扬，恶就会声张。 我忽然觉得这种引用宗教文本进行论战的形式还是挺有乐趣的，它让本来严肃的、神圣的、针锋相对的宗教辩论变得轻松愉快，仿佛基督徒和穆斯林的世仇忽然消失了，他们成了一对嬉皮笑脸打情骂俏的小情侣。另外这些句子事实上还是很精炼很有道理的，所以我觉得有好机会真的应该好好看看这些宗教文学作品。 如果你在中文互联网上搜索圣经，出现最多的翻译版本就是简体中文和合本，这个版本翻译文本格式比较规整简练，但是读起来比较晦涩，上述的”尖刺梁木论战“的翻译就是出于和合本翻译，而最近我恰好看到有人讲不同圣经版本的阅读体验实际上是千差万别的，同时了解到了新世界译本是目前发行量最大的圣经版本之一，且发行年代较近，这个版本的汉语翻译读起来十分顺畅易懂，所以我选择了此版本作为我通读圣经的目标版本。 圣经内容目录 Old Testament（旧约） The OrthodoxGreek-based nameConventional English nameChinese NameLawΓένεσιςGénesisGenesis创世记ἜξοδοςÉxodosExodus出埃及记ΛευϊτικόνLeuitikónLeviticus利未记ἈριθμοίArithmoíNumbers民数记ΔευτερονόμιονDeuteronómionDeuteronomy申命记HistoryἸησοῦς NαυῆIêsous NauêJoshuaΚριταίKritaíJudgesῬούθRoúthRuthΒασιλειῶν ΑʹI ReignsI SamuelΒασιλειῶν ΒʹII ReignsII SamuelΒασιλειῶν ΓʹIII ReignsI KingsΒασιλειῶν ΔʹIV ReignsII KingsΠαραλειπομένων ΑʹI ParalipomenonI ChroniclesΠαραλειπομένων ΒʹII ParalipomenonII ChroniclesἜσδρας ΑʹI Esdras1 EsdrasἜσδρας ΒʹII EsdrasEzra–NehemiahΤωβίτTobitTobit or TobiasἸουδίθIoudithJudithἘσθήρEstherEsther with additionsΜακκαβαίων ΑʹI Makkabaioi1 MaccabeesΜακκαβαίων ΒʹII Makkabaioi2 MaccabeesΜακκαβαίων ΓʹIII Makkabaioi3 MaccabeesWisdomΨαλμοίPsalmsPsalmsΨαλμός ΡΝΑʹPsalm 151Psalm 151Προσευχὴ ΜανάσσηPrayer of ManassehPrayer of ManassehἸώβIōbJobΠαροιμίαιProverbsProverbsἘκκλησιαστήςEkklesiastesEcclesiastesἎσμα ἈσμάτωνSong of SongsSong of Solomon or CanticlesΣοφία ΣαλoμῶντοςWisdom of SolomonWisdomΣοφία Ἰησοῦ ΣειράχWisdom of Jesus the son of SeirachSirach or EcclesiasticusΨαλμοί ΣαλoμῶντοςPsalms of SolomonPsalms of SolomonProphetsΔώδεκαThe TwelveMinor ProphetsὩσηέ ΑʹI.</description>
-    <pubDate>Sun, 18 Feb 2024 00:22:33 GMT</pubDate>
-  </item><item>
-    <title>利未记</title>
-    <link>https://quartz.19960312.xyz/Collections/BibleReading/Leviticus</link>
-    <guid>https://quartz.19960312.xyz/Collections/BibleReading/Leviticus</guid>
-    <description>todo.</description>
     <pubDate>Sun, 18 Feb 2024 00:22:33 GMT</pubDate>
   </item>
     </channel>
