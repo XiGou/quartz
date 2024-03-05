@@ -10,37 +10,37 @@
     <link>https://quartz.19960312.xyz/Travels/Travels</link>
     <guid>https://quartz.19960312.xyz/Travels/Travels</guid>
     <description>北京-天津 [天津]滨江道惬意的夜晚 https://www.acfun.cn/v/ac30585633 戒台寺 十三陵/蟒山 白羊沟 妙峰山 妙峰山露营----扛车上山之旅 https://www.acfun.cn/v/ac29469038 怀柔水库 https://www.youtube.com/watch?v=zVK0bDFXyDc 深圳盐田绿道-大梅沙 https://www.</description>
-    <pubDate>Mon, 04 Mar 2024 11:42:12 GMT</pubDate>
+    <pubDate>Tue, 05 Mar 2024 10:10:02 GMT</pubDate>
   </item><item>
     <title>Videos</title>
     <link>https://quartz.19960312.xyz/Readings/Videos/Videos</link>
     <guid>https://quartz.19960312.xyz/Readings/Videos/Videos</guid>
     <description>EU PyCon 的 JIT 三十分钟教程 Antonio Cuni - How to write a JIT compiler in 30 minutes - YouTube EU PyCon 的 JIT 三十分钟教程，感觉讲的非常的好，建议感兴趣的同学可以看下 .</description>
-    <pubDate>Mon, 04 Mar 2024 11:42:12 GMT</pubDate>
+    <pubDate>Tue, 05 Mar 2024 10:10:02 GMT</pubDate>
   </item><item>
     <title>Papers</title>
     <link>https://quartz.19960312.xyz/Readings/Papers/Papers</link>
     <guid>https://quartz.19960312.xyz/Readings/Papers/Papers</guid>
     <description>梭罗的极简主义生活智慧及其启示 323950844.pdf ［摘 要］极简主义原是西方一种现代艺术流派，其核心理念是崇尚简约。而作为一种生活方式的极简主义，梭罗早在 19 世纪就践行过：他通过对“步行”“奢侈”与“文明”的深刻反思，认为应简化人的物质需求，倡导追求精神上的自由，从而促进人与自然和谐共生。 当前正处于生态危机的时代，亟需提倡这样一种极简主义的生活方式。梭罗的极简主义生活智慧对于我国的生态文明建设具有重要的启示作用，有助于实现全社会 的生态幸福。 ［关键词］梭罗；极简主义；精神自由；生态幸福 Bitcoin- A Peer-to-Peer Electronic Cash System bitcoin.</description>
-    <pubDate>Mon, 04 Mar 2024 11:42:12 GMT</pubDate>
+    <pubDate>Tue, 05 Mar 2024 10:10:02 GMT</pubDate>
   </item><item>
     <title>Nvme Device Operation cmds</title>
     <link>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</link>
     <guid>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</guid>
     <description>Disconnecting and reconnecting nvme Very simple in the end: echo 1 &gt; /sys/bus/pci/devices/$(readlink -f /sys/class/nvme/nvme1 | awk -F &quot;/&quot; &#039;{print $5}&#039;)/remove echo 1 &gt; /sys/bus/pci/devices/$(readlink -f /sys/class/nvme/nvme2 | awk -F &quot;/&quot; &#039;{print $5}&#039;)/remove echo 1 &gt; /sys/bus/pci/rescan .</description>
-    <pubDate>Mon, 04 Mar 2024 11:42:12 GMT</pubDate>
+    <pubDate>Tue, 05 Mar 2024 10:10:02 GMT</pubDate>
   </item><item>
     <title>How to check the binding glibc version of a binary</title>
     <link>https://quartz.19960312.xyz/Knowledges/How-to-check-the-binding-glibc-version-of-a-binary</link>
     <guid>https://quartz.19960312.xyz/Knowledges/How-to-check-the-binding-glibc-version-of-a-binary</guid>
     <description>There are several ways to check the glibc version that a binary file depends on:: ldd command ldd binary_file objdump, disassembly objdump -T binary_file | grep -i glibc readelf readelf -d binary_file | grep libc check dynamic section to get libc version。 check the source code repo If you can access the source code, check the building scripts for the glibc version。 rpm/deb package manage tools How to check RPM Dependencies gdb debugging gdb binary_file print (const char*) ELF-&gt;gnu_required-&gt;name show the glibc SONAME version when linking。 strings extracting strings binary_file | grep GLIBC extracting glibc symbols version prefixes。.</description>
-    <pubDate>Mon, 04 Mar 2024 11:42:12 GMT</pubDate>
+    <pubDate>Tue, 05 Mar 2024 10:10:02 GMT</pubDate>
   </item><item>
     <title>Git</title>
     <link>https://quartz.19960312.xyz/Knowledges/Git</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Git</guid>
     <description>Refs: “Branch early, branch often”.</description>
-    <pubDate>Mon, 04 Mar 2024 11:42:12 GMT</pubDate>
+    <pubDate>Tue, 05 Mar 2024 10:10:02 GMT</pubDate>
   </item><item>
     <title>中国裁判文书网竞业协议案例</title>
     <link>https://quartz.19960312.xyz/Collections/Others/Competitive-Agreement-Cases-on-China-Judgment-Document</link>
@@ -51,7 +51,7 @@
     <title>裁判文书网竞业协议相关案例分析</title>
     <link>https://quartz.19960312.xyz/Blog/Analysis_of_cases_related_to_non-competition_agreement_on_Judgment-Documents</link>
     <guid>https://quartz.19960312.xyz/Blog/Analysis_of_cases_related_to_non-competition_agreement_on_Judgment-Documents</guid>
-    <description>根据联合早报消息拼多多被指滥用竞业协议 向离职员工索赔巨款 | 联合早报，拼多多再一次因为竞业协议被推上舆论的风口。 另外还在推特上看到了一个企图以自杀威胁拼多多停止索赔的用户，实在是有些感到悲哀，这些受过高等教育进入互联网公司工作的年轻人，毫无契约精神，法律意识淡薄，出了事就撒泼打滚，甚至会为了拒付几十万元赔偿金以死相逼。 总结 本文主要选取了五个案例，简单了解一下竞业协议相关劳动争议案件的处理。因为内容冗长，就把总结性的文字放在前面吧。 通过这些案例，可以看到互联网公司在员工离职后，基本都会按照约定支付竞业补偿金，但是员工大多都是领着补偿金去违约，所以基本都是败诉。法庭为了照顾劳动者，往往会酌情减少赔偿金。 如果横向对比，可以发现拼多多是最邪恶的公司，竞业范围大，竞业时间长，索赔金额高，手段几乎都是跟踪监控，十分下作。虽然从公开的裁判文书看，拼多多基本都依照合约支付竞业补偿金，被起诉的员工基本都是高管或者高级技术人员，没有太多不当行为。但是根据网络上一些用户的信息工作8个月离职被索赔26万，女员工崩溃失联，PDD滥用竞业协议？ - 知乎，基层员工离职后也会被竞业协议限制，被索赔巨额赔款，确实是非常不地道。但是看过《罗生门》的都知道，任何一个当事人的陈述都不能客观反映事实的真相，比如这位自称要自杀的员工，显然没有披露其到底入职了哪一家互联网公司，如果其没有入职竞争公司，自然是不需要赔款。况且拼多多在行业内臭名昭著也不是一天两天，你选择与恶魔做交易，自己就要万分谨慎。相比而言字节跳动则较为温和，不会索取过高的赔偿，竞业期限也较短。 竞业协议设立是为了保护企业，防止企业通过挖墙脚的方式恶性竞争，比如早期华为就曾经开大巴在爱立信楼下守候，拉出了一个本土 ICT 巨头。所以这种协议的主导权必须在企业这一方，企业在员工不参与劳动的情况下，支付了工资的 30% 以上作为该协议的对价，如果员工想解除就解除，这个协议存在也失去了意义。但是在实际实施过程中，由于企业启动竞业协议的成本较低且无人监管，竞业协议实际上已经成了企业欺压员工的手段。具体表现为： 竞业范围被无限制扩大，很多基层员工并不知道什么机密，也会被竞业限制； 竞争企业的定义没有标准，所以拼多多这样的企业可以将所有公司都列为竞争企业； 要破这个局其实非常简单，针对这两点运用一下惩罚机制即可。 为了防止竞业范围被扩大，可以规定月薪高于 10 万元人民币的员工才能签订竞业协议，因为启动竞业协议意味着公司认为这个员工知道很重要的事情，月薪没有达到十万，在企业内基本都是可有可无的状态，你说你很重要我都想发笑😄。为了防止企业胡乱定义竞争企业，可以规定竞争企业必须在合同载明，非载明不可认为存在竞争关系，竞争实体名单有更新需要告知员工。在支付竞业补偿的时候，补偿金的计算方式应当与竞争企业数量相关，每增加一个竞争企业，竞业补偿金都会增加，这样企业就会审慎处理竞争企业的名单，仅仅限制竞争关系非常明显的几个企业。最好是指数递增，如果线性递增，肯定会有些企业财大气粗直接在名单上加一百个头部科技公司。 案例一：张某与拼多多（上海）网络科技有限公司竞业限制纠纷 主要事实 2019年9月15日， 张某入职拼多多，职位为招商部门招商总监； 属于高级管理人员，签署竞业协议不属于滥用 2021年10月31日，双方劳动合同解除，经安排，张某劳动关系转入某某公司3的关联公司寻梦公司； 2021年12月31日，张某与寻梦公司的劳动合同解除； 2022年6月6日-21日，拼多多连续多日跟踪张某，掌握其驾驶车辆离开小区到上班地点之间往返的轨迹和具体的时间点，并且进行了公证。 2022年8月8日，拼多多向某某委员会申请仲裁，要求裁令张某：1.</description>
+    <description>根据联合早报消息拼多多被指滥用竞业协议 向离职员工索赔巨款 | 联合早报，拼多多再一次因为竞业协议被推上舆论的风口。 另外还在推特上看到了一个企图以自杀威胁拼多多停止索赔的用户，实在是有些感到悲哀，这些受过高等教育进入互联网公司工作的年轻人，毫无契约精神，法律意识淡薄，出了事就撒泼打滚，甚至会为了拒付几十万元赔偿金以死相逼。 总结 本文主要选取了六个案例，简单了解一下竞业协议相关劳动争议案件的处理。因为内容冗长，就把总结性的文字放在前面吧。 通过这些案例，可以看到互联网公司在员工离职后，基本都会按照约定支付竞业补偿金，但是员工大多都是领着补偿金去违约，所以基本都是败诉。法庭为了照顾劳动者，往往会酌情减少赔偿金。 如果横向对比，可以发现拼多多是最邪恶的公司，竞业范围大，竞业时间长，索赔金额高，手段几乎都是跟踪监控，十分下作。虽然从公开的裁判文书看，拼多多基本都依照合约支付竞业补偿金，被起诉的员工基本都是高管或者高级技术人员，没有太多不当行为。但是根据网络上一些用户的信息工作8个月离职被索赔26万，女员工崩溃失联，PDD滥用竞业协议？ - 知乎，基层员工离职后也会被竞业协议限制，被索赔巨额赔款，确实是非常不地道。看过《罗生门》的都知道，任何一个当事人的陈述都不能客观反映事实的真相，比如这位自称要自杀的员工，显然没有披露其到底入职了哪一家互联网公司，如果其没有入职竞争公司，自然是不需要赔款。况且拼多多在行业内臭名昭著也不是一天两天，你选择与恶魔做交易，自己就要万分谨慎。相比而言字节跳动则较为温和，不会索取过高的赔偿，竞业期限也较短。 竞业协议设立是为了保护企业，防止企业通过挖墙脚的方式恶性竞争，比如早期华为就曾经开大巴在爱立信楼下守候，拉出了一个本土 ICT 巨头。所以这种协议的主导权必须在企业这一方，企业在员工不参与劳动的情况下，支付了工资的 30% 以上作为该协议的对价，如果员工想解除就解除，这个协议存在也失去了意义。但是在实际实施过程中，由于企业启动竞业协议的成本较低且无人监管，竞业协议实际上已经成了企业欺压员工的手段。具体表现为： 竞业范围被无限制扩大，很多基层员工并不知道什么机密，也会被竞业限制； 竞争企业的定义没有标准，所以拼多多这样的企业可以将所有公司都列为竞争企业； 要破这个局其实非常简单，针对这两点运用一下惩罚机制即可。 为了防止竞业范围被扩大，可以规定月薪高于 10 万元人民币的员工才能签订竞业协议，因为启动竞业协议意味着公司认为这个员工知道很重要的事情，月薪没有达到十万，在企业内基本都是可有可无的状态，你说你很重要我都想发笑😄。为了防止企业胡乱定义竞争企业，可以规定竞争企业必须在合同载明，非载明不可认为存在竞争关系，竞争实体名单有更新需要告知员工。在支付竞业补偿的时候，补偿金的计算方式应当与竞争企业数量相关，每增加一个竞争企业，竞业补偿金都会增加，这样企业就会审慎处理竞争企业的名单，仅仅限制竞争关系非常明显的几个企业。最好是指数递增，如果线性递增，肯定会有些企业财大气粗直接在名单上加一百个头部科技公司。 案例一：张某与拼多多（上海）网络科技有限公司竞业限制纠纷 主要事实 2019年9月15日， 张某入职拼多多，职位为招商部门招商总监； 属于高级管理人员，签署竞业协议不属于滥用 2021年10月31日，双方劳动合同解除，经安排，张某劳动关系转入某某公司3的关联公司寻梦公司； 2021年12月31日，张某与寻梦公司的劳动合同解除； 2022年6月6日-21日，拼多多连续多日跟踪张某，掌握其驾驶车辆离开小区到上班地点之间往返的轨迹和具体的时间点，并且进行了公证。 2022年8月8日，拼多多向某某委员会申请仲裁，要求裁令张某：1.</description>
     <pubDate>Sun, 03 Mar 2024 17:14:31 GMT</pubDate>
   </item><item>
     <title>在中国，最普通的少男少女们</title>
