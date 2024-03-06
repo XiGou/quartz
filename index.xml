@@ -10,37 +10,37 @@
     <link>https://quartz.19960312.xyz/Travels/Travels</link>
     <guid>https://quartz.19960312.xyz/Travels/Travels</guid>
     <description>北京-天津 [天津]滨江道惬意的夜晚 https://www.acfun.cn/v/ac30585633 戒台寺 十三陵/蟒山 白羊沟 妙峰山 妙峰山露营----扛车上山之旅 https://www.acfun.cn/v/ac29469038 怀柔水库 https://www.youtube.com/watch?v=zVK0bDFXyDc 深圳盐田绿道-大梅沙 https://www.</description>
-    <pubDate>Wed, 06 Mar 2024 10:40:43 GMT</pubDate>
+    <pubDate>Wed, 06 Mar 2024 13:32:54 GMT</pubDate>
   </item><item>
     <title>Videos</title>
     <link>https://quartz.19960312.xyz/Readings/Videos/Videos</link>
     <guid>https://quartz.19960312.xyz/Readings/Videos/Videos</guid>
     <description>EU PyCon 的 JIT 三十分钟教程 Antonio Cuni - How to write a JIT compiler in 30 minutes - YouTube EU PyCon 的 JIT 三十分钟教程，感觉讲的非常的好，建议感兴趣的同学可以看下 .</description>
-    <pubDate>Wed, 06 Mar 2024 10:40:43 GMT</pubDate>
+    <pubDate>Wed, 06 Mar 2024 13:32:54 GMT</pubDate>
   </item><item>
     <title>Papers</title>
     <link>https://quartz.19960312.xyz/Readings/Papers/Papers</link>
     <guid>https://quartz.19960312.xyz/Readings/Papers/Papers</guid>
     <description>梭罗的极简主义生活智慧及其启示 323950844.pdf ［摘 要］极简主义原是西方一种现代艺术流派，其核心理念是崇尚简约。而作为一种生活方式的极简主义，梭罗早在 19 世纪就践行过：他通过对“步行”“奢侈”与“文明”的深刻反思，认为应简化人的物质需求，倡导追求精神上的自由，从而促进人与自然和谐共生。 当前正处于生态危机的时代，亟需提倡这样一种极简主义的生活方式。梭罗的极简主义生活智慧对于我国的生态文明建设具有重要的启示作用，有助于实现全社会 的生态幸福。 ［关键词］梭罗；极简主义；精神自由；生态幸福 Bitcoin- A Peer-to-Peer Electronic Cash System bitcoin.</description>
-    <pubDate>Wed, 06 Mar 2024 10:40:43 GMT</pubDate>
+    <pubDate>Wed, 06 Mar 2024 13:32:54 GMT</pubDate>
   </item><item>
     <title>Nvme Device Operation cmds</title>
     <link>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</link>
     <guid>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</guid>
     <description>Disconnecting and reconnecting nvme Very simple in the end: echo 1 &gt; /sys/bus/pci/devices/$(readlink -f /sys/class/nvme/nvme1 | awk -F &quot;/&quot; &#039;{print $5}&#039;)/remove echo 1 &gt; /sys/bus/pci/devices/$(readlink -f /sys/class/nvme/nvme2 | awk -F &quot;/&quot; &#039;{print $5}&#039;)/remove echo 1 &gt; /sys/bus/pci/rescan .</description>
-    <pubDate>Wed, 06 Mar 2024 10:40:43 GMT</pubDate>
+    <pubDate>Wed, 06 Mar 2024 13:32:53 GMT</pubDate>
   </item><item>
     <title>How to check the binding glibc version of a binary</title>
     <link>https://quartz.19960312.xyz/Knowledges/How-to-check-the-binding-glibc-version-of-a-binary</link>
     <guid>https://quartz.19960312.xyz/Knowledges/How-to-check-the-binding-glibc-version-of-a-binary</guid>
     <description>There are several ways to check the glibc version that a binary file depends on:: ldd command ldd binary_file objdump, disassembly objdump -T binary_file | grep -i glibc readelf readelf -d binary_file | grep libc check dynamic section to get libc version。 check the source code repo If you can access the source code, check the building scripts for the glibc version。 rpm/deb package manage tools How to check RPM Dependencies gdb debugging gdb binary_file print (const char*) ELF-&gt;gnu_required-&gt;name show the glibc SONAME version when linking。 strings extracting strings binary_file | grep GLIBC extracting glibc symbols version prefixes。.</description>
-    <pubDate>Wed, 06 Mar 2024 10:40:42 GMT</pubDate>
+    <pubDate>Wed, 06 Mar 2024 13:32:53 GMT</pubDate>
   </item><item>
     <title>Git</title>
     <link>https://quartz.19960312.xyz/Knowledges/Git</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Git</guid>
     <description>Refs: “Branch early, branch often”.</description>
-    <pubDate>Wed, 06 Mar 2024 10:40:42 GMT</pubDate>
+    <pubDate>Wed, 06 Mar 2024 13:32:53 GMT</pubDate>
   </item><item>
     <title>Books-2024</title>
     <link>https://quartz.19960312.xyz/Readings/Books/Books-2024</link>
@@ -49,8 +49,8 @@
     <pubDate>Wed, 06 Mar 2024 00:22:33 GMT</pubDate>
   </item><item>
     <title>读「死亡赋格」-保罗·策兰</title>
-    <link>https://quartz.19960312.xyz/Blog/Reading-%22Death-Fugue%22-Paul-Celan</link>
-    <guid>https://quartz.19960312.xyz/Blog/Reading-%22Death-Fugue%22-Paul-Celan</guid>
+    <link>https://quartz.19960312.xyz/Blog/Reading-Death-Fugue-Paul-Celan</link>
+    <guid>https://quartz.19960312.xyz/Blog/Reading-Death-Fugue-Paul-Celan</guid>
     <description>最近读宗教玄学有点多，今天选一本小诗集来中和一下，随机选中了保罗·策兰的「死亡赋格」，死亡赋格是诗集的名字，也是其中一首著名诗歌的名字， 赋格（Fugue）是音译，代表一种音乐形式。 《死亡赋格》这首诗最初是用罗马尼亚文发表的，然后才用德语发表，最初的名字叫《死亡探戈》。死亡探戈指的是二战时期纳粹集中营里的一种现象，纳粹军人命一组被判死刑的人唱怀旧歌，另一组人则在旁边挖坟；或者让犹太人组成乐队，在行军、拷打、枪毙的时演奏探戈，并在废除集中营时将乐队集体枪决。 From 读诗笔记：策兰《死亡赋格》 - 知乎 我承认他写的很好，但是不是我喜欢的类型，没能打动我。 这本诗集读起来就像是精神病患者滚键盘打出来的一样，有很多都无逻辑、无叙事、不知所云，只能感觉到阴郁的气氛。也许有些人就喜欢这种不好好说人话的艺术品，但我必须给出差评，因为我实在是看不懂策兰在写什么玩意，并且我觉得这还是要策兰背锅，而不是因为我个人文化水平不够。 当然其中也有一些喜欢的句子，比如 夜间的花朵 噘起唇瓣， 云杉的树干 交叉相连， 苔藓变灰，石头震动， 寒鸦醒来，要在冰川上空 做无穷尽的飞行 这是那些被我们追上的人 休息的地方。 花朵在夜间绽放，描绘了在黑暗中的生命力；树干交叉相连则是比较写实的句子，如果你在夜晚看过森林就会明白那种感觉，树木像一排排的巨人围绕着你，仿佛在凝视你，要走过来吞噬你。苔藓变灰意味着生命力的消失，在冰川上空无穷尽的飞行是对自由的追求，也是逃离寒冷与危险的旅程；被我们追上的人休息的地方，指的就是被追上就会被我们杀死。 策兰出生于 1920 年，父母在集中营被杀，这段故事写的当然是犹太人被屠杀的事情，但是策兰是站在杀戮者的视角描写的。 你是我的死亡： 当一切脱我而去， 你是我能够抱住的。 这首诗则平静地指出了一个事实：你什么都不能拥有，只有死亡是无法离你而去的。 不要夹在不同世界之间 写你自己， 要起来反抗 多重意义， 信任泪痕 并学会生活。 这是书中为数不多的积极向上的诗句，在迷茫之中的时候，主动去追好过被动地等待结果。 你有这么高速运转的机械 进入中国，记住 我给出的原理 小的时候，就是研发人 这首当然不是策兰写的，而是我从网络抄来黑策兰的，虽然我选出来的一些诗句还是有欣赏的价值，但是这本诗集中大多数都是类似“高速机械”一样的诗句，最终结论是：建议别读。.</description>
     <pubDate>Tue, 05 Mar 2024 17:14:31 GMT</pubDate>
   </item><item>
