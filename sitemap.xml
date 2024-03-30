@@ -113,11 +113,17 @@
     <loc>https://quartz.19960312.xyz/Collections/BibleReading/Joshua</loc>
     <lastmod>2024-03-17T00:22:33.000Z</lastmod>
   </url><url>
+    <loc>https://quartz.19960312.xyz/Collections/BibleReading/Judges</loc>
+    <lastmod>2024-03-24T00:22:33.000Z</lastmod>
+  </url><url>
     <loc>https://quartz.19960312.xyz/Collections/BibleReading/Leviticus</loc>
     <lastmod>2024-02-18T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/BibleReading/Numbers</loc>
     <lastmod>2024-02-18T00:22:33.000Z</lastmod>
+  </url><url>
+    <loc>https://quartz.19960312.xyz/Collections/BibleReading/Ruth</loc>
+    <lastmod>2024-03-24T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/Jiangxuan/A-Secret-Garden-within-a-Library-Card</loc>
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
@@ -243,13 +249,13 @@
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Git</loc>
-    <lastmod>2024-03-18T08:20:14.126Z</lastmod>
+    <lastmod>2024-03-30T19:26:06.464Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/How-to-check-RPM-Dependencies</loc>
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/How-to-check-the-binding-glibc-version-of-a-binary</loc>
-    <lastmod>2024-03-18T08:20:14.133Z</lastmod>
+    <lastmod>2024-03-30T19:26:06.474Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Software-Usage/CICD-System</loc>
     <lastmod>2024-02-05T17:14:31.000Z</lastmod>
@@ -279,7 +285,7 @@
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</loc>
-    <lastmod>2024-03-18T08:20:14.246Z</lastmod>
+    <lastmod>2024-03-30T19:26:06.586Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/iscsiadm-common-commands</loc>
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
@@ -311,6 +317,9 @@
     <loc>https://quartz.19960312.xyz/Moments/2023/Moments-Mar-2023</loc>
     <lastmod>2023-03-05T00:22:33.000Z</lastmod>
   </url><url>
+    <loc>https://quartz.19960312.xyz/Moments/2024/Moments-Apr-Jun-2024</loc>
+    <lastmod>2024-04-01T00:22:33.000Z</lastmod>
+  </url><url>
     <loc>https://quartz.19960312.xyz/Moments/2024/Moments-Jan-Mar-2024</loc>
     <lastmod>2024-01-05T00:22:33.000Z</lastmod>
   </url><url>
@@ -319,6 +328,9 @@
   </url><url>
     <loc>https://quartz.19960312.xyz/Readings/Articles/Matters/You-Are-the-Lost-Dream-Under-the-Sunset</loc>
     <lastmod>2024-02-20T00:22:33.000Z</lastmod>
+  </url><url>
+    <loc>https://quartz.19960312.xyz/Readings/Articles/Tech/Hardware</loc>
+    <lastmod>2024-03-30T19:26:06.748Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Readings/Books/Books-2023</loc>
     <lastmod>2023-02-05T00:22:33.000Z</lastmod>
@@ -342,13 +354,13 @@
     <lastmod>2023-02-05T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Readings/Papers/Papers</loc>
-    <lastmod>2024-03-18T08:20:14.523Z</lastmod>
+    <lastmod>2024-03-30T19:26:06.861Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Readings/Videos/Videos</loc>
-    <lastmod>2024-03-18T08:20:14.539Z</lastmod>
+    <lastmod>2024-03-30T19:26:06.876Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Travels/Travels</loc>
-    <lastmod>2024-03-18T08:20:14.543Z</lastmod>
+    <lastmod>2024-03-30T19:26:06.879Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/</loc>
     <lastmod>2023-09-05T00:22:33.000Z</lastmod>
