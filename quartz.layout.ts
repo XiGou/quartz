@@ -8,8 +8,10 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      GitHub: "https://github.com/XiGou",
+      Linkedin: "https://linkedin.com/in/xigou",
+      StackOverflow: "https://stackoverflow.com/users/10871150/xi-gou",
+      Email: "mailto:gouxivae@gmail.com",
     },
   }),
 }
@@ -21,13 +23,14 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
+    Component.MobileOnly(Component.RecentNotes({title: "Recent", limit: 1 , linkToMore: "/tags"})),
   ],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.RecentNotes({title: "Recent", limit: 5 , linkToMore: "/tags"})),
   ],
   right: [
     Component.Graph(),
