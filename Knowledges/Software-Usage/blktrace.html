@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>blktrace</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto Mono&amp;family=Noto Sans SC:wght@400;700&amp;family=Noto Sans SC:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:title" content="blktrace"/><meta property="og:description" content="使用blktrace前提需要挂载debugfs。 mount –t debugfs debugfs /sys/kernel/debug 简介： 前言 1. blktrace的作者正是block io的maintainer，开发此工具，可以更好的追踪IO的过程。 2. blktrace 结合btt可以统计一个IO是在调度队列停留的时间长，还是在硬件上消耗的时间长，利用这个工具可以协助分析和优化问题。 blktrace的原理 一个I/O请求的处理过程，可以梳理为这样一张简单的图： ![](http://image 前言 blktrace的作者正是block io的maintainer，开发此工具，可以更好的追踪IO的过程。 blktrace 结合btt可以统计一个IO是在调度队列停留的时间长，还是在硬件上消耗的时间长，利用这个工具可以协助分析和优化问题。 blktrace的原理 一个I/O请求的处理过程，可以梳理为这样一张简单的图： 一个I/O请求进入block layer之后，可能会经历下面的过程： I/O enters block layer – it can be: Remapped onto another device (MD, DM) Split into 2 separate I/Os (alignment, size, …) Added to the request queue Merged with a previous entry on the queue All I/Os end up on a request queue at some point At some later time, the I/O is issued to a device driver, and submitted to a device Later, the I/O is completed by the device, and its driver blkparse显示的各指标点示意： Q-------&amp;amp;gt;G------------&amp;amp;gt;I---------&amp;amp;gt;M-------------------&amp;amp;gt;D-----------------------------&amp;amp;gt;C |-Q time-|-Insert time-| |--------- merge time ------------|-merge with other IO| |----------------scheduler time time-------------------|---driver,adapter,storagetime--| |----------------------- await time in iostat output ----------------------------------| 其中： Q2Q — time between requests sent to the block layer Q2G — time from a block I/O is queued to the time it gets a request allocated for it G2I — time from a request is allocated to the time it is Inserted into the device’s queue Q2M — time from a block I/O is queued to the time it gets merged with an existing request I2D — time from a request is inserted into the device’s queue to the time it is actually issued to the device M2D — time from a block I/O is merged with an exiting request until the request is issued to the device D2C — service time of the request by the device Q2C — total time spent in the block layer for a request blktrace 能够记录下IO所经历的各个步骤: blktrace的输出: 第一个字段：8,0 这个字段是设备号 major device ID和minor device ID。 第二个字段：3 表示CPU 第三个字段：11 序列号 第四个字段：0.009507758 Time Stamp是时间偏移 第五个字段：PID 本次IO对应的进程ID 第六个字段：Event，这个字段非常重要，反映了IO进行到了那一步 第七个字段：R表示 Read， W是Write，D表示block，B表示Barrier Operation 第八个字段：223490+56，表示的是起始block number 和 number of blocks，即我们常说的Offset 和 Size 第九个字段： 进程名 其中第六个字段非常有用：每一个字母都代表了IO请求所经历的某个阶段。 Q – 即将生成IO请求 | G – IO请求生成 | I – IO请求进入IO Scheduler队列 | D – IO请求进入driver | C – IO请求执行完毕 blktrace的用法 实际上blktrace仅仅是用来采集数据，数据的分析其实有很多辅助的工具，比如： blkparse btt blkiomon iowatcher 这些工具都是利用blktrace采集的数据，更好的分析，然后输出。 使用blktrace前提需要挂载debugfs。 mount –t debugfs debugfs /sys/kernel/debug 实时查看： blktrace只负责采集，blkparse 负责解析成适合人类看的文字： blktrace -o 指定输出 #blktrace -d /dev/sda -o - | blkparse -i - 先采集，再查看： 1."/><meta property="og:image" content="https://quartz.19960312.xyz/static/og-image.png"/><meta property="og:width" content="1200"/><meta property="og:height" content="675"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="使用blktrace前提需要挂载debugfs。 mount –t debugfs debugfs /sys/kernel/debug 简介： 前言 1. blktrace的作者正是block io的maintainer，开发此工具，可以更好的追踪IO的过程。 2. blktrace 结合btt可以统计一个IO是在调度队列停留的时间长，还是在硬件上消耗的时间长，利用这个工具可以协助分析和优化问题。 blktrace的原理 一个I/O请求的处理过程，可以梳理为这样一张简单的图： ![](http://image 前言 blktrace的作者正是block io的maintainer，开发此工具，可以更好的追踪IO的过程。 blktrace 结合btt可以统计一个IO是在调度队列停留的时间长，还是在硬件上消耗的时间长，利用这个工具可以协助分析和优化问题。 blktrace的原理 一个I/O请求的处理过程，可以梳理为这样一张简单的图： 一个I/O请求进入block layer之后，可能会经历下面的过程： I/O enters block layer – it can be: Remapped onto another device (MD, DM) Split into 2 separate I/Os (alignment, size, …) Added to the request queue Merged with a previous entry on the queue All I/Os end up on a request queue at some point At some later time, the I/O is issued to a device driver, and submitted to a device Later, the I/O is completed by the device, and its driver blkparse显示的各指标点示意： Q-------&amp;amp;gt;G------------&amp;amp;gt;I---------&amp;amp;gt;M-------------------&amp;amp;gt;D-----------------------------&amp;amp;gt;C |-Q time-|-Insert time-| |--------- merge time ------------|-merge with other IO| |----------------scheduler time time-------------------|---driver,adapter,storagetime--| |----------------------- await time in iostat output ----------------------------------| 其中： Q2Q — time between requests sent to the block layer Q2G — time from a block I/O is queued to the time it gets a request allocated for it G2I — time from a request is allocated to the time it is Inserted into the device’s queue Q2M — time from a block I/O is queued to the time it gets merged with an existing request I2D — time from a request is inserted into the device’s queue to the time it is actually issued to the device M2D — time from a block I/O is merged with an exiting request until the request is issued to the device D2C — service time of the request by the device Q2C — total time spent in the block layer for a request blktrace 能够记录下IO所经历的各个步骤: blktrace的输出: 第一个字段：8,0 这个字段是设备号 major device ID和minor device ID。 第二个字段：3 表示CPU 第三个字段：11 序列号 第四个字段：0.009507758 Time Stamp是时间偏移 第五个字段：PID 本次IO对应的进程ID 第六个字段：Event，这个字段非常重要，反映了IO进行到了那一步 第七个字段：R表示 Read， W是Write，D表示block，B表示Barrier Operation 第八个字段：223490+56，表示的是起始block number 和 number of blocks，即我们常说的Offset 和 Size 第九个字段： 进程名 其中第六个字段非常有用：每一个字母都代表了IO请求所经历的某个阶段。 Q – 即将生成IO请求 | G – IO请求生成 | I – IO请求进入IO Scheduler队列 | D – IO请求进入driver | C – IO请求执行完毕 blktrace的用法 实际上blktrace仅仅是用来采集数据，数据的分析其实有很多辅助的工具，比如： blkparse btt blkiomon iowatcher 这些工具都是利用blktrace采集的数据，更好的分析，然后输出。 使用blktrace前提需要挂载debugfs。 mount –t debugfs debugfs /sys/kernel/debug 实时查看： blktrace只负责采集，blkparse 负责解析成适合人类看的文字： blktrace -o 指定输出 #blktrace -d /dev/sda -o - | blkparse -i - 先采集，再查看： 1."/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="Knowledges/Software-Usage/blktrace"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">😄 Joker's Digital Garden</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button><div class="recent-notes desktop-only"><h3>Recent</h3><ul class="recent-ul"><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../../Travels/Shenzhen" class="internal">Shenzhen</a></h3></div><p class="meta">Sep 14, 2024</p><ul class="tags"></ul></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../../Travels/Shanghai" class="internal">Shanghai</a></h3></div><p class="meta">Sep 14, 2024</p><ul class="tags"></ul></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../../Travels/HongKong" class="internal">HongKong</a></h3></div><p class="meta">Sep 14, 2024</p><ul class="tags"></ul></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../../Travels/Guangzhou" class="internal">Guangzhou</a></h3></div><p class="meta">Sep 14, 2024</p><ul class="tags"></ul></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../../Travels/Beijing" class="internal">Beijing</a></h3></div><p class="meta">Sep 14, 2024</p><ul class="tags"></ul></div></li></ul><p><a href="../../tags">See 149 more →</a></p></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Knowledges/">Knowledges</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Knowledges/Software-Usage/">Software Usage</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>blktrace</a></div></nav><h1 class="article-title">blktrace</h1><p show-comma="true" class="content-meta"><span>Jan 05, 2024</span><span>14 min read</span></p><ul class="tags"><li><a href="../../tags/" class="internal tag-link"></a></li></ul><div class="recent-notes mobile-only"><h3>Recent</h3><ul class="recent-ul"><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../../Travels/Shenzhen" class="internal">Shenzhen</a></h3></div><p class="meta">Sep 14, 2024</p><ul class="tags"></ul></div></li></ul><p><a href="../../tags">See 153 more →</a></p></div></div></div><article class="popover-hint"><p>使用blktrace前提需要挂载debugfs。</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">mount</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">      –t</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> debugfs</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">    debugfs</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> /sys/kernel/debug</span></span></code></pre></figure>
+<p><strong>简介：</strong><a href="../.././../tags/" class="tag-link internal alias" data-slug="tags/index"></a> 前言 1. blktrace的作者正是block io的maintainer，开发此工具，可以更好的追踪IO的过程。 2. blktrace 结合btt可以统计一个IO是在调度队列停留的时间长，还是在硬件上消耗的时间长，利用这个工具可以协助分析和优化问题。<a href="../.././../tags/" class="tag-link internal alias" data-slug="tags/index"></a> blktrace的原理 一个I/O请求的处理过程，可以梳理为这样一张简单的图： ![](<a href="http://image" class="external">http://image<svg aria-hidden="true" class="external-icon" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h2 id="前言">前言<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#前言" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li>blktrace的作者正是block io的maintainer，开发此工具，可以更好的追踪IO的过程。</li>
+<li>blktrace 结合btt可以统计一个IO是在调度队列停留的时间长，还是在硬件上消耗的时间长，利用这个工具可以协助分析和优化问题。</li>
+</ol>
+<h2 id="blktrace的原理">blktrace的原理<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#blktrace的原理" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>一个I/O请求的处理过程，可以梳理为这样一张简单的图：</p>
+<p><img src="http://images2017.cnblogs.com/blog/970272/201711/970272-20171123172717508-1143457314.png?x-oss-process=image/resize,w_1400/format,webp" alt/></p>
+<h4 id="一个io请求进入block-layer之后可能会经历下面的过程">一个I/O请求进入block layer之后，可能会经历下面的过程：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#一个io请求进入block-layer之后可能会经历下面的过程" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>
+<p>I/O enters block layer – it can be:</p>
+<ul>
+<li>Remapped onto another device (MD, DM)</li>
+<li>Split into 2 separate I/Os (alignment, size, …)</li>
+<li>Added to the request queue</li>
+<li>Merged with a previous entry on the queue All I/Os end up on a request queue at some point</li>
+</ul>
+</li>
+<li>
+<p>At some later time, the I/O is issued to a device driver, and submitted to a device</p>
+</li>
+<li>
+<p>Later, the I/O is completed by the device, and its driver</p>
+</li>
+</ul>
+<h3 id="blkparse显示的各指标点示意">blkparse显示的各指标点示意：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#blkparse显示的各指标点示意" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code> Q-------&amp;gt;G------------&amp;gt;I---------&amp;gt;M-------------------&amp;gt;D-----------------------------&amp;gt;C
+ |-Q time-|-Insert time-|
+ |--------- merge time ------------|-merge with other IO|
+ |----------------scheduler time time-------------------|---driver,adapter,storagetime--|
+ 
+ |----------------------- await time in iostat output ----------------------------------|
+</code></pre>
+<p>其中：</p>
+<ul>
+<li>Q2Q — time between requests sent to the block layer</li>
+<li>Q2G — time from a block I/O is queued to the time it gets a request allocated for it</li>
+<li>G2I — time from a request is allocated to the time it is Inserted into the device’s queue</li>
+<li>Q2M — time from a block I/O is queued to the time it gets merged with an existing request</li>
+<li>I2D — time from a request is inserted into the device’s queue to the time it is actually issued to the device</li>
+<li>M2D — time from a block I/O is merged with an exiting request until the request is issued to the device</li>
+<li>D2C — service time of the request by the device</li>
+<li>Q2C — total time spent in the block layer for a request</li>
+</ul>
+<h4 id="blktrace-能够记录下io所经历的各个步骤">blktrace 能够记录下IO所经历的各个步骤:<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#blktrace-能够记录下io所经历的各个步骤" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><img src="http://images2017.cnblogs.com/blog/970272/201711/970272-20171123172811758-499318951.png?x-oss-process=image/resize,w_1400/format,webp" alt/></p>
+<p>blktrace的输出:</p>
+<p><img src="http://images2017.cnblogs.com/blog/970272/201711/970272-20171123172850274-409654510.png?x-oss-process=image/resize,w_1400/format,webp" alt/></p>
+<ul>
+<li>第一个字段：8,0 这个字段是设备号 major device ID和minor device ID。</li>
+<li>第二个字段：3 表示CPU</li>
+<li>第三个字段：11 序列号</li>
+<li>第四个字段：0.009507758 Time Stamp是时间偏移</li>
+<li>第五个字段：PID 本次IO对应的进程ID</li>
+<li>第六个字段：Event，这个字段非常重要，反映了IO进行到了那一步</li>
+<li>第七个字段：R表示 Read， W是Write，D表示block，B表示Barrier Operation</li>
+<li>第八个字段：223490+56，表示的是起始block number 和 number of blocks，即我们常说的Offset 和 Size</li>
+<li>第九个字段： 进程名</li>
+</ul>
+<p>其中第六个字段非常有用：每一个字母都代表了IO请求所经历的某个阶段。</p>
+<pre><code>Q – 即将生成IO请求
+|
+G – IO请求生成
+|
+I – IO请求进入IO Scheduler队列
+|
+D – IO请求进入driver
+|
+C – IO请求执行完毕
+</code></pre>
+<h2 id="blktrace的用法">blktrace的用法<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#blktrace的用法" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>实际上blktrace仅仅是用来采集数据，数据的分析其实有很多辅助的工具，比如：</p>
+<ol>
+<li>blkparse</li>
+<li>btt</li>
+<li>blkiomon</li>
+<li>iowatcher</li>
+</ol>
+<p>这些工具都是利用blktrace采集的数据，更好的分析，然后输出。</p>
+<p>使用blktrace前提需要挂载debugfs。</p>
+<pre><code>mount      –t debugfs    debugfs /sys/kernel/debug
+</code></pre>
+<h3 id="实时查看">实时查看：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#实时查看" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>blktrace只负责采集，blkparse 负责解析成适合人类看的文字：
+blktrace -o 指定输出
+#blktrace -d /dev/sda -o - | blkparse -i -
+</code></pre>
+<h3 id="先采集再查看">先采集，再查看：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#先采集再查看" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>1. 先采集，将会在当前目录获得一堆的文件,缺省的输出文件名是 sdb.blktrace.&amp;lt;cpu&amp;gt;，每个CPU对应一个文件。
+#blktrace /dev/sda /dev/sdb
+2. 给blkparse传递磁盘的名字，将会直接解析。
+#blkparse sda sdb
+</code></pre>
+<h3 id="blktrace产生的文件太零散怎么办">blktrace产生的文件太零散怎么办？<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#blktrace产生的文件太零散怎么办" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="生成采集文件">生成采集文件<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#生成采集文件" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<pre><code>#blktrace -d /dev/sda
+</code></pre>
+<h4 id="合并成一个二进制文件">合并成一个二进制文件<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#合并成一个二进制文件" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<pre><code>#blkparse -i sda -d sda.blktrace.bin
+</code></pre>
+<h4 id="其实我们还是嫌弃blkparse的输出太多不方便查看此时可以利用btt协助分析统计">其实我们还是嫌弃blkparse的输出太多，不方便查看，此时可以利用btt协助分析统计<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#其实我们还是嫌弃blkparse的输出太多不方便查看此时可以利用btt协助分析统计" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<pre><code>#btt -i sda.blktrace.bin -l sda.d2c_latency
+
+# 这里就可以看到，每个阶段，消耗的时间
+[root@localhost2 /data/sandbox/blktrace_test]
+#btt -i sda.blktrace.bin -l sda.d2c_latency
+==================== All Devices ====================
+
+            ALL           MIN           AVG           MAX           N
+--------------- ------------- ------------- ------------- -----------
+
+Q2Q               0.000000238   0.126069031   5.007614945          40
+Q2G               0.000000556   0.000001765   0.000006022          11
+G2I               0.000000528   0.000003506   0.000015113          11
+Q2M               0.000000135   0.000000209   0.000001162          30
+I2D               0.000000396   0.000001240   0.000003602          11
+M2D               0.000002235   0.000007047   0.000014071          30
+D2C               0.003104665   0.015828304   0.028136240          41
+Q2C               0.003117684   0.015835360   0.028138401          41
+
+# 这里看到整个IO下来，每个阶段所消耗的时间，占用百分比
+==================== Device Overhead ====================
+
+       DEV |       Q2G       G2I       Q2M       I2D       D2C
+---------- | --------- --------- --------- --------- ---------
+ (  8,  0) |   0.0030%   0.0059%   0.0010%   0.0021%  99.9554%
+---------- | --------- --------- --------- --------- ---------
+   Overall |   0.0030%   0.0059%   0.0010%   0.0021%  99.9554%
+
+==================== Device Merge Information ====================
+
+       DEV |       #Q       #D   Ratio |   BLKmin   BLKavg   BLKmax    Total
+---------- | -------- -------- ------- | -------- -------- -------- --------
+ (  8,  0) |       41       11     3.7 |        8       29      144      328
+ 
+</code></pre>
+<ul>
+<li>Q2I – time it takes to process an I/O prior to it being inserted or merged onto a request queue – Includes split, and remap time</li>
+<li>I2D – time the I/O is “idle” on the request queue</li>
+<li>D2C – time the I/O is “active” in the driver and on the device</li>
+<li>Q2I + I2D + D2C = Q2C</li>
+<li>Q2C: Total processing time of the I/O</li>
+</ul>
+<p>注意：</p>
+<p>D2C: 表征块设备性能的关键指标</p>
+<p>Q2C: 客户发起请求到收到响应的时间</p>
+<p>D2C 平均时间：0.015828304 秒，即15.82毫秒</p>
+<p>Q2C 平均时间：0.015835360 秒，即15.83毫秒</p>
+<p>平均下来，D2C 阶段消耗时间占比 99.9554%</p>
+<h4 id="上述命令其实还会产生一些dat文件可以看到iops信息">上述命令其实还会产生一些.dat文件，可以看到iops信息<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#上述命令其实还会产生一些dat文件可以看到iops信息" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<pre><code>#ll *.dat
+-rw-r--r-- 1 root root    6 Nov 21 14:51 8,0_iops_fp.dat
+-rw-r--r-- 1 root root   11 Nov 21 14:51 8,0_mbps_fp.dat
+-rw-r--r-- 1 root root 3006 Nov 21 14:51 sda.d2c_latency_8,0_d2c.dat
+-rw-r--r-- 1 root root    6 Nov 21 14:51 sys_iops_fp.dat
+-rw-r--r-- 1 root root   11 Nov 21 14:51 sys_mbps_fp.dat
+5. btt -q 
+#btt -i sda.blktrace.bin -q sda.q2c_latency
+</code></pre>
+<h4 id="文件解释">文件解释：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#文件解释" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><code>sys_mbps_fs.dat</code>: 本次统计中所有设备吞吐量</p>
+<p><code>sys_iops_fp.dat</code>: 中是本次统计中所有设备的IOPS</p>
+<p>每个请求的d2c的latency详情:</p>
+<pre><code>sda.d2c_latency_8,0_d2c.dat
+</code></pre>
+<h3 id="修改blkparse的输出格式">修改blkparse的输出格式：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#修改blkparse的输出格式" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>[root@localhost2 /data/sandbox]
+#blktrace -d /dev/sda -o - | blkparse -i - -f &quot;%D %2c %8s %5T.%9t %5p %2a %3d\n&quot;
+  8,0    9        1     0.000000000  8863  A   W
+</code></pre>
+<h3 id="一次io的生命周期direct-read-附录见测试代码">一次IO的生命周期：direct read 附录见测试代码<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#一次io的生命周期direct-read-附录见测试代码" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>[root@localhost /home/ahao.mah/sdc]
+#blktrace -d /dev/sdc  -o - | blkparse -i -
+
+  8,32   7        1     0.000000000  2923  Q   R 272208 + 2 [direct_io_read_]
+  8,32   7        2     0.000002526  2923  G   R 272208 + 2 [direct_io_read_]
+  8,32   7        3     0.000003142  2923  P   N [direct_io_read_]
+  8,32   7        4     0.000004575  2923  I   R 272208 + 2 [direct_io_read_]
+  8,32   7        5     0.000005402  2923  U   N [direct_io_read_] 1
+  8,32   7        6     0.000006775  2923  D   R 272208 + 2 [direct_io_read_]
+  8,32   7        7     0.000200150 32031  C   R 272208 + 2 [0]
+  
+以上就是一次IO请求的生命周期，从actions看到，分别是QGPIUDC
+Q：先产生一个该位置的IO意向插入到io队列，此时并没有真正的请求
+G：发送一个实际的Io请求给设备
+P（plugging）：插入：即等待即将到来的更多的io请求进入队列，以便系统能进行IO优化，减少执行IO请求时花的时间
+I：将IO请求进行调度，到这一步请求已经完全成型（formed）好了
+U (unplugging)：拔出，设备决定不再等待其他的IO请求并使得系统必须响应当前IO请求，将该IO请求传给设备驱动器。可以看到，在P和U之间会等待IO，然后进行调度。这里会对IO进行一点优化，
+ 但是程度很低，因为等待的时间很短，是纳秒级别的
+D ：发布刚才送入驱动器的IO请求
+C：结束IO请求，这里会返回一个执行状态：失败或者成功，在进程号处为0表示执行成功，反之则反
+到此一个IO的周期就结束了
+</code></pre>
+<h3 id="一次io的生命周期direct-write-附录见测试代码">一次IO的生命周期：direct write 附录见测试代码<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#一次io的生命周期direct-write-附录见测试代码" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>[root@localhost /home/ahao.mah/sdc]
+#taskset -c 1 ./direct_io_write_file_one &amp;amp;
+[1] 57376
+write success
+[1]+  Done                    taskset -c 1 ./direct_io_write_file_one
+</code></pre>
+<pre><code>[root@localhost /home/ahao.mah/blktrace/jiangyi]
+#time /usr/bin/blktrace  -w 100 -d /dev/sdc -o -  | /usr/bin/blkparse -w 100   -i -
+
+  8,32   1        1     0.000000000 57376  Q  WS 272208 + 2 [direct_io_write]
+  8,32   1        2     0.000005514 57376  G  WS 272208 + 2 [direct_io_write]
+  8,32   1        3     0.000006880 57376  P   N [direct_io_write]
+  8,32   1        4     0.000009793 57376  I  WS 272208 + 2 [direct_io_write]
+  8,32   1        5     0.000011264 57376  U   N [direct_io_write] 1
+  8,32   1        6     0.000013478 57376  D  WS 272208 + 2 [direct_io_write]
+  8,32   0        1     0.000281069     0  C  WS 272208 + 2 [0]
+</code></pre>
+<h3 id="blktrace--a-参数可以指定监控的动作">blktrace -a 参数可以指定监控的动作：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#blktrace--a-参数可以指定监控的动作" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>1.     blktrace /dev/block/mmcblk0p1 -o /data/trace  命令解析：监控mmcblk0p1块设备，将生成的文件存储在/data目录下，一共生成4个文件，文件以trace开头，分别为trace.blktrace.0  trace.blktrace.1 trace.blktrace.2trace.blktrace.3分别对应cpu0、cpu1、cpu2、cpu3
+2.     blktrace /dev/block/mmcblk0p1 -D /data/trace  命令解析：监控mmcblk0p1块设备，在/data目录下建立一个名字为trace的文件夹，trace文件夹下存放的是名字为                                                                   mmcblk0p1.blktrace.0mmcblk0p1.blktrace.1 mmcblk0p1.blktrace.2 mmcblk0p1.blktrace.3                                                                   分别对应cpu0 cpu1 cpu2 cpu3
+3.     blktrace /dev/block/mmcblk0p1 -o /data/trace -w 10  命令解析：-w 选项表示多长时间之后停止监控(单位：秒）  -w 10 表示10秒之后停止监控
+4.     blktrace /dev/block/mmcblk0p1 -o /data/trace -a WRITE   命令解析：-a 代表只监控写操作
+选项 -a action 表示要监控的动作，action的动作有：
+READ （读）
+WRITE（写）
+BARRIER
+SYNC
+QUEUE
+REQUEUE
+ISSUE
+COMPLETE
+FS
+PC
+</code></pre>
+<h2 id="其他工具blkiomon">其他工具:blkiomon<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#其他工具blkiomon" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>对设备/dev/sda的io监控120秒，每2秒显示一次</p>
+<pre><code># blktrace /dev/sda -a issue -a complete -w 120 -o - | blkiomon  -I 2 -h -
+</code></pre>
+<pre><code>[root@localhost2 /data/sandbox/blktrace_test]
+# blktrace /dev/sda -a issue -a complete -w 120 -o - | blkiomon  -I 2 -h -
+
+time: Tue Nov 21 14:04:48 2017
+device: 8,0
+sizes read (bytes): num 0, min -1, max 0, sum 0, squ 0, avg 0.0, var 0.0
+sizes write (bytes): num 2, min 4096, max 49152, sum 53248, squ 2432696320, avg 26624.0, var 507510784.0
+d2c read (usec): num 0, min -1, max 0, sum 0, squ 0, avg 0.0, var 0.0
+d2c write (usec): num 2, min 8322, max 10708, sum 19030, squ 183916948, avg 9515.0, var 1423249.0
+throughput read (bytes/msec): num 0, min -1, max 0, sum 0, squ 0, avg 0.0, var 0.0
+throughput write (bytes/msec): num 2, min 492, max 4590, sum 5082, squ 21310164, avg 2541.0, var 4198401.0
+sizes histogram (bytes):
+            0:     0         1024:     0         2048:     0         4096:     1
+         8192:     0        16384:     0        32768:     0        65536:     1
+       131072:     0       262144:     0       524288:     0      1048576:     0
+      2097152:     0      4194304:     0      8388608:     0    &amp;gt; 8388608:     0
+d2c histogram (usec):
+            0:     0            8:     0           16:     0           32:     0
+           64:     0          128:     0          256:     0          512:     0
+         1024:     0         2048:     0         4096:     0         8192:     0
+        16384:     2        32768:     0        65536:     0       131072:     0
+       262144:     0       524288:     0      1048576:     0      2097152:     0
+      4194304:     0      8388608:     0     16777216:     0     33554432:     0
+    &amp;gt;33554432:     0
+bidirectional requests: 0
+</code></pre>
+<h2 id="ref">Ref<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ref" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><a href="http://man7.org/linux/man-pages/man1/iowatcher.1.html" class="external">iowatcher man<svg aria-hidden="true" class="external-icon" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p><a href="http://www.cse.unsw.edu.au/~aaronc/iosched/doc/blktrace.html" class="external">http://www.cse.unsw.edu.au/~aaronc/iosched/doc/blktrace.html<svg aria-hidden="true" class="external-icon" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p><a href="http://duch.mimuw.edu.pl/~lichota/09-10/Optymalizacja-open-source/Materialy/10%20-%20Dysk/gelato_ICE06apr_blktrace_brunelle_hp.pdf" class="external">blktrace PDF<svg aria-hidden="true" class="external-icon" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p><a href="http://bean-li.github.io/blktrace-to-report/" class="external">blktrace分析IO<svg aria-hidden="true" class="external-icon" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p><a href="http://blog.csdn.net/u012317833/article/details/23275005" class="external">http://blog.csdn.net/u012317833/article/details/23275005<svg aria-hidden="true" class="external-icon" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h3 id="blktrace-git">blktrace git<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#blktrace-git" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>git clone git://git.kernel.dk/blktrace.git
+</code></pre>
+<h3 id="测试代码">测试代码<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#测试代码" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>#cat direct_io_read_file_one.c
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+#include &amp;lt;unistd.h&amp;gt;
+#include &amp;lt;sys/file.h&amp;gt;
+#include &amp;lt;sys/types.h&amp;gt;
+#include &amp;lt;sys/stat.h&amp;gt;
+#include &amp;lt;string.h&amp;gt;
+#define BUF_SIZE 1024
+
+int main()
+{
+    int fd;
+    int ret;
+    unsigned char *buf;
+    ret = posix_memalign((void **)&amp;amp;buf, 512, BUF_SIZE);
+    if (ret) {
+        perror(&quot;posix_memalign failed&quot;);
+        exit(1);
+    }
+
+    fd = open(&quot;./direct_io.data&quot;, O_RDONLY | O_DIRECT, 0755);
+    if (fd &amp;lt; 0){
+        perror(&quot;open ./direct_io.data failed&quot;);
+        exit(1);
+    }
+
+    ret = read(fd, buf, BUF_SIZE);
+    if (ret &amp;lt; 0) {
+        perror(&quot;write ./direct_io.data failed&quot;);
+    }
+
+    free(buf);
+    close(fd);
+}
+</code></pre>
+<pre><code>[root@localhost /home/ahao.mah/sdc]
+#cat  direct_io_write_file_one.c
+#define _GNU_SOURCE
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+#include &amp;lt;unistd.h&amp;gt;
+#include &amp;lt;sys/file.h&amp;gt;
+#include &amp;lt;sys/types.h&amp;gt;
+#include &amp;lt;sys/stat.h&amp;gt;
+#include &amp;lt;string.h&amp;gt;
+#define BUF_SIZE 1024
+
+int main(int argc, char * argv[])
+{
+    int fd;
+    int ret;
+    unsigned char *buf;
+    ret = posix_memalign((void **)&amp;amp;buf, 512, BUF_SIZE);
+    if (ret) {
+        perror(&quot;posix_memalign failed&quot;);
+        exit(1);
+    }
+    memset(buf, 'c', BUF_SIZE);
+
+    fd = open(&quot;./direct_io.data&quot;, O_WRONLY | O_CREAT | O_DIRECT, 0755);
+    if (fd &amp;lt; 0){
+        perror(&quot;open ./direct_io.data failed&quot;);
+        free(buf);
+        exit(1);
+    }
+
+    ret = write(fd, buf, BUF_SIZE);
+    if (ret &amp;lt; 0) {
+        perror(&quot;write ./direct_io.data failed&quot;);
+    } else {
+        printf(&quot;write success\n&quot;);
+    }
+
+    free(buf);
+    close(fd);
+}
+</code></pre>
+<p><a href="https://developer.aliyun.com/article/698568" class="external">IO神器blktrace使用介绍-阿里云开发者社区<svg aria-hidden="true" class="external-icon" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#前言" data-for="前言">前言</a></li><li class="depth-0"><a href="#blktrace的原理" data-for="blktrace的原理">blktrace的原理</a></li><li class="depth-1"><a href="#blkparse显示的各指标点示意" data-for="blkparse显示的各指标点示意">blkparse显示的各指标点示意：</a></li><li class="depth-0"><a href="#blktrace的用法" data-for="blktrace的用法">blktrace的用法</a></li><li class="depth-1"><a href="#实时查看" data-for="实时查看">实时查看：</a></li><li class="depth-1"><a href="#先采集再查看" data-for="先采集再查看">先采集，再查看：</a></li><li class="depth-1"><a href="#blktrace产生的文件太零散怎么办" data-for="blktrace产生的文件太零散怎么办">blktrace产生的文件太零散怎么办？</a></li><li class="depth-1"><a href="#修改blkparse的输出格式" data-for="修改blkparse的输出格式">修改blkparse的输出格式：</a></li><li class="depth-1"><a href="#一次io的生命周期direct-read-附录见测试代码" data-for="一次io的生命周期direct-read-附录见测试代码">一次IO的生命周期：direct read 附录见测试代码</a></li><li class="depth-1"><a href="#一次io的生命周期direct-write-附录见测试代码" data-for="一次io的生命周期direct-write-附录见测试代码">一次IO的生命周期：direct write 附录见测试代码</a></li><li class="depth-1"><a href="#blktrace--a-参数可以指定监控的动作" data-for="blktrace--a-参数可以指定监控的动作">blktrace -a 参数可以指定监控的动作：</a></li><li class="depth-0"><a href="#其他工具blkiomon" data-for="其他工具blkiomon">其他工具:blkiomon</a></li><li class="depth-0"><a href="#ref" data-for="ref">Ref</a></li><li class="depth-1"><a href="#blktrace-git" data-for="blktrace-git">blktrace git</a></li><li class="depth-1"><a href="#测试代码" data-for="测试代码">测试代码</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li>No backlinks found</li></ul></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.3.1</a> © 2024</p><ul><li><a href="https://github.com/XiGou">GitHub</a></li><li><a href="https://linkedin.com/in/xigou">Linkedin</a></li><li><a href="https://stackoverflow.com/users/10871150/xi-gou">StackOverflow</a></li><li><a href="mailto:gouxivae@gmail.com">Email</a></li></ul></footer></div></body><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script type="module">
+          let mermaidImport = undefined
+          document.addEventListener('nav', async () => {
+            if (document.querySelector("code.mermaid")) {
+              mermaidImport ||= await import('https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs')
+              const mermaid = mermaidImport.default
+              const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
+              mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: darkMode ? 'dark' : 'default'
+              })
+
+              await mermaid.run({
+                querySelector: '.mermaid'
+              })
+            }
+          });
+          </script><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../../postscript.js" type="module"></script></html>
