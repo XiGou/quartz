@@ -116,6 +116,9 @@
     <loc>https://quartz.19960312.xyz/Collections/BibleReading/II_Chronicles</loc>
     <lastmod>2024-08-27T00:22:33.000Z</lastmod>
   </url><url>
+    <loc>https://quartz.19960312.xyz/Collections/BibleReading/II_Esdras</loc>
+    <lastmod>2024-10-05T22:22:33.000Z</lastmod>
+  </url><url>
     <loc>https://quartz.19960312.xyz/Collections/BibleReading/II_Kings</loc>
     <lastmod>2024-08-27T00:22:33.000Z</lastmod>
   </url><url>
@@ -124,6 +127,9 @@
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/BibleReading/I_Chronicles</loc>
     <lastmod>2024-08-27T00:22:33.000Z</lastmod>
+  </url><url>
+    <loc>https://quartz.19960312.xyz/Collections/BibleReading/I_Esdras</loc>
+    <lastmod>2024-10-05T22:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/BibleReading/I_Kings</loc>
     <lastmod>2024-08-27T00:22:33.000Z</lastmod>
@@ -149,17 +155,20 @@
     <loc>https://quartz.19960312.xyz/Collections/BibleReading/Ruth</loc>
     <lastmod>2024-03-24T00:22:33.000Z</lastmod>
   </url><url>
+    <loc>https://quartz.19960312.xyz/Collections/BibleReading/Tobit</loc>
+    <lastmod>2024-10-05T22:22:33.000Z</lastmod>
+  </url><url>
     <loc>https://quartz.19960312.xyz/Collections/Bookmarks/AI_Related</loc>
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/Bookmarks/Career</loc>
-    <lastmod>2024-09-30T09:34:43.006Z</lastmod>
+    <lastmod>2024-10-11T01:42:10.458Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/Bookmarks/Computer_Science_and_Tech</loc>
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/Bookmarks/Internet_Communities</loc>
-    <lastmod>2024-09-30T09:34:43.024Z</lastmod>
+    <lastmod>2024-10-11T01:42:10.469Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/Bookmarks/Internet_Resource</loc>
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
@@ -243,13 +252,13 @@
     <lastmod>2016-01-13T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/OpensourceProject/C++-Dev</loc>
-    <lastmod>2024-09-30T09:34:43.236Z</lastmod>
+    <lastmod>2024-10-11T01:42:10.676Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/OpensourceProject/Database</loc>
-    <lastmod>2024-09-30T09:34:43.237Z</lastmod>
+    <lastmod>2024-10-11T01:42:10.677Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/OpensourceProject/Golang-Dev</loc>
-    <lastmod>2024-09-30T09:34:43.239Z</lastmod>
+    <lastmod>2024-10-11T01:42:10.678Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/OpensourceProject/Markdown-to-Notion-Projects</loc>
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
@@ -261,7 +270,7 @@
     <lastmod>2024-02-05T17:14:31.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/Others/2024-09-29-1409</loc>
-    <lastmod>2024-09-30T09:34:43.259Z</lastmod>
+    <lastmod>2024-10-11T01:42:10.700Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/Others/Baofuzi-writing</loc>
     <lastmod>2024-02-21T00:22:33.000Z</lastmod>
@@ -282,7 +291,7 @@
     <lastmod>2024-02-21T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/References/79625277-d86a-4102-966d-e8ae0a1713e6</loc>
-    <lastmod>2024-09-30T09:34:43.516Z</lastmod>
+    <lastmod>2024-10-11T01:42:10.958Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Collections/Society/Articles-from-who-worked-for-PDD-for-8-months-and-was-acquired-for-a-compensation-of-RMB-260K</loc>
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
@@ -303,28 +312,28 @@
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/DG_index_pages/All-My-Travels</loc>
-    <lastmod>2024-09-30T09:34:43.574Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.012Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/DG_index_pages/Jiangxuan-Workshop</loc>
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/CPP/Dev-Env-Setup</loc>
-    <lastmod>2024-09-30T09:34:43.591Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.029Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/CPP/How_to_check_glibc_version_of_a_binary_in-build_time</loc>
-    <lastmod>2024-09-30T09:34:43.595Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.031Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/CPP/Repost-gcc_g++_args_should_put_in_order</loc>
-    <lastmod>2024-09-30T09:34:43.598Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.035Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/CentOS/RPM</loc>
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Git</loc>
-    <lastmod>2024-09-30T09:34:43.607Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.046Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Python/analyze-packages-imported-by-python-project</loc>
-    <lastmod>2024-09-30T09:34:43.618Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.053Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Software-Usage/CICD-System</loc>
     <lastmod>2024-02-05T17:14:31.000Z</lastmod>
@@ -339,22 +348,22 @@
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Software-Usage/GNU-Global</loc>
-    <lastmod>2024-09-30T09:34:43.691Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.130Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Software-Usage/Knowledge-Management-Software</loc>
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Software-Usage/Nmap</loc>
-    <lastmod>2024-09-30T09:34:43.701Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.138Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Software-Usage/Observability</loc>
-    <lastmod>2024-09-30T09:34:43.704Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.140Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Software-Usage/Syncthing</loc>
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Software-Usage/Terminal</loc>
-    <lastmod>2024-09-30T09:34:43.723Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.164Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/Software-Usage/blktrace</loc>
     <lastmod>2024-01-05T17:14:31.000Z</lastmod>
@@ -369,7 +378,7 @@
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</loc>
-    <lastmod>2024-09-30T09:34:43.787Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.208Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/iscsiadm-common-commands</loc>
     <lastmod>2022-11-05T00:22:33.000Z</lastmod>
@@ -417,10 +426,10 @@
     <lastmod>2024-02-20T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Readings/Articles/Others/What-is-the-differences-between-PDF-Mobi-Epub-of-EBook-formats</loc>
-    <lastmod>2024-09-30T09:34:43.964Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.378Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Readings/Articles/Tech/Hardware</loc>
-    <lastmod>2024-09-30T09:34:43.968Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.382Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Readings/Books/Books-2023</loc>
     <lastmod>2023-02-05T00:22:33.000Z</lastmod>
@@ -444,25 +453,28 @@
     <lastmod>2023-02-05T00:22:33.000Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Readings/Papers/Papers</loc>
-    <lastmod>2024-09-30T09:34:44.091Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.505Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Readings/Videos/Videos</loc>
-    <lastmod>2024-09-30T09:34:44.105Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.522Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Travels/Beijing</loc>
-    <lastmod>2024-09-30T09:34:44.107Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.524Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Travels/Guangzhou</loc>
-    <lastmod>2024-09-30T09:34:44.110Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.527Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Travels/HongKong</loc>
-    <lastmod>2024-09-30T09:34:44.111Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.529Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Travels/Shanghai</loc>
-    <lastmod>2024-09-30T09:34:44.114Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.531Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/Travels/Shenzhen</loc>
-    <lastmod>2024-09-30T09:34:44.127Z</lastmod>
+    <lastmod>2024-10-11T01:42:11.535Z</lastmod>
+  </url><url>
+    <loc>https://quartz.19960312.xyz/Travels/Yangjiang</loc>
+    <lastmod>2024-10-11T01:42:11.544Z</lastmod>
   </url><url>
     <loc>https://quartz.19960312.xyz/</loc>
     <lastmod>2023-09-05T00:22:33.000Z</lastmod>
