@@ -23,14 +23,13 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
-    Component.MobileOnly(Component.RecentNotes({title: "Recent", limit: 1 , linkToMore: "/tags"})),
   ],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.RecentNotes({title: "Recent", limit: 5 , linkToMore: "/tags"})),
+    Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
     Component.Graph(),
