@@ -214,11 +214,11 @@ This issue is easy to resolve, docker is a powerful weapon deal with the depende
 <p>That’s all we need to do, we now have a docker image provide our Command Line as-a Service. We can run a container from this image as a daemon server through command bellow:</p>
 <figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">docker</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> run</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -d</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -p</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> 8000:8000</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> cmd2web_wooey:latest</span></span></code></pre></figure>
 <p>Now we can assess our Command Line WebUI in browser through <a href="http://IP:8000" class="external">http://IP:8000<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
-<p><img src="https://r2.blog-image.19960312.xyz/JlRaGqx.png" alt="Imgur"/></p>
+<p><img src="../images/JlRaGqx.png" width="auto" height="auto" alt/></p>
 <p>Click the “wooey_entry_cmd” script, that is the name of our python command line script, then set the arguments through the WebUI, click “submit” to run the command.</p>
-<p><img src="https://r2.blog-image.19960312.xyz/OiGSCKa.png" alt="Imgur"/></p>
+<p><img src="../images/OiGSCKa.png" width="auto" height="auto" alt/></p>
 <p>Wait a moment, and we can get the console output and the generated empty file from the result.</p>
-<p><img src="https://r2.blog-image.19960312.xyz/ykgGckZ.png" alt="Imgur"/></p>
+<p><img src="../images/ykgGckZ.png" width="auto" height="auto" alt/></p>
 <p>code of this post are published on:</p>
 <p><a href="https://github.com/XiGou/cmd2web_wooey" class="external">https://github.com/XiGou/cmd2web_wooey<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
 <p>Refs:</p>
