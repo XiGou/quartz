@@ -6,65 +6,65 @@
       <description>Last 10 notes on 😄 Jorge&#039;s Digital Garden</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>Alpine Linux Usage</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Linux/Alpine</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Linux/Alpine</guid>
-    <description>Install setup-alpine when setting apk mirror, don’t use auto select fastest mirror, it takes a long time.</description>
-    <pubDate>Tue, 22 Apr 2025 08:19:15 GMT</pubDate>
+    <title>Books-2023</title>
+    <link>https://quartz.19960312.xyz/Readings/Books/Books-2023</link>
+    <guid>https://quartz.19960312.xyz/Readings/Books/Books-2023</guid>
+    <description>苟熙 个人博客 gouxi xigou 程序员 Developer</description>
+    <pubDate>Mon, 28 Apr 2025 05:13:03 GMT</pubDate>
   </item><item>
-    <title>Mount iso as yum repo</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Linux/Mount-iso-as-yum-repo</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Linux/Mount-iso-as-yum-repo</guid>
-    <description>要将 CentOS ISO 挂载为本地软件包仓库（repo），可以按照以下步骤进行操作： 创建一个目录来挂载 ISO 文件： sudo mkdir /mnt/iso 这将在 /mnt/iso 目录下创建一个用于挂载 ISO 的目录。 挂载 CentOS ISO 文件到指定目录： sudo mount -o loop /path/to/centos.iso /mnt/iso 将 /path/to/centos.iso 替换为实际的 CentOS ISO 文件路径。这将将 ISO 文件挂载到 /mnt/iso 目录下。 创建一个新的 repo 配置文件： sudo vi /etc/yum.repo...</description>
-    <pubDate>Tue, 22 Apr 2025 08:19:15 GMT</pubDate>
+    <title>Books-2024</title>
+    <link>https://quartz.19960312.xyz/Readings/Books/Books-2024</link>
+    <guid>https://quartz.19960312.xyz/Readings/Books/Books-2024</guid>
+    <description>Linux 内核设计的艺术: 图解Linux操作系统架构设计与实现原理 这是一本彻头彻尾的垃圾书，一看就是沽名钓誉的🐶教授指使研究生写的。 曾经有作家说过，在科普读物中每多一个公式你的读者就会减少10%，计算机科学领域书籍也是样的，每多一行代码读者就会喷你一次。 我认为计算机科学的书籍应该只允许使用伪代码。否则这样的作者更像是在向读者炫耀：看我多牛逼能看懂这里的代码，而不是传递知识与思想。 当然也不能完全否认这本书作者的工作，这书更像是一本说明书性质的东西 「死亡赋格」-保罗·策兰 读「死亡赋格」-保罗·策兰 沙之书 读博尔赫斯《沙之书》 小径分岔的花园 博尔赫斯 阿莱夫 博尔赫斯 我想在神...</description>
+    <pubDate>Mon, 28 Apr 2025 05:13:03 GMT</pubDate>
   </item><item>
-    <title>RPM</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Linux/RPM</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Linux/RPM</guid>
-    <description>How to check RPM Dependencies 有以下几种方法可以查看一个RPM软件包的依赖关系: 使用rpm命令的-qR参数 rpm -qR package.rpm 可以查看直接依赖的软件包。 使用yum本地仓库 yum deplist package.rpm 可以查看详细的依赖树信息。 解开RPM包查看spec文件 每一个RPM软件包里都包含一个spec文件,可以直接查看其中的依赖声明。 查看RPM数据库 yumdownloader --resolve package.rpm 可以在本地yum数据库中解析所有依赖关系。 使用rpmlint检查包 rpmlint package....</description>
-    <pubDate>Tue, 22 Apr 2025 08:19:15 GMT</pubDate>
+    <title>Books-2025</title>
+    <link>https://quartz.19960312.xyz/Readings/Books/Books-2025</link>
+    <guid>https://quartz.19960312.xyz/Readings/Books/Books-2025</guid>
+    <description>山寨-中国式解构 作者: [德] 韩炳哲 中国的哲学是从解构开始，而中国不认同柏拉图那种美好的善意是永恒不变的假设，他们认为一切都是在变化的 作者将原创品类比为真理，它是超越的，是永恒不变的，能够对抗变化化。而中国人喜欢赝品，认可赝品，社会以另外一种包容的方式来运行。实际上韩炳哲他并没有批判山寨产品，相反，他认为山寨本身就是一种再创造，如果不认可山寨的创造性的地位，就无法超越山寨。 这一点我想腾讯是做的最好的，谁敢山寨他，他就会把对手的功能全部抄过来，反过来又把别人超越。当他抄袭别人的时候，他总会比别人更胜一筹，将整个市场全部吃下。 东亚地区不崇拜原始统一的东西，也不崇拜古迹真迹，天生就拥有不...</description>
+    <pubDate>Mon, 28 Apr 2025 05:13:03 GMT</pubDate>
   </item><item>
-    <title>nc 命令</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Linux/nc-%E5%91%BD%E4%BB%A4</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Linux/nc-%E5%91%BD%E4%BB%A4</guid>
-    <description>一个服务仅仅监听 127.0.0.1， 我如何将外部请求通过 nc 转发过去 你可以使用 nc（Netcat）来实现简单的端口转发，将外部请求转发到仅监听 127.0.0.1 的服务。以下是一个常见的实现方法： 示例 假设服务监听在 127.0.0.1:8080，你希望将外部的 0.0.0.0:9090 转发到 127.0.0.1:8080。 启动转发： 在终端运行以下命令： nc -lk -p 9090 -c &quot;nc 127.0.0.1 8080&quot; -l：监听模式。 -k：保持连接（允许多个客户端连接）。 -p 9090：监听外部的端口 9090。 -c &quot;nc...</description>
-    <pubDate>Tue, 22 Apr 2025 08:19:15 GMT</pubDate>
+    <title>王家卫</title>
+    <link>https://quartz.19960312.xyz/Readings/Movies/Kar-Wai-Wong</link>
+    <guid>https://quartz.19960312.xyz/Readings/Movies/Kar-Wai-Wong</guid>
+    <description>王家卫</description>
+    <pubDate>Mon, 28 Apr 2025 05:13:03 GMT</pubDate>
   </item><item>
-    <title>analyze packages imported by python project</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Python/analyze-packages-imported-by-python-project</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Python/analyze-packages-imported-by-python-project</guid>
-    <description>import os import re def analyze_imports(project_path): imports = set() for root, dirs, files in os.walk(project_path): for file in files: if file.endswith(&quot;.py&quot;): file_path = os.path.join(root, file) with open(file_path, &quot;r&quot;) as f: lines = f.readlines() for line in lines: if line...</description>
-    <pubDate>Tue, 22 Apr 2025 08:19:15 GMT</pubDate>
+    <title>Others</title>
+    <link>https://quartz.19960312.xyz/Readings/Movies/Others</link>
+    <guid>https://quartz.19960312.xyz/Readings/Movies/Others</guid>
+    <description>苟熙 个人博客 gouxi xigou 程序员 Developer</description>
+    <pubDate>Mon, 28 Apr 2025 05:13:03 GMT</pubDate>
   </item><item>
-    <title>Calibra: Ebook Management System</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Software-Usage/Calibra</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Software-Usage/Calibra</guid>
-    <description> Github Repo GitHub - janeczku/calibre-web: :books: Web app for browsing, reading and downloading eBooks stored in a Calibre database Webui can be found at http://your-ip:8083 --- services: calibre-web: image: lscr.io/linuxserver/calibre-web:latest container_name: calibre-web environment: - PUID=100...</description>
-    <pubDate>Tue, 22 Apr 2025 08:19:15 GMT</pubDate>
+    <title>福禄寿</title>
+    <link>https://quartz.19960312.xyz/Readings/Music/Fulushou_FloruitShow</link>
+    <guid>https://quartz.19960312.xyz/Readings/Music/Fulushou_FloruitShow</guid>
+    <description>苟熙 个人博客 gouxi xigou 程序员 Developer</description>
+    <pubDate>Mon, 28 Apr 2025 05:13:03 GMT</pubDate>
   </item><item>
-    <title>Git Format-Patch</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Software-Usage/Git-Format-Patch</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Software-Usage/Git-Format-Patch</guid>
-    <description>TL;DR; 生成 patch：git format-patch &lt;commit-range&gt;。 传输：手动或用工具（如 scp）。 应用： git apply：只应用更改。 git am：应用并创建 commit（推荐）。 这个方法简单高效，适合跨机器共享代码。 在 Git 中，你可以将某个 commit 转换为 patch 文件，然后传输到另一台机器上并应用（apply）。这个过程通常用于在无法直接推送（push）或拉取（pull）的情况下共享更改，例如通过电子邮件或手动文件传输。以下是具体的步骤和命令： 步骤 1：在源机器上生成 Patch 文件 使用 git format-...</description>
-    <pubDate>Tue, 22 Apr 2025 08:19:15 GMT</pubDate>
+    <title>Papers</title>
+    <link>https://quartz.19960312.xyz/Readings/Papers/Papers</link>
+    <guid>https://quartz.19960312.xyz/Readings/Papers/Papers</guid>
+    <description>梭罗的极简主义生活智慧及其启示 323950844.pdf ［摘 要］极简主义原是西方一种现代艺术流派，其核心理念是崇尚简约。而作为一种生活方式的极简主义，梭罗早在 19 世纪就践行过：他通过对“步行”“奢侈”与“文明”的深刻反思，认为应简化人的物质需求，倡导追求精神上的自由，从而促进人与自然和谐共生。 当前正处于生态危机的时代，亟需提倡这样一种极简主义的生活方式。梭罗的极简主义生活智慧对于我国的生态文明建设具有重要的启示作用，有助于实现全社会 的生态幸福。 ［关键词］梭罗；极简主义；精神自由；生态幸福 Bitcoin- A Peer-to-Peer Electronic Cash Syste...</description>
+    <pubDate>Mon, 28 Apr 2025 05:13:03 GMT</pubDate>
   </item><item>
-    <title>Git Proxy Configuration</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Software-Usage/Git-Proxy-Configuration</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Software-Usage/Git-Proxy-Configuration</guid>
-    <description>Git 配置代理的方法 Git 支持 HTTP(S) 代理 和 SOCKS 代理，可以针对全局或单个仓库进行配置。 1.</description>
-    <pubDate>Tue, 22 Apr 2025 08:19:15 GMT</pubDate>
+    <title>Videos</title>
+    <link>https://quartz.19960312.xyz/Readings/Videos/Videos</link>
+    <guid>https://quartz.19960312.xyz/Readings/Videos/Videos</guid>
+    <description>EU PyCon 的 JIT 三十分钟教程 Antonio Cuni - How to write a JIT compiler in 30 minutes - YouTube EU PyCon 的 JIT 三十分钟教程，感觉讲的非常的好，建议感兴趣的同学可以看下 .</description>
+    <pubDate>Mon, 28 Apr 2025 05:13:03 GMT</pubDate>
   </item><item>
-    <title>Git</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Software-Usage/Git</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Software-Usage/Git</guid>
-    <description>Config email and username: git config --global user.name &quot;username&quot; git config --global user.email useremail@qq.com git config --global core.editor vim git config --global credential.helper store git config --list HTTP Credential 首先打开 git config --global credential.helper store 然后生成一个 PTA ...</description>
-    <pubDate>Tue, 22 Apr 2025 08:19:15 GMT</pubDate>
+    <title>Friends</title>
+    <link>https://quartz.19960312.xyz/About/Friends</link>
+    <guid>https://quartz.19960312.xyz/About/Friends</guid>
+    <description> LinkDescriptionhayami’s blog文艺青年，原教旨女权(经典观点：男性要坐着尿尿)洋同学的宏观笔记搜集赛里斯政策资料Reimu’s blogReading&amp;ThinkingAlexandra ZahariaTech BlogYIRAN’S BLOG每周记录.</description>
+    <pubDate>Mon, 28 Apr 2025 05:13:03 GMT</pubDate>
   </item><item>
-    <title>Nmap</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Software-Usage/Nmap</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Software-Usage/Nmap</guid>
-    <description>Nmap（Network Mapper）是一个用于网络探测和安全评估的强大工具。要扫描常见的端口，你可以使用以下命令： nmap -p 1-1024 &lt;目标IP或主机名&gt;.</description>
-    <pubDate>Tue, 22 Apr 2025 08:19:15 GMT</pubDate>
+    <title>各种排序算法的介绍与实现</title>
+    <link>https://quartz.19960312.xyz/Blog/2017-06-5-sort_agrithon</link>
+    <guid>https://quartz.19960312.xyz/Blog/2017-06-5-sort_agrithon</guid>
+    <description>写在前边：这篇文章又臭又长，纯属个人无聊总结之作。 [TOC] 排序算法在计算机界是很基础，很重要的，对人类也是至关重要的，没有排序算法，就难以把人类分成三六九等区别对待了，那样的世界真是无法想象啊。 为了演示方便，此文排序的对象都是一个 int 类型的 vector，其中交换两个元素，采用了位运算，至于为什么，第一是我恰好会，第二是，我认为这三行写在一起有一种独特的美感。 vec[i]=vec[j]^vec[i]; vec[j]=vec[j]^vec[i]; vec[i]=vec[j]^vec[i]; (看起来似乎有点画蛇添足了，还不如。sort()…)。 1.菜鸟排序 这个排序算法，是所有...</description>
+    <pubDate>Mon, 28 Apr 2025 05:13:03 GMT</pubDate>
   </item>
     </channel>
   </rss>
