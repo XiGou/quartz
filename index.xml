@@ -6,65 +6,65 @@
       <description>Last 10 notes on 😄 Jorge&#039;s Digital Garden</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>保安，中国新兴的实权角色</title>
-    <link>https://quartz.19960312.xyz/Blog/2022-10-22-new-powerful-role-security-guard</link>
-    <guid>https://quartz.19960312.xyz/Blog/2022-10-22-new-powerful-role-security-guard</guid>
-    <description>一位红遍中国互联网的青年保安陈义曾经说过：如果 2019 年你还没有从事保安，那你就真的 out 了！这句话从陈义那表情夸张的脸上的口中说出来有一股自嘲的味道，但是在今天这个时间复述这句话，却是意味深长而又富有远见的观点.</description>
-    <pubDate>Wed, 04 Jun 2025 03:43:08 GMT</pubDate>
+    <title>Demangling compiled C++ names with c++filt</title>
+    <link>https://quartz.19960312.xyz/Knowledges/CPP/Demangling-compiled-C++-names-with-c++filt</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/CPP/Demangling-compiled-C++-names-with-c++filt</guid>
+    <description>IBM Documentation.</description>
+    <pubDate>Fri, 04 Jul 2025 05:01:55 GMT</pubDate>
   </item><item>
-    <title>真正的核酸爱好者：一天做五次</title>
-    <link>https://quartz.19960312.xyz/Blog/2022-11-13-finish-5-covid-test-in-one-day</link>
-    <guid>https://quartz.19960312.xyz/Blog/2022-11-13-finish-5-covid-test-in-one-day</guid>
-    <description>Vlog-I Finished 5 Covid Test in One Day! 在西方世界的视角中，人是由细胞构成的，所以新冠病毒会损害你的身体健康。 但是在我们的视角中，根据伟大导师马克思的观点，人是一切社会关系的总和，如果你感染了新冠病毒，你的社会关系被被毁灭。你的生活方式将会被放在网上被批判，你必须离开自己的家，坐上大巴去隔离营地。 综上所述，新冠病毒是一个令人恐惧的病毒。 但是好消息是，我们有对抗病毒的强大武器：核酸检测。但是我最近观察到互联网上有很多抱怨核酸检测的声音，很多人不愿意做核酸，真是令人遗憾的消息。 我非常喜欢做核酸，我可以三个月不吃战斧牛排，但是我不能一天不做核酸，所以...</description>
-    <pubDate>Wed, 04 Jun 2025 03:43:08 GMT</pubDate>
+    <title>Dev Env Setup</title>
+    <link>https://quartz.19960312.xyz/Knowledges/CPP/Dev-Env-Setup</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/CPP/Dev-Env-Setup</guid>
+    <description>zsh sh -c &quot;$(curl -fsSL raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot; # plugins git clone github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions git clone github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~...</description>
+    <pubDate>Fri, 04 Jul 2025 05:01:55 GMT</pubDate>
   </item><item>
-    <title>2022 年底随想</title>
-    <link>https://quartz.19960312.xyz/Blog/2023-01-02-annual-review</link>
-    <guid>https://quartz.19960312.xyz/Blog/2023-01-02-annual-review</guid>
-    <description>2022 年结束了，我想我也应该写一点什么，纪念一下。比起那些年轻有为的人，我列不出长长的一串书单，一系列的项目成果，一堆的人生大事来展示自己这一年的精彩，我的人生过得颇为平淡，以至于我拿起笔的时候都不知道应该写什么东西。所以就这样吧，让我的思维随机游走，回忆一下自己这一年的一些思想碎片吧。 今年我辞去了我的第 1 份工作，从北京搬到了深圳。相对于北京，深圳有着更好的空气，更温暖的环境，更明媚的自然景色，这一点令我很是喜欢。北方的冬天是漫长的，天空是阴霾的，在小半年的时间只能看见枯黄的草和光秃秃的树枝，仿佛抽根烟就能把整个北京点了。这样的天气总是会让人感到压抑苦闷，来到深圳之后，我住在离海边只...</description>
-    <pubDate>Wed, 04 Jun 2025 03:43:08 GMT</pubDate>
+    <title>gcc/g++编译参数顺序所引起的链接错误</title>
+    <link>https://quartz.19960312.xyz/Knowledges/CPP/Repost-gcc_g++_args_should_put_in_order</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/CPP/Repost-gcc_g++_args_should_put_in_order</guid>
+    <description> From: gcc/g++编译参数顺序所引起的链接错误_g++的参数是有顺序要求的-CSDN博客 TLDR: 我草泥马，这也能出错​, 简单说就是 -l 参数必须放在源代码后面 问题描述 在应用代码里面调用opencv API（比如imread imshow等），然后用gcc/g++编译就遇到了下面的链接错误。 问题解析 这个链接错误很显然是说opencv库没找到或版本不对而导致的。但是g++编译命令是有正确的把opencv库link进来，如下图所示。 再三确认，/usr/local/lib_opencv343/lib下面是存在libopencv_world.so的。 经过大半天的折腾，后来...</description>
+    <pubDate>Fri, 04 Jul 2025 05:01:55 GMT</pubDate>
   </item><item>
-    <title>西西弗神话- 天门山四人集体自杀事件</title>
-    <link>https://quartz.19960312.xyz/Blog/2023-04-15-le-myth-de-sysyphes-4-suicide-in-tianmenshan</link>
-    <guid>https://quartz.19960312.xyz/Blog/2023-04-15-le-myth-de-sysyphes-4-suicide-in-tianmenshan</guid>
-    <description> 发疯文学，无不良导向，慎阅 最近这些年我很少关注社会新闻，而近期唯一让我感到内心受到震撼，久久不能平静的，就是天门山发生的四人集体自杀事件。这种震撼不是来源于赛里斯那些脑瘫短视频平台配着的那些聒噪的音乐，而是他们这个行为的象征意义: 他们的赴死方式实在是太哲学了，结伴而行爬到高高的山顶，一跃而下，和希腊神话里的西西弗斯的隐喻不谋而合。 在加缪这种愚蠢而不自知的人，还在自欺欺人地思考着人生的意义，甚至写出一本杂乱无章的「西西弗神话」，试图向大家解释作为西西弗斯应该努力的把石头推到山顶，然后享受在石头掉落山崖之后自己空着手下山那种卸下重负之后的愉悦的时候，这4个人早已经看透了自己根本没有资格做西...</description>
-    <pubDate>Wed, 04 Jun 2025 03:43:08 GMT</pubDate>
+    <title>CNI plugin 安装</title>
+    <link>https://quartz.19960312.xyz/Knowledges/Zettelkasten/CNI-plugin-%E5%AE%89%E8%A3%85</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/Zettelkasten/CNI-plugin-%E5%AE%89%E8%A3%85</guid>
+    <description>Kubernetes 报错 CNI plugin not initialized 通常表示 容器网络接口 (CNI) 没有正确安装或初始化，导致 Pod 处于 ContainerCreating 状态。可以按照以下步骤进行排查和修复： 1.</description>
+    <pubDate>Fri, 04 Jul 2025 05:01:55 GMT</pubDate>
   </item><item>
-    <title>福岛核废水排放事件的一些事实和争议</title>
-    <link>https://quartz.19960312.xyz/Blog/2023-08-27-some-facts-and-argue-of-fudao-nuc-water</link>
-    <guid>https://quartz.19960312.xyz/Blog/2023-08-27-some-facts-and-argue-of-fudao-nuc-water</guid>
-    <description> 核物理基础知识 辐射种类 核辐射主要分为以下几种类型： 阿尔法辐射（Alpha Radiation）：阿尔法辐射由带有2个质子和2个中子的阿尔法粒子组成，即氦核。它的穿透能力较弱，只能在几厘米的空气或几毫米的物体中传播。然而，如果阿尔法辐射进入人体，就会对组织造成严重伤害。 贝塔辐射（Beta Radiation）：贝塔辐射由高速电子（β-粒子）或正电子（β+粒子）组成。贝塔粒子比阿尔法粒子穿透能力更强，可以穿过几米的空气和几毫米的物体。当贝塔辐射进入人体时，它可以引起组织损伤，并对细胞和基因造成破坏。 伽马辐射（Gamma Radiation）：伽马辐射是高能量电磁波，具有极强的穿透能力。...</description>
-    <pubDate>Wed, 04 Jun 2025 03:43:08 GMT</pubDate>
+    <title>dufs</title>
+    <link>https://quartz.19960312.xyz/Knowledges/Zettelkasten/dufs</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/Zettelkasten/dufs</guid>
+    <description>API Upload a file curl -T path-to-file http://127.0.0.1:5000/new-path/path-to-file Upload a folder #!/bin/bash # 检查参数 if [ &quot;$#&quot; -ne 2 ]; then echo &quot;Usage: $0 &lt;local_directory&gt; &lt;dufs_url&gt;&quot; exit 1 fi LOCAL_DIR=&quot;$1&quot; DUFS_URL=&quot;$2&quot; # 确保目录存在 if [ ! -d &q...</description>
+    <pubDate>Fri, 04 Jul 2025 05:01:55 GMT</pubDate>
   </item><item>
-    <title>赛里斯生存指南：如何证明我妈是我妈</title>
-    <link>https://quartz.19960312.xyz/Blog/2023-11-17-how-to-prove-your-mom-is-your-mom</link>
-    <guid>https://quartz.19960312.xyz/Blog/2023-11-17-how-to-prove-your-mom-is-your-mom</guid>
-    <description>最近我遇到了一点需要证明我妈是我妈的小麻烦,中间还遇到了一些小小波折, 为了防止“没有记录就没有发生”，所以简单记录一下.</description>
-    <pubDate>Wed, 04 Jun 2025 03:43:08 GMT</pubDate>
+    <title>etcd deploy and test</title>
+    <link>https://quartz.19960312.xyz/Knowledges/Zettelkasten/etcd-deploy-and-test</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/Zettelkasten/etcd-deploy-and-test</guid>
+    <description>Slow etcd performance (performance testing and optimization) | Support | SUSE 本地启动 etcd 集群 好的，根据你提供的三个 IP 地址（192.168.30.189、192.168.24.192、192.168.28.4），我将为你调整之前的 etcd 集群配置方案。这些 IP 地址看起来属于不同的子网，这可能会影响节点间的通信，因此需要确保网络配置允许这些节点互相访问（特别是端口 2379 和 2380）。以下是基于这三个 IP 的具体配置步骤。 前提条件 确保三台机器的网络互通，防火墙已开放 2379（客户端...</description>
+    <pubDate>Fri, 04 Jul 2025 05:01:55 GMT</pubDate>
   </item><item>
-    <title>书影：你想活出怎样的人生？</title>
-    <link>https://quartz.19960312.xyz/Blog/2024-04-04-What-kind-of-life-do-you-want-to-live</link>
-    <guid>https://quartz.19960312.xyz/Blog/2024-04-04-What-kind-of-life-do-you-want-to-live</guid>
-    <description>由于宫崎骏的电影你想活出怎样的人生 (豆瓣电影)于4月3日在中国大陆上映，所以同名小说你想活出怎样的人生 (豆瓣图书)被摆到了书店的 C 位，周末无聊的我读完了这本书。 这本书被称为日本人必读经典，是一个 15 中学生本田潤一的故事，他的父亲去世，与妈妈和舅舅一起生活，书中主要讲的是他的一些思考和在学校发生的事情，在他每次遇到困扰的问题向舅舅请教之后，舅舅都会在日记本中记录下来，并且将想说的话也写下，两人通过日记本进行心灵沟通。 由于这是一本中学生读物，内容比较浅显易懂，但是笔触充满温情，与东野圭吾的《解忧杂货铺》有相似的风格。主要是通过这个少年的故事教导青少年思考一个人生的终极问题：你要活出...</description>
-    <pubDate>Wed, 04 Jun 2025 03:43:08 GMT</pubDate>
+    <title>etcd pressure test</title>
+    <link>https://quartz.19960312.xyz/Knowledges/Zettelkasten/etcd-pressure-test</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/Zettelkasten/etcd-pressure-test</guid>
+    <description>对 etcd 进行压力测试是评估其性能、稳定性和在高负载下的表现的重要步骤。以下是一个详细的指南，介绍如何使用 etcd 自带的工具（如 benchmark）或其他方法来进行压力测试，并分析结果。 前提条件 etcd 已部署： 确保你已经搭建了一个 etcd 集群（单节点或多节点均可）。例如，使用之前的配置（IP: 192.168.30.189, 192.168.24.192, 192.168.28.4）。 集群正常运行，可以通过 etcdctl member list 和 etcdctl endpoint health 验证。 工具准备： etcdctl：etcd 自带的管理工具，用于基本操...</description>
+    <pubDate>Fri, 04 Jul 2025 05:01:55 GMT</pubDate>
   </item><item>
-    <title>江南烟花奇案</title>
-    <link>https://quartz.19960312.xyz/Blog/2025-01-02-jiangnan-firework-case</link>
-    <guid>https://quartz.19960312.xyz/Blog/2025-01-02-jiangnan-firework-case</guid>
-    <description> 本文是 AI 创作，与本人无任何关系。 故事的起始，若非虚构，便是遗忘的产物。它发生在一个古老而遥远的国度，其名字早已被时光的长河抹去，仿佛从未存在。但我依稀记得，有一条蜿蜒如命运的河流贯穿其间，将这片土地割裂成两种对立而又和谐的存在。在河的南岸，有一片被称为“江南”的地域，那里的一切如梦般朦胧，似乎仅仅是记忆的倒影。 当时的人们，仿佛被某种无形的宿命驱使，过着一成不变的生活。他们总是在一年将尽时，像被解开的钟摆，涌上街头，以一种既茫然又执着的姿态在狭窄的街巷中游走。没有庆祝的仪式，也没有哀悼的语言，只有散乱的脚步声，仿佛在追逐某种不可见的真理，或逃避某种不可逃的虚无。他们的举动无序，却透着...</description>
-    <pubDate>Wed, 04 Jun 2025 03:43:08 GMT</pubDate>
+    <title>k8s add new node</title>
+    <link>https://quartz.19960312.xyz/Knowledges/Zettelkasten/k8s-add-new-node</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/Zettelkasten/k8s-add-new-node</guid>
+    <description>添加 Worker 节点 主节点： kubeadm token create --print-join-command 输出示例：kubeadm join 192.168.1.100:6443 --token abcdef.1234567890abcdef --discovery-token-ca-cert-hash sha256:xxxxxx 新 Worker 节点： sudo kubeadm join 192.168.1.100:6443 --token abcdef.1234567890abcdef --discovery-token-ca-cert-hash sha256:xxxxxx...</description>
+    <pubDate>Fri, 04 Jul 2025 05:01:55 GMT</pubDate>
   </item><item>
-    <title>库斯科的梯田</title>
-    <link>https://quartz.19960312.xyz/Blog/2025-01-27-kusike-titian</link>
-    <guid>https://quartz.19960312.xyz/Blog/2025-01-27-kusike-titian</guid>
-    <description> 本文是 AI 创作，与本人无任何关系。 我出生在库斯科的山区一个的小村庄里，这个村庄依山而建，山坡上开辟了一层又一层的水田，远看像阶梯一样，进入仲夏的时节，层层叠叠的绿色让从远方奔赴此地的旅人感受到充满秩序的诗意。 库斯科在南美大陆独树一帜，这里的人们种植水稻和马铃薯，据传这里的居民是远古时期从太平洋上带着浸透煤油的浮木漂流而来的遥远的东方民族；这儿的人也从来不过殖民者的节日，而是在每年月亮历年头之时庆祝春天到来；它甚至还有一个充满神秘感的东方名字—“故私哥国”。 春节临近，我也回到了库斯科，身为一个作家，我已经很久未曾到过农田中工作，回想起在青年时期曾经帮助我的祖父采收玉米，玉米叶子上的锯...</description>
-    <pubDate>Wed, 04 Jun 2025 03:43:08 GMT</pubDate>
+    <title>kubectl command usage</title>
+    <link>https://quartz.19960312.xyz/Knowledges/Zettelkasten/kubectl-command-usage</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/Zettelkasten/kubectl-command-usage</guid>
+    <description>在 Kubernetes (kubectl) 中，可以使用以下命令来查看 Pod 内的容器列表、查看容器日志以及进入容器： 1.</description>
+    <pubDate>Fri, 04 Jul 2025 05:01:55 GMT</pubDate>
   </item><item>
-    <title>年轻人的第一次相亲</title>
-    <link>https://quartz.19960312.xyz/Blog/The-First-Blind-Date-of-a-Young-Man</link>
-    <guid>https://quartz.19960312.xyz/Blog/The-First-Blind-Date-of-a-Young-Man</guid>
-    <description>今年过年回家，因为一些契机，我们在家里开始搞起了封建迷信活动，按照神仙在凡间代言人的指导，在我八十八岁高龄的老外婆的见证之下，我拜了我的二姨和二姨父作干爹干妈, 我也进行了人生中第一次相亲。 我外婆生育了七个子女，目前我有一位大姨已经去世，所以还剩下六个子女，而二姨一家是属于家族之中权钱皆备的一家，但因为生活习惯的原因，历来有些疏远。这么多年也没提过这些事情，要不是借着封建迷信的由头，我这个行为多少有点趋炎附势的味道了。 我的二姨和姨父搞了个新爹上任“三把火”，首先就是严肃批评了我的反叛思想，不过这对我伤害性不大，毕竟那是我以前上大学时期的事情了，现在我已经是嬉皮笑脸的乐子人了，什么东方西方、...</description>
-    <pubDate>Wed, 04 Jun 2025 03:43:08 GMT</pubDate>
+    <title>zabbix 部署</title>
+    <link>https://quartz.19960312.xyz/Knowledges/Zettelkasten/zabbix-%E9%83%A8%E7%BD%B2</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/Zettelkasten/zabbix-%E9%83%A8%E7%BD%B2</guid>
+    <description> 最近需要调查 zabbix 相关问题，所以急需部署一个 zabbix，以下是 AI 生成内容，且经过本人在 ubuntu 24.04 实际测试通过。 下面是一个完整、简洁的教程，教你如何在 Ubuntu 上使用 Docker 部署 Zabbix（含前端 + 数据库）。 ✅ 教程目标 在 Ubuntu 系统中，使用 Docker 快速部署一套 Zabbix 6.x + PostgreSQL + Web UI 的系统。 🧰 前置条件 已安装 Docker 和 Docker Compose 系统为 Ubuntu 18.04+，建议 20.04/22.04 至少 2GB 内存（推荐 4GB） 如果...</description>
+    <pubDate>Fri, 04 Jul 2025 05:01:55 GMT</pubDate>
   </item>
     </channel>
   </rss>

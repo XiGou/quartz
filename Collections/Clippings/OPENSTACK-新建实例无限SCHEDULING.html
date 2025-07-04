@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>[OPENSTACK] 新建实例无限SCHEDULING</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto Sans SC:wght@400;700&amp;family=Noto Sans SC:ital,wght@0,400;0,600;1,400;1,600&amp;family=Roboto Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="😄 Jorge's Digital Garden"/><meta property="og:title" content="[OPENSTACK] 新建实例无限SCHEDULING"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="[OPENSTACK] 新建实例无限SCHEDULING"/><meta name="twitter:description" content="症状： 创建实例时一直处在build状态，无限scheduling，且无论多长时间Horizon都不显示任何错误 neutron-server.log无ERROR或WARNING 出现这种情况还有可能是其他原因导致的，请根据自己的情况和以下的日志来判断。 原因： nova-conductor无法连接"/><meta property="og:description" content="症状： 创建实例时一直处在build状态，无限scheduling，且无论多长时间Horizon都不显示任何错误 neutron-server.log无ERROR或WARNING 出现这种情况还有可能是其他原因导致的，请根据自己的情况和以下的日志来判断。 原因： nova-conductor无法连接"/><meta property="og:image:alt" content="症状： 创建实例时一直处在build状态，无限scheduling，且无论多长时间Horizon都不显示任何错误 neutron-server.log无ERROR或WARNING 出现这种情况还有可能是其他原因导致的，请根据自己的情况和以下的日志来判断。 原因： nova-conductor无法连接"/><meta property="twitter:domain" content="quartz.19960312.xyz"/><meta property="og:url" content="https://quartz.19960312.xyz/Collections/Clippings/OPENSTACK-新建实例无限SCHEDULING"/><meta property="twitter:url" content="https://quartz.19960312.xyz/Collections/Clippings/OPENSTACK-新建实例无限SCHEDULING"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="症状： 创建实例时一直处在build状态，无限scheduling，且无论多长时间Horizon都不显示任何错误 neutron-server.log无ERROR或WARNING 出现这种情况还有可能是其他原因导致的，请根据自己的情况和以下的日志来判断。 原因： nova-conductor无法连接"/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvcnVubmVyL3dvcmsvcGVyc29uYWwtYmxvZy9wZXJzb25hbC1ibG9nL3F1YXJ0el8vcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBhZGRpbmc6IDJyZW07XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://quartz.19960312.xyz/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://quartz.19960312.xyz/Collections/Clippings/OPENSTACK-新建实例无限SCHEDULING-og-image.webp"/><meta property="og:image:url" content="https://quartz.19960312.xyz/Collections/Clippings/OPENSTACK-新建实例无限SCHEDULING-og-image.webp"/><meta name="twitter:image" content="https://quartz.19960312.xyz/Collections/Clippings/OPENSTACK-新建实例无限SCHEDULING-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Collections/Clippings/OPENSTACK-新建实例无限SCHEDULING"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">😄 Jorge's Digital Garden</a></h2><div class="spacer mobile-only"></div><div style="display: flex; flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-content"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="explorer-content" aria-expanded="false"><ul class="explorer-ul overflow" id="zwao8h"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Collections/">Collections</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Collections/Clippings/">Clippings</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>[OPENSTACK] 新建实例无限SCHEDULING</a></div></nav><h1 class="article-title">[OPENSTACK] 新建实例无限SCHEDULING</h1><p show-comma="true" class="content-meta"><time datetime="2025-07-04T05:01:55.175Z">Jul 04, 2025</time><span>10 min read</span></p><ul class="tags"><li><a href="../../tags/clippings" class="internal tag-link">clippings</a></li></ul></div></div><article class="popover-hint"><h3 id="症状">症状：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#症状" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>创建实例时一直处在build状态，无限scheduling，且无论多长时间Horizon都不显示任何错误</li>
+<li>neutron-server.log无ERROR或WARNING</li>
+</ul>
+<p>出现这种情况还有可能是其他原因导致的，请根据自己的情况和以下的日志来判断。</p>
+<h3 id="原因">原因：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#原因" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>nova-conductor无法连接到rabbitmq消息队列，导致其无法与其他组件联络，无法控制nova-compute部署实例。</li>
+<li>nova-conductor虽然进程显示配置文件为/etc/nova/nova.conf，但是实际上不从nova.conf中读取配置，nova-conductor直接从mysql数据库中读取自己的配置。</li>
+</ul>
+<h3 id="诊断过程">诊断过程：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#诊断过程" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>一般来说我们遇到Horizon创建实例的时候，如果长时间卡在Scheduling或者Spawning，最后会扔一个错误，在我接触过的案例中，十有八九都是neutron-server的锅，然而这次不是。</p>
+<ul>
+<li>按照我以往的经验去寻找neutron-server.log中的错误讯息，结果一无所获，只找到了以下这一条消息：</li>
+</ul>
+<p><code>2018-01-23 16:16:20.657 18341 WARNING keystonemiddleware.auth_token [-] A valid token was submitted as a service token, but it was not a valid service token. This is incorrect but backwards compatible behaviour. This will be removed in future releases.</code></p>
+<p>但这并不是问题的原因，这条警告讯息是OpenStack的一个bug，可自行Google，在devstack中已没有这条警告讯息。</p>
+<p>此时已经可以排除neutron-server的问题了，没有更多的警告消息，且当前警告消息无用</p>
+<ul>
+<li>接下来能做的就是寻找其他组件的日志，来寻找问题</li>
+<li>实际上我在这里犯了个错误</li>
+<li>因为是远程调试，延迟比较大，所以我就直接tail了nova各个组件的日志，又因为我更改systemctl restart nova-*.service，所以没有看到任何日志。</li>
+<li>nova-conductor这个组件又比较有意思，他启动的时候不会验证当前配置，他启动的时候只会打印出以下日志，所以我忽略了</li>
+</ul>
+<p><code># ...</code><br/>
+<code>2018-01-23 06:40:16.981 8090 INFO nova.service [-] Starting conductor node (version 16.0.3)</code><br/>
+<code>2018-01-23 06:40:16.991 8086 INFO nova.service [-] Starting conductor node (version 16.0.3)</code><br/>
+<code>2018-01-23 06:40:16.995 8091 INFO nova.service [-] Starting conductor node (version 16.0.3)</code><br/>
+<code>2018-01-23 06:40:16.996 8092 INFO nova.service [-] Starting conductor node (version 16.0.3)</code><br/>
+<code># End</code></p>
+<p>后来一个一个log文件cat，的确是看到这个了，去检查了一遍nova.conf和neutron.conf，发现rabbitmq凭据配置无误，就跳过了</p>
+<p>最后重新启动一个实例，重新tail nova* 才发现了nova-conductor又报这个错误，这就很有意思了，错误如下：</p>
+<p><code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server [req-eb9ca3b8-58d8-4103-b8b0-d5b9a3d706b1 244f2e998d2e424d8da726ccec82588b 74ff9f41f424407d99df3e6607de120f - default default] Exception during message handling: AccessRefused: (0, 0): (403) ACCESS_REFUSED - Login was refused using authentication mechanism AMQPLAIN. For details see the broker logfile.</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server Traceback (most recent call last):</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/oslo_messaging/rpc/server.py&quot;, line 160, in _process_incoming</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server res = self.dispatcher.dispatch(message)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/oslo_messaging/rpc/dispatcher.py&quot;, line 213, in dispatch</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server return self._do_dispatch(endpoint, method, ctxt, args)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/oslo_messaging/rpc/dispatcher.py&quot;, line 183, in _do_dispatch</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server result = func(ctxt, **new_args)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/nova/conductor/manager.py&quot;, line 1172, in schedule_and_build_instances</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server limits=host['limits'])</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/nova/compute/rpcapi.py&quot;, line 1124, in build_and_run_instance</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server limits=limits)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/oslo_messaging/rpc/client.py&quot;, line 147, in cast</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server self.transport._send(self.target, msg_ctxt, msg, retry=self.retry)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/oslo_messaging/transport.py&quot;, line 123, in _send</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server timeout=timeout, retry=retry)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/oslo_messaging/_drivers/amqpdriver.py&quot;, line 578, in send</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server retry=retry)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/oslo_messaging/_drivers/amqpdriver.py&quot;, line 539, in _send</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server with self._get_connection(rpc_common.PURPOSE_SEND) as conn:</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/oslo_messaging/_drivers/amqpdriver.py&quot;, line 494, in _get_connection</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server purpose=purpose)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/oslo_messaging/_drivers/common.py&quot;, line 399, in __init__</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server self.connection = connection_pool.get()</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/oslo_messaging/_drivers/pool.py&quot;, line 107, in get</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server return self.create()</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/oslo_messaging/_drivers/pool.py&quot;, line 144, in create</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server return self.connection_cls(self.conf, self.url, purpose)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/oslo_messaging/_drivers/impl_rabbit.py&quot;, line 614, in __init__</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server self.ensure_connection()</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/oslo_messaging/_drivers/impl_rabbit.py&quot;, line 713, in ensure_connection</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server self.ensure(method=self.connection.connect)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/oslo_messaging/_drivers/impl_rabbit.py&quot;, line 807, in ensure</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server ret, channel = autoretry_method()</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/kombu/connection.py&quot;, line 494, in _ensured</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server return fun(*args, **kwargs)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/kombu/connection.py&quot;, line 569, in __call__</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server self.revive(self.connection.default_channel)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/kombu/connection.py&quot;, line 819, in default_channel</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server self.connection</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/kombu/connection.py&quot;, line 802, in connection</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server self._connection = self._establish_connection()</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/kombu/connection.py&quot;, line 757, in _establish_connection</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server conn = self.transport.establish_connection()</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/kombu/transport/pyamqp.py&quot;, line 130, in establish_connection</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server conn.connect()</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/amqp/connection.py&quot;, line 300, in connect</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server self.drain_events(timeout=self.connect_timeout)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/amqp/connection.py&quot;, line 464, in drain_events</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server return self.blocking_read(timeout)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/amqp/connection.py&quot;, line 469, in blocking_read</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server return self.on_inbound_frame(frame)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/amqp/method_framing.py&quot;, line 68, in on_frame</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server callback(channel, method_sig, buf, None)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/amqp/connection.py&quot;, line 473, in on_inbound_method</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server method_sig, payload, content,</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/amqp/abstract_channel.py&quot;, line 142, in dispatch_method</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server listener(*args)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server File &quot;/usr/lib/python2.7/dist-packages/amqp/connection.py&quot;, line 595, in _on_close</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server (class_id, method_id), ConnectionError)</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server AccessRefused: (0, 0): (403) ACCESS_REFUSED - Login was refused using authentication mechanism AMQPLAIN. For details see the broker logfile.</code><br/>
+<code>2018-01-23 06:26:18.952 7478 ERROR oslo_messaging.rpc.server</code></p>
+<p>nova-conductor在连接到RabbitMQ消息队列的时候，被拒绝访问了</p>
+<p><code>AccessRefused: (0, 0): (403) ACCESS_REFUSED - Login was refused using authentication mechanism AMQPLAIN. For details see the broker logfile.</code></p>
+<p>根据这个提示我们来找rabbitmq的日志，<a href="mailto:rabbit@controller.log" class="external">rabbit@controller.log<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>发现其中有如下错误信息</p>
+<p><code>=ERROR REPORT==== 23-Jan-2018::04:11:23 ===</code><br/>
+<code>closing AMQP connection &lt;0.6917.0> (10.0.0.30:59652 -> 10.0.0.30:5672):</code><br/>
+<code>{handshake_error,starting,0,</code><br/>
+<code>{amqp_error,access_refused,</code><br/>
+<code>&quot;AMQPLAIN login refused: user 'openstack' - invalid credentials&quot;,</code><br/>
+<code>'connection.start_ok'}}</code></p>
+<p><code>=INFO REPORT==== 23-Jan-2018::04:29:59 ===</code><br/>
+<code>accepting AMQP connection &lt;0.7038.0> (10.0.0.30:34068 -> 10.0.0.30:5672)</code></p>
+<p><code>=INFO REPORT==== 23-Jan-2018::04:30:00 ===</code><br/>
+<code>accepting AMQP connection &lt;0.7055.0> (10.0.0.30:34096 -> 10.0.0.30:5672)</code></p>
+<p><code>=ERROR REPORT==== 23-Jan-2018::04:30:03 ===</code><br/>
+<code>closing AMQP connection &lt;0.7055.0> (10.0.0.30:34096 -> 10.0.0.30:5672):</code><br/>
+<code>{handshake_error,starting,0,</code><br/>
+<code>{amqp_error,access_refused,</code><br/>
+<code>&quot;AMQPLAIN login refused: user 'openstack' - invalid credentials&quot;,</code><br/>
+<code>'connection.start_ok'}}</code></p>
+<p>到这里问题就很明了了，但是我们仍然不知道为什么会拒绝连接，上面说到过的，检查nova.conf和neutron.conf没有任何问题，rabbitmq连接测试正常</p>
+<p>已经没有招了。</p>
+<h3 id="问题根源解决问题">问题根源/解决问题：<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#问题根源解决问题" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>如果你 <code>systemctl status nova-conductor.service</code> ， 你会发现他有指向配置文件 <code> --config-file=/etc/nova/nova.conf</code></p>
+<p><code>● nova-conductor.service - OpenStack Compute Conductor</code><br/>
+<code>Loaded: loaded (/lib/systemd/system/nova-conductor.service; enabled; vendor preset: enabled)</code><br/>
+<code>Active: active (running) since Tue 2018-01-23 06:40:14 PST; 1 day 13h ago</code><br/>
+<code>Main PID: 8036 (nova-conductor)</code><br/>
+<code>Tasks: 25</code><br/>
+<code>Memory: 1.8G</code><br/>
+<code>CPU: 1h 32min 57.730s</code><br/>
+<code>CGroup: /system.slice/nova-conductor.service</code><br/>
+<code>├─8036 /usr/bin/python /usr/bin/nova-conductor --config-file=/etc/nova/nova.conf --log-file=/var/log/nova/nova-conductor.log</code><br/>
+<code>├─......</code><br/>
+<code>└─8098 /usr/bin/python /usr/bin/nova-conductor --config-file=/etc/nova/nova.conf --log-file=/var/log/nova/nova-conductor.log</code></p>
+<p><code>Jan 23 06:40:14 controller systemd[1]: Starting OpenStack Compute Conductor...</code><br/>
+<code>Jan 23 06:40:14 controller systemd[1]: Started OpenStack Compute Conductor.</code></p>
+<p>但是他并不从nova.conf中读取 <code>transport_url</code> ！！！！</p>
+<p>他只从nova.conf中读取 <code>connection = mysql+pymysql:</code> 字段，获取到连接数据库的凭据，然后从数据库读取配置！！</p>
+<p>WTF？？？（我相信大部分人和我的反应是一样的）</p>
+<p>实际上如果小心翼翼的按照教程一步一步来或许就不会出现这样的问题，在配置nova的时候，会有一段往mysql数据库中写入数据，然后sync_db的配置步骤</p>
+<p>这一步中，有一句</p>
+<p><code>su -s /bin/bash nova -c &quot;nova-manage cell_v2 create_cell --name cell1 \</code><br/>
+<code>--database_connection mysql+pymysql://nova:password@10.0.0.30/nova \</code><br/>
+<code>--transport-url rabbit://openstack:password@10.0.0.30:5672&quot;</code></p>
+<p>如果这里写错了transport-url，那就完蛋了，因为他直接把这个写到数据库里了</p>
+<p>但是幸运的是，他明文存储的密码和用户名，那就让我们来跑一下联合查询，先以root身份登陆mysql server，然后执行以下语句</p>
+<p>此语句是从数据库中查找’openstack’字段，当然这已经不算是个联合查询了，因为我已经知道了nova_api.cell_mappings了，直接从这里面找即可</p>
+<p><code>SELECT * FROM `nova_api`.`cell_mappings` WHERE `created_at` LIKE BINARY '%openstack%' OR `updated_at` LIKE BINARY '%openstack%' OR `id` LIKE BINARY '%openstack%' OR `uuid` LIKE BINARY '%openstack%' OR `name` LIKE BINARY '%openstack%' OR `transport_url` LIKE BINARY '%openstack%' OR `database_connection` LIKE BINARY '%openstack%' ;</code></p>
+<p>永远不要尝试在大规模生产环境中执行联合查询！！</p>
+<p>结果如下</p>
+<p><code>+---------------------+------------+----+--------------------------------------+-------+--------------------------------------------------------+----------------------------------------------------------+</code><br/>
+<code>| created_at | updated_at | id | uuid | name | transport_url | database_connection |</code><br/>
+<code>+---------------------+------------+----+--------------------------------------+-------+--------------------------------------------------------+----------------------------------------------------------+</code><br/>
+<code>| 2018-01-23 08:37:50 | NULL | 2 | 4952f0f2-***** | cell1 | rabbit://openstack:******@10.0.0.30:5672 | mysql+pymysql://nova:********@10.0.0.30/nova |</code><br/>
+<code>+---------------------+------------+----+--------------------------------------+-------+--------------------------------------------------------+----------------------------------------------------------+</code><br/>
+<code>1 row in set (0.00 sec)</code></p>
+<p>发现 <code>rabbit://openstack:******@10.0.0.30:5672</code> 的密码是错误的，修改即可</p>
+<p>来源：<a href="https://blog.silversky.moe/works/openstack-lanuch-instance-infinite-scheduling" class="external">https://blog.silversky.moe/works/openstack-lanuch-instance-infinite-scheduling<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="toc-content"><ul id="801bis" class="overflow"><li class="depth-0"><a href="#症状" data-for="症状">症状：</a></li><li class="depth-0"><a href="#原因" data-for="原因">原因：</a></li><li class="depth-0"><a href="#诊断过程" data-for="诊断过程">诊断过程：</a></li><li class="depth-0"><a href="#问题根源解决问题" data-for="问题根源解决问题">问题根源/解决问题：</a></li><li class="overflow-end"></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul id="3ga71j" class="overflow"><li><a href="../../Moments/2025/Moments-Jul-Sep-2025" class="internal">Moments-Jul-Sep-2025</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.0</a> © 2025</p><ul><li><a href="https://github.com/XiGou">GitHub</a></li><li><a href="https://linkedin.com/in/xigou">Linkedin</a></li><li><a href="https://stackoverflow.com/users/10871150/xi-gou">StackOverflow</a></li><li><a href="mailto:gouxivae@gmail.com">Email</a></li></ul></footer></div></div></body><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">function o(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=e+"px";let c=t,l=t.parentElement;for(;l;){if(!l.classList.contains("callout"))return;let i=l.classList.contains("is-collapsed")?l.scrollHeight:l.scrollHeight+c.scrollHeight;l.style.maxHeight=i+"px",c=l,l=l.parentElement}}function n(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let e=s.firstElementChild;if(!e)continue;e.addEventListener("click",o),window.addCleanup(()=>e.removeEventListener("click",o));let l=s.classList.contains("is-collapsed")?e.scrollHeight:s.scrollHeight;s.style.maxHeight=l+"px"}}document.addEventListener("nav",n);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../../postscript.js" type="module"></script></html>
