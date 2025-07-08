@@ -6,65 +6,65 @@
       <description>Last 10 notes on 😄 Joker&#039;s Digital Garden</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>Dev Env Setup</title>
-    <link>https://quartz.19960312.xyz/Knowledges/CPP/Dev-Env-Setup</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/CPP/Dev-Env-Setup</guid>
-    <description>zsh sh -c &quot;$(curl -fsSL raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot; # plugins git clone github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions git clone github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~...</description>
-    <pubDate>Tue, 08 Jul 2025 06:12:55 GMT</pubDate>
-  </item><item>
-    <title>How_to_check_glibc_version_of_a_binary_in build_time</title>
-    <link>https://quartz.19960312.xyz/Knowledges/CPP/How_to_check_glibc_version_of_a_binary_in-build_time</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/CPP/How_to_check_glibc_version_of_a_binary_in-build_time</guid>
-    <description>There are several ways to check the glibc version that a binary file depends on:: ldd command ldd binary_file objdump, disassembly objdump -T binary_file | grep -i glibc readelf readelf -d binary_file | grep libc check dynamic section to get libc version。 check the source code repo If you can access...</description>
-    <pubDate>Tue, 08 Jul 2025 06:12:55 GMT</pubDate>
-  </item><item>
-    <title>gcc/g++编译参数顺序所引起的链接错误</title>
-    <link>https://quartz.19960312.xyz/Knowledges/CPP/Repost-gcc_g++_args_should_put_in_order</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/CPP/Repost-gcc_g++_args_should_put_in_order</guid>
-    <description> From: gcc/g++编译参数顺序所引起的链接错误_g++的参数是有顺序要求的-CSDN博客 TLDR: 我草泥马，这也能出错​, 简单说就是 -l 参数必须放在源代码后面 问题描述 在应用代码里面调用opencv API（比如imread imshow等），然后用gcc/g++编译就遇到了下面的链接错误。 问题解析 这个链接错误很显然是说opencv库没找到或版本不对而导致的。但是g++编译命令是有正确的把opencv库link进来，如下图所示。 再三确认，/usr/local/lib_opencv343/lib下面是存在libopencv_world.so的。 经过大半天的折腾，后来...</description>
-    <pubDate>Tue, 08 Jul 2025 06:12:55 GMT</pubDate>
-  </item><item>
-    <title>Commit Type in Git or Github workflow</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Collaboration/Commit-Type-in-Git-or-Github-workflow</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Collaboration/Commit-Type-in-Git-or-Github-workflow</guid>
-    <description>TL,DR; feat：新功能。 chore：日常维护。 fix：修 bug。 docs：文档。 style：格式。 refactor：重构。 test：测试。 perf：性能。 ci：CI/CD。 build：构建。 revert：回滚。 这些术语在 GitHub 上没有强制要求，但遵循约定式提交的项目会广泛使用。 在 GitHub（以及更广泛的 Git 工作流）中，feat、chore 等术语通常出现在 commit 消息或 Pull Request (PR) 的描述中，特别是在遵循 Conventional Commits（约定式提交）规范的项目中。这些前缀用来描述提交的类型，帮助团队快...</description>
-    <pubDate>Tue, 08 Jul 2025 06:12:55 GMT</pubDate>
-  </item><item>
-    <title>Alpine Linux Usage</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Linux/Alpine</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Linux/Alpine</guid>
-    <description>Install setup-alpine when setting apk mirror, don’t use auto select fastest mirror, it takes a long time.</description>
-    <pubDate>Tue, 08 Jul 2025 06:12:55 GMT</pubDate>
-  </item><item>
-    <title>Mount iso as yum repo</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Linux/Mount-iso-as-yum-repo</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Linux/Mount-iso-as-yum-repo</guid>
-    <description>要将 CentOS ISO 挂载为本地软件包仓库（repo），可以按照以下步骤进行操作： 创建一个目录来挂载 ISO 文件： sudo mkdir /mnt/iso 这将在 /mnt/iso 目录下创建一个用于挂载 ISO 的目录。 挂载 CentOS ISO 文件到指定目录： sudo mount -o loop /path/to/centos.iso /mnt/iso 将 /path/to/centos.iso 替换为实际的 CentOS ISO 文件路径。这将将 ISO 文件挂载到 /mnt/iso 目录下。 创建一个新的 repo 配置文件： sudo vi /etc/yum.repo...</description>
-    <pubDate>Tue, 08 Jul 2025 06:12:55 GMT</pubDate>
-  </item><item>
-    <title>nc 命令</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Linux/nc-%E5%91%BD%E4%BB%A4</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Linux/nc-%E5%91%BD%E4%BB%A4</guid>
-    <description>一个服务仅仅监听 127.0.0.1， 我如何将外部请求通过 nc 转发过去 你可以使用 nc（Netcat）来实现简单的端口转发，将外部请求转发到仅监听 127.0.0.1 的服务。以下是一个常见的实现方法： 示例 假设服务监听在 127.0.0.1:8080，你希望将外部的 0.0.0.0:9090 转发到 127.0.0.1:8080。 启动转发： 在终端运行以下命令： nc -lk -p 9091 -c &quot;nc 127.0.0.1 9090&quot; -l：监听模式。 -k：保持连接（允许多个客户端连接）。 -p 9090：监听外部的端口 9090。 -c &quot;nc...</description>
-    <pubDate>Tue, 08 Jul 2025 06:12:55 GMT</pubDate>
-  </item><item>
     <title>CNI plugin 安装</title>
     <link>https://quartz.19960312.xyz/Knowledges/Zettelkasten/CNI-plugin-%E5%AE%89%E8%A3%85</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Zettelkasten/CNI-plugin-%E5%AE%89%E8%A3%85</guid>
     <description>Kubernetes 报错 CNI plugin not initialized 通常表示 容器网络接口 (CNI) 没有正确安装或初始化，导致 Pod 处于 ContainerCreating 状态。可以按照以下步骤进行排查和修复： 1.</description>
-    <pubDate>Tue, 08 Jul 2025 06:12:55 GMT</pubDate>
+    <pubDate>Tue, 08 Jul 2025 06:33:34 GMT</pubDate>
   </item><item>
     <title>dufs</title>
     <link>https://quartz.19960312.xyz/Knowledges/Zettelkasten/dufs</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Zettelkasten/dufs</guid>
     <description>API Upload a file curl -T path-to-file http://127.0.0.1:5000/new-path/path-to-file Upload a folder #!/bin/bash # 检查参数 if [ &quot;$#&quot; -ne 2 ]; then echo &quot;Usage: $0 &lt;local_directory&gt; &lt;dufs_url&gt;&quot; exit 1 fi LOCAL_DIR=&quot;$1&quot; DUFS_URL=&quot;$2&quot; # 确保目录存在 if [ ! -d &q...</description>
-    <pubDate>Tue, 08 Jul 2025 06:12:55 GMT</pubDate>
+    <pubDate>Tue, 08 Jul 2025 06:33:34 GMT</pubDate>
   </item><item>
     <title>etcd deploy and test</title>
     <link>https://quartz.19960312.xyz/Knowledges/Zettelkasten/etcd-deploy-and-test</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Zettelkasten/etcd-deploy-and-test</guid>
     <description>Slow etcd performance (performance testing and optimization) | Support | SUSE 本地启动 etcd 集群 好的，根据你提供的三个 IP 地址（192.168.30.189、192.168.24.192、192.168.28.4），我将为你调整之前的 etcd 集群配置方案。这些 IP 地址看起来属于不同的子网，这可能会影响节点间的通信，因此需要确保网络配置允许这些节点互相访问（特别是端口 2379 和 2380）。以下是基于这三个 IP 的具体配置步骤。 前提条件 确保三台机器的网络互通，防火墙已开放 2379（客户端...</description>
-    <pubDate>Tue, 08 Jul 2025 06:12:55 GMT</pubDate>
+    <pubDate>Tue, 08 Jul 2025 06:33:34 GMT</pubDate>
+  </item><item>
+    <title>etcd pressure test</title>
+    <link>https://quartz.19960312.xyz/Knowledges/Zettelkasten/etcd-pressure-test</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/Zettelkasten/etcd-pressure-test</guid>
+    <description>对 etcd 进行压力测试是评估其性能、稳定性和在高负载下的表现的重要步骤。以下是一个详细的指南，介绍如何使用 etcd 自带的工具（如 benchmark）或其他方法来进行压力测试，并分析结果。 前提条件 etcd 已部署： 确保你已经搭建了一个 etcd 集群（单节点或多节点均可）。例如，使用之前的配置（IP: 192.168.30.189, 192.168.24.192, 192.168.28.4）。 集群正常运行，可以通过 etcdctl member list 和 etcdctl endpoint health 验证。 工具准备： etcdctl：etcd 自带的管理工具，用于基本操...</description>
+    <pubDate>Tue, 08 Jul 2025 06:33:34 GMT</pubDate>
+  </item><item>
+    <title>k8s add new node</title>
+    <link>https://quartz.19960312.xyz/Knowledges/Zettelkasten/k8s-add-new-node</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/Zettelkasten/k8s-add-new-node</guid>
+    <description>添加 Worker 节点 主节点： kubeadm token create --print-join-command 输出示例：kubeadm join 192.168.1.100:6443 --token abcdef.1234567890abcdef --discovery-token-ca-cert-hash sha256:xxxxxx 新 Worker 节点： sudo kubeadm join 192.168.1.100:6443 --token abcdef.1234567890abcdef --discovery-token-ca-cert-hash sha256:xxxxxx...</description>
+    <pubDate>Tue, 08 Jul 2025 06:33:34 GMT</pubDate>
+  </item><item>
+    <title>kubectl command usage</title>
+    <link>https://quartz.19960312.xyz/Knowledges/Zettelkasten/kubectl-command-usage</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/Zettelkasten/kubectl-command-usage</guid>
+    <description>在 Kubernetes (kubectl) 中，可以使用以下命令来查看 Pod 内的容器列表、查看容器日志以及进入容器： 1.</description>
+    <pubDate>Tue, 08 Jul 2025 06:33:34 GMT</pubDate>
+  </item><item>
+    <title>zabbix 部署</title>
+    <link>https://quartz.19960312.xyz/Knowledges/Zettelkasten/zabbix-%E9%83%A8%E7%BD%B2</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/Zettelkasten/zabbix-%E9%83%A8%E7%BD%B2</guid>
+    <description> 最近需要调查 zabbix 相关问题，所以急需部署一个 zabbix，以下是 AI 生成内容，且经过本人在 ubuntu 24.04 实际测试通过。 下面是一个完整、简洁的教程，教你如何在 Ubuntu 上使用 Docker 部署 Zabbix（含前端 + 数据库）。 ✅ 教程目标 在 Ubuntu 系统中，使用 Docker 快速部署一套 Zabbix 6.x + PostgreSQL + Web UI 的系统。 🧰 前置条件 已安装 Docker 和 Docker Compose 系统为 Ubuntu 18.04+，建议 20.04/22.04 至少 2GB 内存（推荐 4GB） 如果...</description>
+    <pubDate>Tue, 08 Jul 2025 06:33:34 GMT</pubDate>
+  </item><item>
+    <title>本地启动 etcd 集群</title>
+    <link>https://quartz.19960312.xyz/Knowledges/Zettelkasten/%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8-etcd-%E9%9B%86%E7%BE%A4</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/Zettelkasten/%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8-etcd-%E9%9B%86%E7%BE%A4</guid>
+    <description>以下是将三节点 etcd 集群的启动命令改为单行形式，并确保前台运行（不加 &amp; 后台运行）。由于是单行命令，你需要在一个终端窗口运行一个节点，然后另开窗口运行其他节点，或者用脚本分步执行。这里提供每个节点的前台单行命令，方便复制粘贴： 单行命令（前台运行） 节点 1（infra0） etcd --name infra0 --data-dir etcd-cluster/infra0 --listen-client-urls http://127.0.0.1:2379 --advertise-client-urls http://127.0.0.1:2379 --listen-peer-u...</description>
+    <pubDate>Tue, 08 Jul 2025 06:33:34 GMT</pubDate>
+  </item><item>
+    <title>Dev Env Setup</title>
+    <link>https://quartz.19960312.xyz/Knowledges/CPP/Dev-Env-Setup</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/CPP/Dev-Env-Setup</guid>
+    <description>zsh sh -c &quot;$(curl -fsSL raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot; # plugins git clone github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions git clone github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~...</description>
+    <pubDate>Tue, 08 Jul 2025 06:33:34 GMT</pubDate>
+  </item><item>
+    <title>How_to_check_glibc_version_of_a_binary_in build_time</title>
+    <link>https://quartz.19960312.xyz/Knowledges/CPP/How_to_check_glibc_version_of_a_binary_in-build_time</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/CPP/How_to_check_glibc_version_of_a_binary_in-build_time</guid>
+    <description>There are several ways to check the glibc version that a binary file depends on:: ldd command ldd binary_file objdump, disassembly objdump -T binary_file | grep -i glibc readelf readelf -d binary_file | grep libc check dynamic section to get libc version。 check the source code repo If you can access...</description>
+    <pubDate>Tue, 08 Jul 2025 06:33:34 GMT</pubDate>
   </item>
     </channel>
   </rss>
