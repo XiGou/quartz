@@ -10,61 +10,61 @@
     <link>https://quartz.19960312.xyz/Knowledges/Collaboration/Commit-Type-in-Git-or-Github-workflow</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Collaboration/Commit-Type-in-Git-or-Github-workflow</guid>
     <description>TL,DR; feat：新功能。 chore：日常维护。 fix：修 bug。 docs：文档。 style：格式。 refactor：重构。 test：测试。 perf：性能。 ci：CI/CD。 build：构建。 revert：回滚。 这些术语在 GitHub 上没有强制要求，但遵循约定式提交的项目会广泛使用。 在 GitHub（以及更广泛的 Git 工作流）中，feat、chore 等术语通常出现在 commit 消息或 Pull Request (PR) 的描述中，特别是在遵循 Conventional Commits（约定式提交）规范的项目中。这些前缀用来描述提交的类型，帮助团队快...</description>
-    <pubDate>Fri, 18 Jul 2025 08:31:02 GMT</pubDate>
+    <pubDate>Fri, 18 Jul 2025 16:43:42 GMT</pubDate>
   </item><item>
     <title>Alpine Linux Usage</title>
     <link>https://quartz.19960312.xyz/Knowledges/Linux/Alpine</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Linux/Alpine</guid>
     <description>Install setup-alpine when setting apk mirror, don’t use auto select fastest mirror, it takes a long time.</description>
-    <pubDate>Fri, 18 Jul 2025 08:31:02 GMT</pubDate>
+    <pubDate>Fri, 18 Jul 2025 16:43:42 GMT</pubDate>
   </item><item>
     <title>Mount iso as yum repo</title>
     <link>https://quartz.19960312.xyz/Knowledges/Linux/Mount-iso-as-yum-repo</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Linux/Mount-iso-as-yum-repo</guid>
     <description>要将 CentOS ISO 挂载为本地软件包仓库（repo），可以按照以下步骤进行操作： 创建一个目录来挂载 ISO 文件： sudo mkdir /mnt/iso 这将在 /mnt/iso 目录下创建一个用于挂载 ISO 的目录。 挂载 CentOS ISO 文件到指定目录： sudo mount -o loop /path/to/centos.iso /mnt/iso 将 /path/to/centos.iso 替换为实际的 CentOS ISO 文件路径。这将将 ISO 文件挂载到 /mnt/iso 目录下。 创建一个新的 repo 配置文件： sudo vi /etc/yum.repo...</description>
-    <pubDate>Fri, 18 Jul 2025 08:31:02 GMT</pubDate>
+    <pubDate>Fri, 18 Jul 2025 16:43:42 GMT</pubDate>
   </item><item>
     <title>nc 命令</title>
     <link>https://quartz.19960312.xyz/Knowledges/Linux/nc-%E5%91%BD%E4%BB%A4</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Linux/nc-%E5%91%BD%E4%BB%A4</guid>
     <description>一个服务仅仅监听 127.0.0.1， 我如何将外部请求通过 nc 转发过去 你可以使用 nc（Netcat）来实现简单的端口转发，将外部请求转发到仅监听 127.0.0.1 的服务。以下是一个常见的实现方法： 示例 假设服务监听在 127.0.0.1:8080，你希望将外部的 0.0.0.0:9090 转发到 127.0.0.1:8080。 启动转发： 在终端运行以下命令： nc -lk -p 9091 -c &quot;nc 127.0.0.1 9090&quot; -l：监听模式。 -k：保持连接（允许多个客户端连接）。 -p 9090：监听外部的端口 9090。 -c &quot;nc...</description>
-    <pubDate>Fri, 18 Jul 2025 08:31:02 GMT</pubDate>
+    <pubDate>Fri, 18 Jul 2025 16:43:42 GMT</pubDate>
   </item><item>
     <title>GNU Global</title>
     <link>https://quartz.19960312.xyz/Knowledges/Software-Usage/GNU-Global</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Software-Usage/GNU-Global</guid>
     <description>Install wget ftp.gnu.org/pub/gnu/global/global-6.6.12.tar.gz Unzip it tar -zxvf, Then Read INSTALL.</description>
-    <pubDate>Fri, 18 Jul 2025 08:31:02 GMT</pubDate>
+    <pubDate>Fri, 18 Jul 2025 16:43:42 GMT</pubDate>
   </item><item>
     <title>Git Proxy Configuration</title>
     <link>https://quartz.19960312.xyz/Knowledges/Software-Usage/Git-Proxy-Configuration</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Software-Usage/Git-Proxy-Configuration</guid>
     <description>Git 配置代理的方法 Git 支持 HTTP(S) 代理 和 SOCKS 代理，可以针对全局或单个仓库进行配置。 1.</description>
-    <pubDate>Fri, 18 Jul 2025 08:31:02 GMT</pubDate>
-  </item><item>
-    <title>Git</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Software-Usage/Git</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Software-Usage/Git</guid>
-    <description>Config email and username: git config --global user.name &quot;username&quot; git config --global user.email useremail@qq.com git config --global core.editor vim git config --global credential.helper store git config --list HTTP Credential 首先打开 git config --global credential.helper store 然后生成一个 PTA ...</description>
-    <pubDate>Fri, 18 Jul 2025 08:31:02 GMT</pubDate>
+    <pubDate>Fri, 18 Jul 2025 16:43:42 GMT</pubDate>
   </item><item>
     <title>Proxy Configuration</title>
     <link>https://quartz.19960312.xyz/Knowledges/Software-Usage/Proxy-Configuration</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Software-Usage/Proxy-Configuration</guid>
     <description>Docker Proxy Configuration Docker Docker Cli Proxy configuration Daemon proxy configuration Git Git Proxy Configuration.</description>
-    <pubDate>Fri, 18 Jul 2025 08:31:02 GMT</pubDate>
+    <pubDate>Fri, 18 Jul 2025 16:43:42 GMT</pubDate>
   </item><item>
     <title>Terminal</title>
     <link>https://quartz.19960312.xyz/Knowledges/Software-Usage/Terminal</link>
     <guid>https://quartz.19960312.xyz/Knowledges/Software-Usage/Terminal</guid>
     <description>Tabby - a terminal for a more modern age 功能很好，但是 UI 界面不够美观，没有经过良好设计。 GitHub - kingToolbox/WindTerm: A professional cross-platform SSH/Sftp/Shell/Telnet/Serial terminal.</description>
-    <pubDate>Fri, 18 Jul 2025 08:31:02 GMT</pubDate>
+    <pubDate>Fri, 18 Jul 2025 16:43:42 GMT</pubDate>
   </item><item>
     <title>Nvme Device Operation cmds</title>
     <link>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</link>
     <guid>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</guid>
     <description>Disconnecting and reconnecting nvme Very simple in the end: echo 1 &gt; /sys/bus/pci/devices/$(readlink -f /sys/class/nvme/nvme1 | awk -F &quot;/&quot; &#039;{print $5}&#039;)/remove echo 1 &gt; /sys/bus/pci/devices/$(readlink -f /sys/class/nvme/nvme2 | awk -F &quot;/&quot; &#039;{print $5}&#039;)/r...</description>
-    <pubDate>Fri, 18 Jul 2025 08:31:02 GMT</pubDate>
+    <pubDate>Fri, 18 Jul 2025 16:43:42 GMT</pubDate>
+  </item><item>
+    <title>Dev Env Setup</title>
+    <link>https://quartz.19960312.xyz/Knowledges/CPP/Dev-Env-Setup</link>
+    <guid>https://quartz.19960312.xyz/Knowledges/CPP/Dev-Env-Setup</guid>
+    <description>zsh sh -c &quot;$(curl -fsSL raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot; # plugins git clone github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions git clone github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~...</description>
+    <pubDate>Fri, 18 Jul 2025 16:43:42 GMT</pubDate>
   </item>
     </channel>
   </rss>
