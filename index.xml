@@ -10,61 +10,61 @@
     <link>https://quartz.19960312.xyz/Readings/Articles/Others/What-is-the-differences-between-PDF-Mobi-Epub-of-EBook-formats</link>
     <guid>https://quartz.19960312.xyz/Readings/Articles/Others/What-is-the-differences-between-PDF-Mobi-Epub-of-EBook-formats</guid>
     <description>TL;DR: epub 是一种开源标准格式，优先选择这个格式的电子书。mobi、azw是亚马逊私有格式，PDF 体积大，txt 无格式。 小编 • 2023年2月16日 下午11:08 • 科技 • 阅读 4175 区别是：PDF是一种用独立于应用程序、硬件、操作系统的方式呈现文档的文件格式。mobi是一种电子书格式，是亚马逊专用阅读电子书格式。txt是最简单的的文本，非富文本格式，但功能单一。EPub 是一个自由的开源标准，是一种富文本格式，可以自动重新排版。 PDF PDF（英语：Portable Document Format，便携式文档格式）是一种用独立于应用程序、硬件、操作系统的方式...</description>
-    <pubDate>Mon, 13 Apr 2026 09:08:04 GMT</pubDate>
-  </item><item>
-    <title>Hardware</title>
-    <link>https://quartz.19960312.xyz/Readings/Articles/Tech/Hardware</link>
-    <guid>https://quartz.19960312.xyz/Readings/Articles/Tech/Hardware</guid>
-    <description>CPU的制造和概念 | plantegg 非常详尽的关于 CPU 的文章.</description>
-    <pubDate>Mon, 13 Apr 2026 09:08:04 GMT</pubDate>
-  </item><item>
-    <title>Videos</title>
-    <link>https://quartz.19960312.xyz/Readings/Videos/Videos</link>
-    <guid>https://quartz.19960312.xyz/Readings/Videos/Videos</guid>
-    <description>EU PyCon 的 JIT 三十分钟教程 Antonio Cuni - How to write a JIT compiler in 30 minutes - YouTube EU PyCon 的 JIT 三十分钟教程，感觉讲的非常的好，建议感兴趣的同学可以看下 .</description>
-    <pubDate>Mon, 13 Apr 2026 09:08:04 GMT</pubDate>
-  </item><item>
-    <title>Commit Type in Git or Github workflow</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Collaboration/Commit-Type-in-Git-or-Github-workflow</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Collaboration/Commit-Type-in-Git-or-Github-workflow</guid>
-    <description>TL,DR; feat：新功能。 chore：日常维护。 fix：修 bug。 docs：文档。 style：格式。 refactor：重构。 test：测试。 perf：性能。 ci：CI/CD。 build：构建。 revert：回滚。 这些术语在 GitHub 上没有强制要求，但遵循约定式提交的项目会广泛使用。 在 GitHub（以及更广泛的 Git 工作流）中，feat、chore 等术语通常出现在 commit 消息或 Pull Request (PR) 的描述中，特别是在遵循 Conventional Commits（约定式提交）规范的项目中。这些前缀用来描述提交的类型，帮助团队快...</description>
-    <pubDate>Mon, 13 Apr 2026 09:08:04 GMT</pubDate>
-  </item><item>
-    <title>Alpine Linux Usage</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Linux/Alpine</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Linux/Alpine</guid>
-    <description>Install setup-alpine when setting apk mirror, don’t use auto select fastest mirror, it takes a long time.</description>
-    <pubDate>Mon, 13 Apr 2026 09:08:04 GMT</pubDate>
-  </item><item>
-    <title>Mount iso as yum repo</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Linux/Mount-iso-as-yum-repo</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Linux/Mount-iso-as-yum-repo</guid>
-    <description>要将 CentOS ISO 挂载为本地软件包仓库（repo），可以按照以下步骤进行操作： 创建一个目录来挂载 ISO 文件： sudo mkdir /mnt/iso 这将在 /mnt/iso 目录下创建一个用于挂载 ISO 的目录。 挂载 CentOS ISO 文件到指定目录： sudo mount -o loop /path/to/centos.iso /mnt/iso 将 /path/to/centos.iso 替换为实际的 CentOS ISO 文件路径。这将将 ISO 文件挂载到 /mnt/iso 目录下。 创建一个新的 repo 配置文件： sudo vi /etc/yum.repo...</description>
-    <pubDate>Mon, 13 Apr 2026 09:08:04 GMT</pubDate>
-  </item><item>
-    <title>nc 命令</title>
-    <link>https://quartz.19960312.xyz/Knowledges/Linux/nc-%E5%91%BD%E4%BB%A4</link>
-    <guid>https://quartz.19960312.xyz/Knowledges/Linux/nc-%E5%91%BD%E4%BB%A4</guid>
-    <description>一个服务仅仅监听 127.0.0.1， 我如何将外部请求通过 nc 转发过去 你可以使用 nc（Netcat）来实现简单的端口转发，将外部请求转发到仅监听 127.0.0.1 的服务。以下是一个常见的实现方法： 示例 假设服务监听在 127.0.0.1:8080，你希望将外部的 0.0.0.0:9090 转发到 127.0.0.1:8080。 启动转发： 在终端运行以下命令： nc -lk -p 9091 -c &quot;nc 127.0.0.1 9090&quot; -l：监听模式。 -k：保持连接（允许多个客户端连接）。 -p 9090：监听外部的端口 9090。 -c &quot;nc...</description>
-    <pubDate>Mon, 13 Apr 2026 09:08:04 GMT</pubDate>
+    <pubDate>Mon, 13 Apr 2026 09:10:25 GMT</pubDate>
   </item><item>
     <title>Nvme Device Operation cmds</title>
     <link>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</link>
     <guid>https://quartz.19960312.xyz/Knowledges/UsefulSnipets/Nvme-Device-Operation-cmds</guid>
     <description>Disconnecting and reconnecting nvme Very simple in the end: echo 1 &gt; /sys/bus/pci/devices/$(readlink -f /sys/class/nvme/nvme1 | awk -F &quot;/&quot; &#039;{print $5}&#039;)/remove echo 1 &gt; /sys/bus/pci/devices/$(readlink -f /sys/class/nvme/nvme2 | awk -F &quot;/&quot; &#039;{print $5}&#039;)/r...</description>
-    <pubDate>Mon, 13 Apr 2026 09:08:04 GMT</pubDate>
+    <pubDate>Mon, 13 Apr 2026 09:10:25 GMT</pubDate>
+  </item><item>
+    <title>Hardware</title>
+    <link>https://quartz.19960312.xyz/Readings/Articles/Tech/Hardware</link>
+    <guid>https://quartz.19960312.xyz/Readings/Articles/Tech/Hardware</guid>
+    <description>CPU的制造和概念 | plantegg 非常详尽的关于 CPU 的文章.</description>
+    <pubDate>Mon, 13 Apr 2026 09:10:25 GMT</pubDate>
   </item><item>
     <title>Papers</title>
     <link>https://quartz.19960312.xyz/Readings/Papers/Papers</link>
     <guid>https://quartz.19960312.xyz/Readings/Papers/Papers</guid>
     <description>梭罗的极简主义生活智慧及其启示 323950844.pdf ［摘 要］极简主义原是西方一种现代艺术流派，其核心理念是崇尚简约。而作为一种生活方式的极简主义，梭罗早在 19 世纪就践行过：他通过对“步行”“奢侈”与“文明”的深刻反思，认为应简化人的物质需求，倡导追求精神上的自由，从而促进人与自然和谐共生。 当前正处于生态危机的时代，亟需提倡这样一种极简主义的生活方式。梭罗的极简主义生活智慧对于我国的生态文明建设具有重要的启示作用，有助于实现全社会 的生态幸福。 ［关键词］梭罗；极简主义；精神自由；生态幸福 Bitcoin- A Peer-to-Peer Electronic Cash Syste...</description>
-    <pubDate>Mon, 13 Apr 2026 09:08:04 GMT</pubDate>
+    <pubDate>Mon, 13 Apr 2026 09:10:25 GMT</pubDate>
+  </item><item>
+    <title>Videos</title>
+    <link>https://quartz.19960312.xyz/Readings/Videos/Videos</link>
+    <guid>https://quartz.19960312.xyz/Readings/Videos/Videos</guid>
+    <description>EU PyCon 的 JIT 三十分钟教程 Antonio Cuni - How to write a JIT compiler in 30 minutes - YouTube EU PyCon 的 JIT 三十分钟教程，感觉讲的非常的好，建议感兴趣的同学可以看下 .</description>
+    <pubDate>Mon, 13 Apr 2026 09:10:25 GMT</pubDate>
   </item><item>
     <title>Travels</title>
     <link>https://quartz.19960312.xyz/Travels/All-My-Travels</link>
     <guid>https://quartz.19960312.xyz/Travels/All-My-Travels</guid>
     <description>Beijing Shanghai Guangzhou Shenzhen HongKong.</description>
-    <pubDate>Mon, 13 Apr 2026 09:08:04 GMT</pubDate>
+    <pubDate>Mon, 13 Apr 2026 09:10:25 GMT</pubDate>
+  </item><item>
+    <title>Beijing</title>
+    <link>https://quartz.19960312.xyz/Travels/Beijing</link>
+    <guid>https://quartz.19960312.xyz/Travels/Beijing</guid>
+    <description>北京-天津 滨江道惬意的夜晚 www.acfun.cn/v/ac30585633 戒台寺 十三陵/蟒山 白羊沟 妙峰山 妙峰山露营----扛车上山之旅 妙峰山露营----扛车上山之旅 怀柔水库 北京怀柔水库骑行&amp; 户外 螺狮粉吃播 - YouTube Others 后海-老北京正宗酒吧爬行 - YouTube 探访北京工体土味酒吧: OT - YouTube.</description>
+    <pubDate>Mon, 13 Apr 2026 09:10:25 GMT</pubDate>
+  </item><item>
+    <title>Chengdu</title>
+    <link>https://quartz.19960312.xyz/Travels/Chengdu</link>
+    <guid>https://quartz.19960312.xyz/Travels/Chengdu</guid>
+    <description>2025新春成都街头拍摄 - YouTube.</description>
+    <pubDate>Mon, 13 Apr 2026 09:10:25 GMT</pubDate>
+  </item><item>
+    <title>Guangzhou</title>
+    <link>https://quartz.19960312.xyz/Travels/Guangzhou</link>
+    <guid>https://quartz.19960312.xyz/Travels/Guangzhou</guid>
+    <description>沉浸式体验广州最大城中村：棠下 - YouTube 广州越秀花街 &amp; 人民公园 - YouTube.</description>
+    <pubDate>Mon, 13 Apr 2026 09:10:25 GMT</pubDate>
+  </item><item>
+    <title>HongKong</title>
+    <link>https://quartz.19960312.xyz/Travels/HongKong</link>
+    <guid>https://quartz.19960312.xyz/Travels/HongKong</guid>
+    <description>深圳轮渡-香港+弥敦道街景/天星小轮 - YouTube 香港中环观光摩天轮 - YouTube 夜逛香港兰桂坊街道 - YouTube HK Bar Crawl：如果你的人生多了一晚上的时间，你会不会和我一起去 - YouTube 香港Citywalk-深圳湾口岸-坚尼地城新海旁-庙街 - YouTube 二零二四年七月六号下午六点之前的一分钟，你同我一起 - YouTube 香港麦理浩径第1-2段 | MacLehose Trail Sections 1-2 in Hong Kong - YouTube 香港尖沙咀地道街头演出: 座右铭-吴雨霏 @m_iffy.c HK - YouTube...</description>
+    <pubDate>Mon, 13 Apr 2026 09:10:25 GMT</pubDate>
   </item>
     </channel>
   </rss>
